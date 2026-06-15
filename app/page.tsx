@@ -1,4 +1,7 @@
 import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+
+
 
 export default function Home() {
   return (
@@ -10,6 +13,21 @@ export default function Home() {
       }}
     >
   <Navbar />
+
+      <main>
+       <Hero />
+
+       <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="h-px bg-linear-to-r from-transparent via-white/6 to-transparent" />
+        </div>
+
+        
+
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
+        </div>
+
+      </main>
     </div>
   );
 }
