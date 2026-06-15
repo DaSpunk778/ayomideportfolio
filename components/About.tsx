@@ -7,9 +7,9 @@ import Image from "next/image";
 
 const stats = [
   { value: "2+", label: "Years Experience", icon: Calendar },
-  { value: "100%", label: "Efficiency", icon: Zap },
+  { value: "100%", label: "Efficiency and exceptional product delivery", icon: Zap },
   { value: "5+", label: "Happy Clients", icon: Coffee },
-  { value: "24/7", label: "Active", icon: MapPin }, 
+  { value: "24/7", label: "active all round the globe", icon: MapPin }, 
 ]
 
 export default function About() {
