@@ -44,7 +44,7 @@ export default function About() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={inView ? { opacity: 1, y: 0 } : {}}
                             transition={{ delay: 0.5, duration: 0.5 }}
-                            className="absolute -bottom-6 -right-6 bg-[#111117] border border-white/8 rounded-xl p-4 shadow-2xl"
+                            className="absolute -bottom-6 right-0 lg:right-6 bg-[#111117] border border-white/8 rounded-xl p-4 shadow-2xl"
                             >
                             <div className="flex items-center gap-3">
                             <div className="w-10 h-10 rounded-full bg-[#7c3aed]/20 flex items-center justify-center">
