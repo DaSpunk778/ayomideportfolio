@@ -87,16 +87,19 @@ export default function About() {
                    className="space-y-4 text-[#a1a1aa] leading-relaxed mb-8"
                  >
                    <p>
-                     I'm Ayomide Samuel Akintomide, a software developer based in Lagos, Nigeria with a passion for crafting
+                     I'm Ayomide Samuel Akintomide, a software developer from Lagos Nigeria with a passion for crafting
                      digital experiences that are as beautiful as they are performant. My journey
-                     started with a curiosity for how things work on the web, which quickly evolved
+                     started with a curiosity for how things works on the web, which quickly evolved
                      into a career building products used by thousands.
                    </p>
                    <p>
-
+                     With expertise spanning Next.js, Node.js, TypeScript, and a strong Database infrastructure,
+                     I bring ideas from raw sketches to polished production-ready applications.
+                     I believe great that a software is the intersection of solid engineering and thoughtful design.
                    </p>
                    <p>
-
+                     When I'm not writing code, you'll find me contributing to open-source projects,
+                     writing technical blog posts, or exploring the latest in web performance optimization.
                    </p>
 
                  </div>
