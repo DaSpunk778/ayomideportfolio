@@ -52,17 +52,56 @@ export default function About() {
                             </div>
                             <div>
                                 <p className="text-white text-sm" style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 600 }}>
-                                Currently available
+                                    Currently available
                                 </p>
                                 <p className="text-[#71717a] text-xs" style={{ fontFamily: "'Inter', sans-serif" }}>
-                                Open to new projects
+                                    Open to new projects
                                 </p>
                             </div>
                             </div>
                         </motion.div>
-
                    </div> 
                     </motion.div>
+
+                {/* Text side */}
+                <motion.div
+                  initial={{ opacity: 0, x: 40 }}
+                  animate={inView ? { opacity: 1, x: 0 } : {}}
+                  transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+                >
+                 <span
+                  className="text-xs tracking-[0.2em] text-[#a78bfa] uppercase mb-4 block"
+                  style={{ fontFamily: "'jetBrains Monno', monospace"}}
+                 >
+                   — About Me
+                 </span>
+                 <h2
+                  style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 700 }}
+                  className="text-4xl sm:text-5xl text-white mb-6 leading-tight"
+                 >
+                  Building the future,{" "}
+                  <span className="text-[#a78bfa]">one line</span> at a time
+                 </h2>
+                 <div 
+                   style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400 }}
+                   className="space-y-4 text-[#a1a1aa] leading-relaxed mb-8"
+                 >
+                   <p>
+                     I'm Ayomide Samuel Akintomide, a software developer based in Lagos, Nigeria with a passion for crafting
+                     digital experiences that are as beautiful as they are performant. My journey
+                     started with a curiosity for how things work on the web, which quickly evolved
+                     into a career building products used by thousands.
+                   </p>
+                   <p>
+
+                   </p>
+                   <p>
+
+                   </p>
+
+                 </div>
+                    
+                    </motion.div> 
                 </div>
             </div>
         </section>
