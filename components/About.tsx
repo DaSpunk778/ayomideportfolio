@@ -6,10 +6,10 @@ import Image from "next/image";
 
 
 const stats = [
-  { value: "5+", label: "Years Experience", icon: Calendar },
-  { value: "60+", label: "Projects Shipped", icon: Zap },
-  { value: "30+", label: "Happy Clients", icon: Coffee },
-  { value: "12", label: "Countries Served", icon: MapPin }, 
+  { value: "2+", label: "Years Experience", icon: Calendar },
+  { value: "100%", label: "Efficiency", icon: Zap },
+  { value: "5+", label: "Happy Clients", icon: Coffee },
+  { value: "24/7", label: "Active", icon: MapPin }, 
 ]
 
 export default function About() {
@@ -101,9 +101,47 @@ export default function About() {
                      When I'm not writing code, you'll find me contributing to open-source projects,
                      writing technical blog posts, or exploring the latest in web performance optimization.
                    </p>
-
                  </div>
-                    
+
+                 {/* skills highligh */}
+                 <div className="flex flex-wrap gap-2 mb-10">
+                  {["Clean code", "Agile", "TDD", "System Design", "Comunication"].map((tag) => (
+                    <span
+                     key={tag}
+                     className="px-3 py-1 text-xs rounded-full border border-[#7c3aed]/30 text-[#a78bfa] bg-[#7c3aed]/10"
+                     style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                    >
+                    {tag}
+                    </span>
+                  ))}
+                 </div>
+
+                 {/* */}
+                    <div className="grid grid-cols-2 gap-4">
+              {stats.map((stat, i) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ delay: 0.4 + i * 0.1, duration: 0.5 }}
+                  className="p-4 rounded-xl border border-white/6 bg-white/2 hover:border-[#7c3aed]/30 transition-colors group"
+                >
+                  <stat.icon
+                    size={20}
+                    className="text-[#7c3aed] group-hover:text-[#a78bfa] transition-colors mb-2"
+                  />
+                  <p
+                    style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 700 }}
+                    className="text-2xl text-white"
+                  >
+                    {stat.value}
+                  </p>
+                  <p className="text-xs text-[#71717a]" style={{ fontFamily: "'Inter', sans-serif" }}>
+                    {stat.label}
+                  </p>
+                </motion.div>
+              ))}
+            </div>  
                     </motion.div> 
                 </div>
             </div>
