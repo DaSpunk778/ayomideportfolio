@@ -7,7 +7,7 @@ import {useEffect, useRef, useState } from "react"
 
 
 
-const roles = ["Frontend-Engineer", "Software-Dveloper" ];
+const roles = ["Frontend-Engineer", "Software-Developer" ];
 
 const floatingBadges = [
     { label: "Next.js", color: "#61dafb", x:"5%", y: "20%"},
