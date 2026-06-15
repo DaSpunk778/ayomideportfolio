@@ -7,7 +7,7 @@ import {useEffect, useRef, useState } from "react"
 
 
 
-const roles = ["Frontend-Engineer", "Software-Developer" ];
+const roles = ["Full-Stack developer", "AI-context Engineer" ];
 
 const floatingBadges = [
     { label: "Next.js", color: "#61dafb", x:"5%", y: "20%"},
@@ -156,7 +156,7 @@ export default function Hero() {
                     className="text-base sm:text-lg text-[#71717a] max-w-2xl mx-auto mb-10 leading-relaxed"
                     >
                     I craft high-performance web applications with a focus on clean architecture,
-                    exceptional UX, and scalable backend systems. 5+ years turning complex problems
+                    exceptional UX, and scalable backend systems. over 2 years turning complex problems
                     into elegant digital experiences.
                 </motion.p>
 
