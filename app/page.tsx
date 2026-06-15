@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import About from "@/components/About"
 
 
 
@@ -21,10 +22,10 @@ export default function Home() {
           <div className="h-px bg-linear-to-r from-transparent via-white/6 to-transparent" />
         </div>
 
+        <About />
         
-
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
+          <div className="h-px bg-linear-to-r from-transparent via-white/6 to-transparent" />
         </div>
 
       </main>

@@ -175,7 +175,7 @@ export default function Hero() {
                   </button>
                   <a
                     href="#"
-                    className="group w-full sm:w-auto flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl border border-white/10 hover:border-white/20 text-white/80 hover:text-white text-sm transition-all duration-200 bg-white/[0.03] hover:bg-white/[0.07]"
+                    className="group w-full sm:w-auto flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl border border-white/10 hover:border-white/20 text-white/80 hover:text-white text-sm transition-all duration-200 bg-white/3 hover:bg-white/[0.07]"
                     style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}
                    >
                     <Download size={16} />
