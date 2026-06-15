@@ -71,7 +71,7 @@ export default function Hero() {
           {/* Raidial glow */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
             <div 
-             className="w-150 h-150 rounded-full opacity-20 blur-[120px]"
+             className="w-150 h-150 rounded-full opacity-20 blur-[80px] sm:blur-[120px]"
              style={{ background: "radial-gradient(circle, #7c3aed 0%, #22d3ee 60%, transparent 80%)" }}
             />
           </div>
@@ -81,7 +81,7 @@ export default function Hero() {
             <motion.div
              key={badge.label}
              className="absolute hidden lg:flex items-center gap-1.5 px-3 py-1.5 rounded-full border-white/10 bg-white/4 backdrop-blur-sm text-xs text-white/60 "
-             style={{ left: badge.x, top: badge.y}}
+             style={{ left: badge.x, top: badge.y, willChange: "transform" }}
              initial={{ opacity: 0, scale: 0.8}}
              animate={{ opacity: 1, scale: 1, y: [0, -8, 0]}}
              transition={{
