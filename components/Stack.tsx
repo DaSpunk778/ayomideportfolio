@@ -14,13 +14,6 @@ const categories = [
 
 const stacks = [
   {
-    name: "React",
-    category: "Frontend",
-    level: 95,
-    color: "#61dafb",
-    description: "Component architecture, hooks, performance",
-  },
-  {
     name: "TypeScript",
     category: "Frontend",
     level: 92,
@@ -42,25 +35,11 @@ const stacks = [
     description: "Utility-first CSS framework",
   },
   {
-    name: "Vue.js",
-    category: "Frontend",
-    level: 75,
-    color: "#42b883",
-    description: "Progressive JS framework",
-  },
-  {
     name: "Node.js",
     category: "Backend",
     level: 30,
     color: "#68a063",
     description: "Server-side JavaScript runtime",
-  },
-  {
-    name: "Express",
-    category: "Backend",
-    level: 30,
-    color: "#ffffff",
-    description: "Minimal Node.js web framework",
   },
   //{ name: "GraphQL", category: "Backend", level: 80, color: "#e535ab", description: "API query language" },
   {
@@ -79,11 +58,11 @@ const stacks = [
     description: "Relational database mastery",
   },
   {
-    name: "MongoDB",
+    name: "MySql",
     category: "Database",
     level: 82,
     color: "#47a248",
-    description: "NoSQL document database",
+    description: "Relational databse Management system",
   },
   //{ name: "Redis", category: "Database", level: 80, color: "#ff4438", description: "In-memory data structure store" },
   {
@@ -115,13 +94,6 @@ const stacks = [
     level: 80,
     color: "#f24e1e",
     description: "Design & prototyping",
-  },
-  {
-    name: "Vite",
-    category: "Tools",
-    level: 90,
-    color: "#bd34fe",
-    description: "Lightning-fast build tool",
   },
   {
     name: "Jest",
