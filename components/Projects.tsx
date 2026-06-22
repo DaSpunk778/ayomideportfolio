@@ -188,13 +188,13 @@ export default function Projects() {
                         <div className="absolute top-3 right-3 flex gap-2">
                             <a
                              href={project.liveUrl}
-                             className="p-2 rounded-lg bg-[#09090b]/80 backdrop-blur-sm text-white/60 hover:text-white transition-colors opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 duration-300 "
+                             className="p-2 rounded-lg bg-[#09090b]/80 backdrop-blur-sm text-white/60 hover:text-white transition-colors opacity-100 sm:opacity-0 sm:group-hover:opacity-100 translate-y-0 sm:translate-y-1 sm:group-hover:translate-y-0 duration-300"
                             >
                               <ExternalLink size={17} />
                             </a>
                             <a
                             href={project.githubUrl}
-                            className="p-2 rounded-lg bg-[#09090b]/80 backdrop-blur-sm text-white/60 hover:text-white transition-colors opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 duration-300 delay-75"
+                            className="p-2 rounded-lg bg-[#09090b]/80 backdrop-blur-sm text-white/60 hover:text-white transition-colors opacity-100 sm:opacity-0 sm:group-hover:opacity-100 translate-y-0 sm:translate-y-1 sm:group-hover:translate-y-0 duration-300 delay-75"
                             >
                           <Github size={17} />
                         </a>
