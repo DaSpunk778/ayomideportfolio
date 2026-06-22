@@ -47,7 +47,7 @@ export default function Navbar() {
             const top = el.getBoundingClientRect().top + window.scrollY - 80;
             window.scrollTo({ top, behavior: "smooth" });
         }
-    }, 300); // wait for menu close animation (matches your 0.25s + buffer)
+    }, 500); // wait for menu close animation (matches your 0.25s + buffer)
 };
 
     return(
