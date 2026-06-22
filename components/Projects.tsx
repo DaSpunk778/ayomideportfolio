@@ -222,10 +222,22 @@ export default function Projects() {
                             {project.title}
                           </h3>
                           <p
-                           className="text-[#71717a] text-sm leading-relaxed mb-4 "
+                           className="text-[#71717a] text-sm leading-relaxed mb-4 line-clamp-3"
+                           style={{ fontFamily: "'JetBrains Mono', monospace" }}
                           >
                             {project.description}
                           </p>
+                          <div className="flex flex-wrap gap-1.5">
+                            {project.tags.slice(0, 3).map((tag) => (
+                               <span 
+                                key={tag}
+                                className="text-[10px] px-2 py-0.5 rounded bg-white/4 text-[#a1a1aa] border border-white/6"
+                                style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                               >
+                                {tag}
+                               </span> 
+                            ))}
+                          </div>
                         </div>
 
                     </motion.div>
