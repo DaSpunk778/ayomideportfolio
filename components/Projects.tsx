@@ -238,7 +238,7 @@ export default function Projects() {
                       </h3>
                       <p
                         className="text-[#71717a] text-sm leading-relaxed mb-4 line-clamp-3"
-                        style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                    
                       >
                         {project.description}
                       </p>
