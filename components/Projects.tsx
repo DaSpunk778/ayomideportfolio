@@ -15,7 +15,7 @@ const projects = [
     description: "An AI-Powered Resume generat ",
     image: "/resume.png",
     tags: ["Next.js", "TypeScript", "openAI", "Tailwind"],
-    category: "Full-stack",
+    category: "Full-Stack",
     liveUrl: "#",
     githubUrl: "#",
     featured: false,
@@ -23,11 +23,11 @@ const projects = [
   },
   {
     id: 2,
-    title: "RESUME AI",
+    title: "E&E Medical Ambulance Services",
     description: "An AI-Powered Resume generat ",
-    image: "/resume.png",
+    image: "/medical.png",
     tags: ["Next.js", "TypeScript", "openAI", "Tailwind"],
-    category: "Full-stack",
+    category: "Full-Stack",
     liveUrl: "#",
     githubUrl: "#",
     featured: false,
@@ -37,9 +37,9 @@ const projects = [
     id: 3,
     title: "E&E Medical Ambulance Services",
     description: "An AI-Powered Resume generat ",
-    image: "/resume.png",
+    image: "/portfolio.png",
     tags: ["javascipt", "VanillaCss"],
-    category: "Full-stack",
+    category: "Full-Stack",
     liveUrl: "#",
     githubUrl: "#",
     featured: false,
@@ -49,9 +49,9 @@ const projects = [
     id: 4,
     title: "RESUME AI",
     description: "An AI-Powered Resume generat ",
-    image: "/resume.png",
+    image: "/e-com.png",
     tags: ["Next.js", "TypeScript", "openAI", "Tailwind"],
-    category: "Full-stack",
+    category: "E-commerce",
     liveUrl: "#",
     githubUrl: "#",
     featured: false,
@@ -63,7 +63,7 @@ const projects = [
     description: "An AI-Powered Resume generat ",
     image: "/resume.png",
     tags: ["Next.js", "TypeScript", "openAI", "Tailwind"],
-    category: "Full-stack",
+    category: "Frontend",
     liveUrl: "#",
     githubUrl: "#",
     featured: false,
@@ -73,9 +73,9 @@ const projects = [
     id: 6,
     title: "RESUME AI",
     description: "An AI-Powered Resume generat ",
-    image: "/resume.png",
+    image: "/",
     tags: ["Next.js", "TypeScript", "openAI", "Tailwind"],
-    category: "Full-stack",
+    category: "Tools",
     liveUrl: "#",
     githubUrl: "#",
     featured: false,
@@ -83,7 +83,7 @@ const projects = [
   },
 ];
 
-const cats = ["All", "Full-Stack", "Frontend", "Data", "Tools", "Mobile"];
+const cats = ["All", "Full-Stack", "Frontend", "Data", "Tools", "E-commerce"];
 
 export default function Projects() {
   const { ref, inView } = useInView(0.1);
@@ -179,8 +179,44 @@ export default function Projects() {
                       className="group elative rounded-2xl overflow-hidden border border-white/6 bg-[#111117] hover:border-[#7c3aed]/30 transition-all duration-300"
                     >
                       <div className="relative h-44 overflow-hidden">
+                        <img 
+                           src={project.image}
+                           alt={project.title}
+                           className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-linear-to-tfrom-[#111117] via-[#111117]/20 to-transparent"/>
+                        <div className="absolute top-3 rigtht-3 flex gap-2">
+                            <a
+                             href={project.liveUrl}
+                             className="p-2 rounded-lg bg-[#09090b]/80 backdrop-blur-sm text-white/60 hover:text-white transition-colors opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 duration-300 "
+                            >
+                              <ExternalLink size={17} />
+                            </a>
+                            <a
+                            href={project.githubUrl}
+                            className="p-2 rounded-lg bg-[#09090b]/80 backdrop-blur-sm text-white/60 hover:text-white transition-colors opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 duration-300 delay-75"
+                            >
+                          <Github size={17} />
+                        </a>
+                        </div>
+                        </div>
 
-                        </div>  
+                        <div className="p-5">
+                          <div className="flex items-center justify-between mb-2">
+                            <span
+                              className="text-[10px] text-[#52525b]"
+                              style={{ fontFamily: "'JetBrains Mono', monospac" }}
+                            >
+                                {project.year}
+                            </span>
+                            <span 
+                              className="text-[10px] px-2 py-0.5 rounded-full border border-[#7c3aed]/30 text-[#a78bfa]"
+                            >
+                                {project.category}
+                            </span>
+                          </div>
+                        </div>
+
                     </motion.div>
                   ))
                 }
