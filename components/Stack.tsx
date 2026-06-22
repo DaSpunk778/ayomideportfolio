@@ -41,7 +41,6 @@ const stacks = [
     color: "#68a063",
     description: "Server-side JavaScript runtime",
   },
-  //{ name: "GraphQL", category: "Backend", level: 80, color: "#e535ab", description: "API query language" },
   {
     name: "Go Lang",
     category: "Backend",
@@ -49,7 +48,6 @@ const stacks = [
     color: "#ffdd57",
     description: "Scripting and automation",
   },
-  //{ name: "Rust", category: "Backend", level: 55, color: "#ce422b", description: "Systems programming language" },
   {
     name: "PostgreSQL",
     category: "Database",
@@ -64,7 +62,6 @@ const stacks = [
     color: "#47a248",
     description: "Relational databse Management system",
   },
-  //{ name: "Redis", category: "Database", level: 80, color: "#ff4438", description: "In-memory data structure store" },
   {
     name: "Sequelize",
     category: "Database",
@@ -72,8 +69,6 @@ const stacks = [
     color: "#5a67d8",
     description: "Next-gen ORM for TypeScript",
   },
-  //{ name: "Docker", category: "DevOps", level: 85, color: "#2496ed", description: "Container platform" },
-  //{ name: "Kubernetes", category: "DevOps", level: 70, color: "#326ce5", description: "Container orchestration" },
   {
     name: "AWS",
     category: "DevOps",
@@ -102,7 +97,6 @@ const stacks = [
     color: "#c21325",
     description: "JavaScript testing framework",
   },
-  //{ name: "Turborepo", category: "Tools", level: 72, color: "#ffffff", description: "Monorepo tooling" },
 ];
 
 export default function Stack() {

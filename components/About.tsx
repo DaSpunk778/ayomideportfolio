@@ -116,7 +116,7 @@ export default function About() {
                   ))}
                  </div>
 
-                 {/* */}
+                 {/* stats */}
                     <div className="grid grid-cols-2 gap-4">
               {stats.map((stat, i) => (
                 <motion.div
