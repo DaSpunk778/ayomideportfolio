@@ -182,7 +182,7 @@ export default function Projects() {
                         <img 
                            src={project.image}
                            alt={project.title}
-                           className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         />
                         <div className="absolute inset-0 bg-linear-to-t from-[#111117] via-[#111117]/20 to-transparent"/>
                         <div className="absolute top-3 right-3 flex gap-2">

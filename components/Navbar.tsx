@@ -38,10 +38,17 @@ export default function Navbar() {
         }, []);
 
         const scrollTo = (href: string) => {
-            const id = href.slice(1);
-            document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-            setOpen(false);
-        };
+    const id = href.slice(1);
+    setOpen(false); // close menu first
+    
+    setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) {
+            const top = el.getBoundingClientRect().top + window.scrollY - 80;
+            window.scrollTo({ top, behavior: "smooth" });
+        }
+    }, 300); // wait for menu close animation (matches your 0.25s + buffer)
+};
 
     return(
         <motion.header 
@@ -131,7 +138,7 @@ export default function Navbar() {
                     <li key={link.label}>
                       <button 
                         onClick={() => scrollTo(link.href)}
-                        className="w-full text-left px-4 py-3 text-sm text[#a1a1aa] hover:text-white hover:bg-white/4 rounded-lg transition-colors"
+                        className="w-full text-left px-4 py-3 text-sm hover:text-white hover:bg-white/4 rounded-lg transition-colors"
                       >
                         {link.label}
                       </button>
