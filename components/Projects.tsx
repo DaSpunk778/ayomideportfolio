@@ -61,7 +61,7 @@ const projects = [
     id: 5,
     title: "RESUME AI",
     description: "A full-featured customer relationship management system built with Next.js 14, TypeScript, and PostgreSQL. Real-time notifications, advanced analytics.",
-    image: "/resume.png",
+    image: "/klogin.png",
     tags: ["Next.js", "TypeScript", "openAI", "Tailwind"],
     category: "Frontend",
     liveUrl: "#",
@@ -73,7 +73,7 @@ const projects = [
     id: 6,
     title: "RESUME AI",
     description: "A comprehensive React component library with 80+ components, Figma integration, automated accessibility testing, and full TypeScript support.",
-    image: "/",
+    image: "/trivia.png",
     tags: ["Next.js", "TypeScript", "openAI", "Tailwind"],
     category: "Tools",
     liveUrl: "#",
@@ -94,7 +94,7 @@ export default function Projects() {
     filter === "All" ? projects : projects.filter((p) => p.category === filter);
 
   return (
-    <section id="pojects" ref={ref} className="py-24 sm:py-32 relative">
+    <section id="projects" ref={ref} className="py-24 sm:py-32 relative">
       <div className="absolute top-0 right-1/3 w-96 h-96 rounded-full bg-[#7c3aed]/5 blur-[130px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -237,15 +237,19 @@ export default function Projects() {
                                 {tag}
                                </span> 
                             ))}
+                            {project.tags.length > 3 && (
+                                <span
+                                  className="text-[10px] px-2 py-0.5 rounded bg-white/4 text-[#52525b]"
+                                  style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                                >
+                                     +{project.tags.length - 3}
+                                </span>
+                            )}
                           </div>
                         </div>
-
                     </motion.div>
-                  ))
-                }
+                  ))}
             </div>
-
-
           </motion.div>
         </AnimatePresence>
       </div>
