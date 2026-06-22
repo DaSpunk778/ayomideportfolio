@@ -12,7 +12,7 @@ const projects = [
   {
     id: 1,
     title: "RESUME AI",
-    description: "An AI-Powered Resume generat ",
+    description: "A full-featured customer relationship management system built with Next.js 14, TypeScript, and PostgreSQL. Real-time notifications, advanced analytics, and team collaboration features.",
     image: "/resume.png",
     tags: ["Next.js", "TypeScript", "openAI", "Tailwind"],
     category: "Full-Stack",
@@ -24,7 +24,7 @@ const projects = [
   {
     id: 2,
     title: "E&E Medical Ambulance Services",
-    description: "An AI-Powered Resume generat ",
+    description: "A comprehensive React component library with 80+ components, Figma integration, automated accessibility testing, and full TypeScript support. ",
     image: "/medical.png",
     tags: ["Next.js", "TypeScript", "openAI", "Tailwind"],
     category: "Full-Stack",
@@ -36,7 +36,7 @@ const projects = [
   {
     id: 3,
     title: "E&E Medical Ambulance Services",
-    description: "An AI-Powered Resume generat ",
+    description: "A full-featured customer relationship management system built with Next.js 14, TypeScript, and PostgreSQL. Real-time notifications, advanced analytics.",
     image: "/portfolio.png",
     tags: ["javascipt", "VanillaCss"],
     category: "Full-Stack",
@@ -48,7 +48,7 @@ const projects = [
   {
     id: 4,
     title: "RESUME AI",
-    description: "An AI-Powered Resume generat ",
+    description: "A comprehensive React component library with 80+ components, Figma integration, automated accessibility testing, and full TypeScript support. ",
     image: "/e-com.png",
     tags: ["Next.js", "TypeScript", "openAI", "Tailwind"],
     category: "E-commerce",
@@ -60,7 +60,7 @@ const projects = [
   {
     id: 5,
     title: "RESUME AI",
-    description: "An AI-Powered Resume generat ",
+    description: "A full-featured customer relationship management system built with Next.js 14, TypeScript, and PostgreSQL. Real-time notifications, advanced analytics.",
     image: "/resume.png",
     tags: ["Next.js", "TypeScript", "openAI", "Tailwind"],
     category: "Frontend",
@@ -72,7 +72,7 @@ const projects = [
   {
     id: 6,
     title: "RESUME AI",
-    description: "An AI-Powered Resume generat ",
+    description: "A comprehensive React component library with 80+ components, Figma integration, automated accessibility testing, and full TypeScript support.",
     image: "/",
     tags: ["Next.js", "TypeScript", "openAI", "Tailwind"],
     category: "Tools",
@@ -215,6 +215,17 @@ export default function Projects() {
                                 {project.category}
                             </span>
                           </div>
+                          <h3
+                           style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 700 }}
+                            className="text-white text-lg mb-2 group-hover:text-[#a78bfa] transition-colors"
+                          >
+                            {project.title}
+                          </h3>
+                          <p
+                           className="text-[#71717a] text-sm leading-relaxed mb-4 "
+                          >
+                            {project.description}
+                          </p>
                         </div>
 
                     </motion.div>
