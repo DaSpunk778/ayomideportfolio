@@ -176,7 +176,7 @@ export default function Projects() {
                       transition={{ delay: i * 0.07, duration: 0.4 }}
                       onMouseEnter={() => setHoveredId(project.id)}
                       onMouseLeave={() => setHoveredId(null)}
-                      className="group elative rounded-2xl overflow-hidden border border-white/6 bg-[#111117] hover:border-[#7c3aed]/30 transition-all duration-300"
+                      className="group relative rounded-2xl overflow-hidden border border-white/6 bg-[#111117] hover:border-[#7c3aed]/30 transition-all duration-300"
                     >
                       <div className="relative h-44 overflow-hidden">
                         <img 
@@ -184,8 +184,8 @@ export default function Projects() {
                            alt={project.title}
                            className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
                         />
-                        <div className="absolute inset-0 bg-linear-to-tfrom-[#111117] via-[#111117]/20 to-transparent"/>
-                        <div className="absolute top-3 rigtht-3 flex gap-2">
+                        <div className="absolute inset-0 bg-linear-to-t from-[#111117] via-[#111117]/20 to-transparent"/>
+                        <div className="absolute top-3 right-3 flex gap-2">
                             <a
                              href={project.liveUrl}
                              className="p-2 rounded-lg bg-[#09090b]/80 backdrop-blur-sm text-white/60 hover:text-white transition-colors opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 duration-300 "
