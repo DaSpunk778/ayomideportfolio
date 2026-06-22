@@ -178,7 +178,9 @@ export default function Projects() {
                       onMouseLeave={() => setHoveredId(null)}
                       className="group elative rounded-2xl overflow-hidden border border-white/6 bg-[#111117] hover:border-[#7c3aed]/30 transition-all duration-300"
                     >
+                      <div className="relative h-44 overflow-hidden">
 
+                        </div>  
                     </motion.div>
                   ))
                 }
