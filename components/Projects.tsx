@@ -28,7 +28,7 @@ const projects = [
     description:
       "A responsive ambulance booking platform that allows users to request emergency medical transport in real time. Designed for speed and clarity in critical situations, with a streamlined booking flow, service information, and direct contact options for immediate assistance. ",
     image: "/medical.png",
-    tags: ["Next.js", "TypeScript", "openAI", "Tailwind"],
+    tags: ["Next.js", "TypeScript", "Tailwind"],
     category: "Full-Stack",
     liveUrl: "https://github.com/DaSpunk778/E-E-medical-ambulance-services",
     githubUrl: "https://github.com/DaSpunk778/E-E-medical-ambulance-services",
@@ -41,7 +41,7 @@ const projects = [
     description:
       "A personal portfolio built with Framer Motion and Aceternity UI, featuring fluid scroll animations, interactive hover effects, and a modern, visually engaging design. Crafted to showcase projects and skills through smooth, polished motion design.",
     image: "/portfolio.png",
-    tags: ["javascipt", "VanillaCss"],
+    tags: ["next.js", "TailwindCss", "AcetenityUI"],
     category: "Tools",
     liveUrl: "https://ayomidesamuelportfolio.netlify.app/",
     githubUrl: "https://github.com/DaSpunk778/Ay-dev-portfolio",
@@ -54,7 +54,7 @@ const projects = [
     description:
       "A fully functional e-commerce storefront built with HTML, JavaScript, and vanilla CSS. Uses JSON for data prototyping to simulate product listings, cart functionality, and dynamic rendering — demonstrating core e-commerce logic without relying on a framework. ",
     image: "/e-com.png",
-    tags: ["Next.js", "TypeScript", "openAI", "Tailwind"],
+    tags: [ "javaScript", "Vanilla Css"],
     category: "E-commerce",
     liveUrl: "https://daspunk778.github.io/ecommerce-project/",
     githubUrl: "https://github.com/DaSpunk778/ecommerce-project",
@@ -67,7 +67,7 @@ const projects = [
     description:
       "A frontend UI prototype showcasing a clean, modern login and authentication flow. Focused on intuitive navigation, responsive layouts, and polished interaction design",
     image: "/klogin.png",
-    tags: ["Next.js", "TypeScript", "openAI", "Tailwind"],
+    tags: ["Next.js", "TypeScript", "Tailwind"],
     category: "Frontend",
     liveUrl: "https://korrecttrivia.netlify.app/login",
     githubUrl: "#",
@@ -80,7 +80,7 @@ const projects = [
     description:
       "A frontend UI prototype showcasing a clean, modern login and authentication flow. Focused on intuitive navigation, responsive layouts, and polished interaction design",
     image: "/trivia.png",
-    tags: ["Next.js", "TypeScript", "openAI", "Tailwind"],
+    tags: ["Next.js", "TypeScript","Tailwind"],
     category: "Frontend",
     liveUrl: "https://trivia-flow-chi.vercel.app/landing",
     githubUrl: "#",
