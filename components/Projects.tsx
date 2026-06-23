@@ -12,7 +12,7 @@ const projects = [
     id: 1,
     title: "RESUME AI",
     description:
-      "A full-featured customer relationship management system built with Next.js 14, TypeScript, and PostgreSQL. Real-time notifications, advanced analytics, and team collaboration features.",
+      "An AI-powered resume builder that transforms user input into polished, professional resumes in seconds. Built with Next.js, TypeScript, and OpenAI's API, it intelligently structures content, suggests impactful phrasing, and generates ATS-friendly resumes tailored to the user's industry and experience level.",
     image: "/cvcraft.png",
     tags: ["Next.js", "TypeScript", "openAI", "Tailwind"],
     category: "Full-Stack",
