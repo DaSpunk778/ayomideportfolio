@@ -1,11 +1,12 @@
 "use client";
-import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
+
 import { useInView } from "../hooks/useInView";
 import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
 import { p, title } from "motion/react-client";
 import Image from "next/image";
 import { Category } from "@mui/icons-material";
+import { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence, useScroll, useTransform } from "motion/react";
 
 const projects = [
   {
@@ -236,10 +237,7 @@ export default function Projects() {
                       >
                         {project.title}
                       </h3>
-                      <p
-                        className="text-[#71717a] text-sm leading-relaxed mb-4 line-clamp-3"
-                    
-                      >
+                      <p className="text-[#71717a] text-sm leading-relaxed mb-4 line-clamp-3">
                         {project.description}
                       </p>
                       <div className="flex flex-wrap gap-1.5">
@@ -336,7 +334,8 @@ function FeaturedCard({ project }: { project: (typeof projects)[0] }) {
               className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#7c3aed] hover:bg-[#6d28d9] text-white text-sm transition-colors"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
-              <ExternalLink size={15} />currently building!
+              <ExternalLink size={15} />
+              currently building!
             </a>
             <a
               href={project.githubUrl}
@@ -349,5 +348,122 @@ function FeaturedCard({ project }: { project: (typeof projects)[0] }) {
         </div>
       </div>
     </div>
+  );
+}
+
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 640);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+  return isMobile;
+}
+
+function ProjectCard({
+  project,
+  index,
+}: {
+  project: (typeof projects)[0];
+  index: number;
+}) {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
+  const { scrollYProgress } = useScroll({
+    target: cardRef,
+    offset: ["start end", "center center", "end start"],
+  });
+
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.92, 1.05, 0.92]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0.6, 1, 0.6]);
+  const brightness = useTransform(
+    scrollYProgress,
+    [0, 0.5, 1],
+    [0.7, 1.1, 0.7],
+  );
+  const filterStyle = useTransform(brightness, (b) => `brightness(${b})`);
+
+  return (
+    <motion.div
+      ref={cardRef}
+      style={isMobile ? { scale, opacity, filter: filterStyle } : {}}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: index * 0.07, duration: 0.4 }}
+      className="group relative rounded-2xl overflow-hidden border border-white/6 bg-[#111117] hover:border-[#7c3aed]/30 transition-all duration-300"
+    >
+      <div className="relative h-44 overflow-hidden">
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-linear-to-t from-[#111117] via-[#111117]/20 to-transparent" />
+        <div className="absolute top-3 right-3 flex gap-2">
+          <a
+            href={project.liveUrl}
+            className="p-2 rounded-lg bg-[#09090b]/80 backdrop-blur-sm text-white/60 hover:text-white transition-colors opacity-100 sm:opacity-0 sm:group-hover:opacity-100 translate-y-0 sm:translate-y-1 sm:group-hover:translate-y-0 duration-300"
+          >
+            <ExternalLink size={17} />
+          </a>
+          <a
+            href={project.githubUrl}
+            className="p-2 rounded-lg bg-[#09090b]/80 backdrop-blur-sm text-white/60 hover:text-white transition-colors opacity-100 sm:opacity-0 sm:group-hover:opacity-100 translate-y-0 sm:translate-y-1 sm:group-hover:translate-y-0 duration-300 delay-75"
+          >
+            <Github size={17} />
+          </a>
+        </div>
+      </div>
+
+      <div className="p-5">
+        <div className="flex items-center justify-between mb-2">
+          <span
+            className="text-[10px] text-[#52525b]"
+            style={{ fontFamily: "'JetBrains Mono', monospace" }}
+          >
+            {project.year}
+          </span>
+          <span className="text-[10px] px-2 py-0.5 rounded-full border border-[#7c3aed]/30 text-[#a78bfa]">
+            {project.category}
+          </span>
+        </div>
+        <h3
+          style={{
+            fontFamily: "'Bricolage Grotesque', sans-serif",
+            fontWeight: 700,
+          }}
+          className="text-white text-lg mb-2 group-hover:text-[#a78bfa] transition-colors"
+        >
+          {project.title}
+        </h3>
+        <p
+          className="text-[#71717a] text-sm leading-relaxed mb-4 line-clamp-3"
+          style={{ fontFamily: "'JetBrains Mono', monospace" }}
+        >
+          {project.description}
+        </p>
+        <div className="flex flex-wrap gap-1.5">
+          {project.tags.slice(0, 3).map((tag) => (
+            <span
+              key={tag}
+              className="text-[10px] px-2 py-0.5 rounded bg-white/4 text-[#a1a1aa] border border-white/6"
+              style={{ fontFamily: "'JetBrains Mono', monospace" }}
+            >
+              {tag}
+            </span>
+          ))}
+          {project.tags.length > 3 && (
+            <span
+              className="text-[10px] px-2 py-0.5 rounded bg-white/4 text-[#52525b]"
+              style={{ fontFamily: "'JetBrains Mono', monospace" }}
+            >
+              +{project.tags.length - 3}
+            </span>
+          )}
+        </div>
+      </div>
+    </motion.div>
   );
 }
