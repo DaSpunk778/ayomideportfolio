@@ -108,9 +108,9 @@ export default function Navbar() {
               <button 
               onClick={() => scrollTo("#contact")}
               className="px-4 py-2 text-sm bg-[#7c3aed] hover:bg-[#6d28d9] text-white rounded-lg transition-colors"
-              style={{ fontFamily: "'inter', sans-serif"}}
+              style={{ fontFamily: "'JetBrains Mono', monospace"}}
               >
-                Hire Me
+                Let's Build
               </button>
             </div>
 
@@ -146,9 +146,10 @@ export default function Navbar() {
                   ))}
                   <li className="pt-2 px-3">
                     <button 
+                      style={{ fontFamily: "'JetBrains Mono', monospace"}}
                       onClick={() => scrollTo("#contact")}
                       className="w-full px-4 py-3 text-sm bg-[#7c3aed] hover:bg-[#6d28d9] text-white rounded-lg transition-colors">
-                    Hire Me
+                    let's Build
                     </button>
                   </li>
                 </ul>

@@ -106,8 +106,10 @@ export default function Hero() {
                   transition={{ delay: 0.5, duration: 0.6}}
                   className="inline-flex mt-20 sm:mt-0 items-center gap-2 px-4 py-1.5 rounded-full border border-[#7c3aed]/30 bg-[#7c3ead]/10 text-[#a78bfa] text-sm mb-8"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#22d3ee] animate-pulse" />
-                   Ay_Dev always active, let's connect
+                  <span 
+                  style={{ fontFamily: "'JetBrains Mono', monospace"}}
+                  className="w-1.5 h-1.5 rounded-full bg-[#22d3ee] animate-pulse" />
+                   Ay_Developer, let's connect
                 </motion.div>
 
                 <motion.h1
@@ -168,16 +170,16 @@ export default function Hero() {
                 >
                   <button
                     onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
-                    className="group w-full sm:w-auto flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#7c3aed] hover:bg-[#6d28d9] text-white text-sm transition-all duration-200 hover:shadow-[0_0_30px_rgba(124,58,237,0.4)]"
-                    style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}
+                    className="group w-64 sm:w-auto flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#7c3aed] hover:bg-[#6d28d9] text-white text-sm transition-all duration-200 hover:shadow-[0_0_30px_rgba(124,58,237,0.4)]"
+                    style={{ fontFamily: "'JetBrains Mono', monospace", fontWeight: 500 }}
                   >
                     View My Work
                   </button>
                   <a
                     href="/ayomides_CV.pdf"
                   
-                    className="group w-full sm:w-auto flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl border border-white/10 hover:border-white/20 text-white/80 hover:text-white text-sm transition-all duration-200 bg-white/3 hover:bg-white/[0.07]"
-                    style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}
+                    className="group w-64 sm:w-auto flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl border border-white/10 hover:border-white/20 text-white/80 hover:text-white text-sm transition-all duration-200 bg-white/3 hover:bg-white/[0.07]"
+                    style={{ fontFamily: "'JetBrains Mono', monospace", fontWeight: 500 }}
                    >
                     <Download size={16} />
                     Download CV

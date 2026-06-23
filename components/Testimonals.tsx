@@ -148,7 +148,7 @@ export default function Testimonials() {
 
                 {/*quotes from people */}
                 <blockquote
-                  className="text-lg sm:text-xl text-white/80 leading-relaxed mb-8 max-w-3xl"
+                  className="text-[16px] sm:text-[16px] text-white/80 leading-relaxed mb-8 max-w-3xl"
                   style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}
                 >
                   "{current.content}"

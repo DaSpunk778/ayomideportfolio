@@ -84,7 +84,7 @@ export default function About() {
                  </h2>
                  <div 
                    style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400 }}
-                   className="space-y-4 text-[#a1a1aa] leading-relaxed mb-8"
+                   className="space-y-4 text-[#a1a1aa]  leading-relaxed mb-8"
                  >
                    <p>
                      I'm Ayomide Samuel Akintomide, a software developer from Lagos Nigeria with a passion for crafting
@@ -95,12 +95,12 @@ export default function About() {
                    <p>
                      With expertise spanning Next.js, Node.js, TypeScript, and a strong Database infrastructure,
                      I bring ideas from raw sketches to polished production-ready applications.
-                     I believe great that a software is the intersection of solid engineering and thoughtful design.
+                     I believe that a great software is the intersection of solid engineering and thoughtful design.
                    </p>
                    <p>
                      When I'm not writing code, you'll find me contributing to open-source projects,
                      writing technical blog posts, exploring the latest in web performance optimization while listeing to good music
-                     like the one you're enjoying now😊.
+                     like the one you're enjoying now.
                    </p>
                  </div>
 
