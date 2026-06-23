@@ -99,7 +99,8 @@ export default function About() {
                    </p>
                    <p>
                      When I'm not writing code, you'll find me contributing to open-source projects,
-                     writing technical blog posts, or exploring the latest in web performance optimization.
+                     writing technical blog posts, exploring the latest in web performance optimization while listeing to good music
+                     like the one you're enjoying now😊.
                    </p>
                  </div>
 
