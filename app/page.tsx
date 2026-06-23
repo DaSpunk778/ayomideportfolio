@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About"
 import Stack from "@/components/Stack"
 import Projects from "@/components/Projects"
+import MusicPlayer from "@/components/musicPlayer"
 
 
 
@@ -43,6 +44,8 @@ export default function Home() {
         </div>
 
       </main>
+
+      <MusicPlayer />
     </div>
   );
 }
