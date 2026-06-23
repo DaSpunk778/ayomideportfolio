@@ -38,10 +38,10 @@ const projects = [
     id: 3,
     title: "Framer-motion portfolio",
     description:
-      "A full-featured customer relationship management system built with Next.js 14, TypeScript, and PostgreSQL. Real-time notifications, advanced analytics.",
+      "A personal portfolio built with Framer Motion and Aceternity UI, featuring fluid scroll animations, interactive hover effects, and a modern, visually engaging design. Crafted to showcase projects and skills through smooth, polished motion design.",
     image: "/portfolio.png",
     tags: ["javascipt", "VanillaCss"],
-    category: "Full-Stack",
+    category: "Tools",
     liveUrl: "https://ayomidesamuelportfolio.netlify.app/",
     githubUrl: "https://github.com/DaSpunk778/Ay-dev-portfolio",
     featured: false,
@@ -51,7 +51,7 @@ const projects = [
     id: 4,
     title: "KING STORES",
     description:
-      "A comprehensive React component library with 80+ components, Figma integration, automated accessibility testing, and full TypeScript support. ",
+      "A fully functional e-commerce storefront built with HTML, JavaScript, and vanilla CSS. Uses JSON for data prototyping to simulate product listings, cart functionality, and dynamic rendering — demonstrating core e-commerce logic without relying on a framework. ",
     image: "/e-com.png",
     tags: ["Next.js", "TypeScript", "openAI", "Tailwind"],
     category: "E-commerce",
@@ -64,7 +64,7 @@ const projects = [
     id: 5,
     title: "KORRECT LOGIN",
     description:
-      "A full-featured customer relationship management system built with Next.js 14, TypeScript, and PostgreSQL. Real-time notifications, advanced analytics.",
+      "A frontend UI prototype showcasing a clean, modern login and authentication flow. Focused on intuitive navigation, responsive layouts, and polished interaction design",
     image: "/klogin.png",
     tags: ["Next.js", "TypeScript", "openAI", "Tailwind"],
     category: "Frontend",
@@ -77,10 +77,10 @@ const projects = [
     id: 6,
     title: "TRIVIA FLOW",
     description:
-      "A comprehensive React component library with 80+ components, Figma integration, automated accessibility testing, and full TypeScript support.",
+      "A frontend UI prototype showcasing a clean, modern login and authentication flow. Focused on intuitive navigation, responsive layouts, and polished interaction design",
     image: "/trivia.png",
     tags: ["Next.js", "TypeScript", "openAI", "Tailwind"],
-    category: "Tools",
+    category: "Frontend",
     liveUrl: "https://trivia-flow-chi.vercel.app/landing",
     githubUrl: "#",
     featured: false,
@@ -336,7 +336,7 @@ function FeaturedCard({ project }: { project: (typeof projects)[0] }) {
               className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#7c3aed] hover:bg-[#6d28d9] text-white text-sm transition-colors"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
-              <ExternalLink size={15} /> Live Demo
+              <ExternalLink size={15} />currently building!
             </a>
             <a
               href={project.githubUrl}
