@@ -25,7 +25,7 @@ const projects = [
     id: 2,
     title: "E&E Medical Ambulance Services",
     description:
-      "A comprehensive React component library with 80+ components, Figma integration, automated accessibility testing, and full TypeScript support. ",
+      "A responsive ambulance booking platform that allows users to request emergency medical transport in real time. Designed for speed and clarity in critical situations, with a streamlined booking flow, service information, and direct contact options for immediate assistance. ",
     image: "/medical.png",
     tags: ["Next.js", "TypeScript", "openAI", "Tailwind"],
     category: "Full-Stack",
