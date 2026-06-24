@@ -72,7 +72,7 @@ export default function Hero() {
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
             <div 
              className="w-150 h-150 rounded-full opacity-20 blur-[80px] sm:blur-[120px] hidden sm:block"
-             style={{ background: "radial-gradient(circle, #7c3aed 0%, #22d3ee 60%, transparent 80%)" }}
+             style={{ background: "radial-gradient(circle, #7c3aed 0%, #22d3ee 40%, transparent 20%)" }}
             />
           </div>
 
@@ -154,7 +154,7 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.65, duration: 0.6 }}
-                    style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400 }}
+                    style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}
                     className="text-base sm:text-lg text-[#71717a] max-w-2xl mx-auto mb-10 leading-relaxed"
                     >
                     I craft high-performance web applications with a focus on clean architecture,

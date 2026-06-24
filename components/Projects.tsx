@@ -30,7 +30,7 @@ const projects = [
     image: "/medical.png",
     tags: ["Next.js", "TypeScript", "Tailwind"],
     category: "Full-Stack",
-    liveUrl: "https://github.com/DaSpunk778/E-E-medical-ambulance-services",
+    liveUrl: "",
     githubUrl: "https://github.com/DaSpunk778/E-E-medical-ambulance-services",
     featured: false,
     year: "2026",
