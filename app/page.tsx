@@ -8,6 +8,7 @@ import Testimonials from "@/components/Testimonals"
 
 
 
+
 export default function Home() {
   return (
     <div
@@ -50,6 +51,7 @@ export default function Home() {
           <div className="h-px bg-linear-to-r from-transparent via-white/6 to-transparent" />
         </div>
 
+       
 
       </main>
 

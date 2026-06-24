@@ -12,7 +12,7 @@ const links = [
     { label: "Stacks", href: "#stack" },
     { label: "Projects", href: "#projects" },
     { label: "Testimonials", href: "#testimonials" },
-    { label: "Blog", href: "#blog" },
+    //{ label: "Gallery", href: "#gallery"},
     { label: "Contact", href: "#contact" },
 ];
 
