@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About"
+import Service from "@/components/Service"
 import Stack from "@/components/Stack"
 import Projects from "@/components/Projects"
 import MusicPlayer from "@/components/musicPlayer"
@@ -31,6 +32,12 @@ export default function Home() {
 
         <About />
         
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="h-px bg-linear-to-r from-transparent via-white/6 to-transparent" />
+        </div>
+
+        <Service />
+
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="h-px bg-linear-to-r from-transparent via-white/6 to-transparent" />
         </div>
