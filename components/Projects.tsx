@@ -127,7 +127,7 @@ export default function Projects() {
           <a
             href="#"
             className="flex items-center gap-1.5 text-sm text-[#a78bfa] hover:text-white transition-colors shrink-0"
-            style={{ fontFamily: "'Inter', sans-serif" }}
+            style={{ fontFamily: "'JetBrains Mono', monospace" }}
           >
             View all on GitHub <ArrowUpRight size={16} />
           </a>
