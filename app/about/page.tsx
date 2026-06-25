@@ -18,13 +18,13 @@ export default function AboutPage() {
               <div className="absolute -inset-3 rounded-2xl border border-[#7c3aed]/20" />
               <div className="absolute -inset-6 rounded-3xl border border-[#7c3aed]/10" />
               <Image
-                src="/samuel.jpg"
+                src="/gemini.png"
                 alt="Ay_dev— front-end engineer"
                 fill
                 className="relative w-full aspect-4/5 object-cover rounded-xl"
               />
               {/* Floating card */}
-              <div className="absolute -bottom-6 right-0 lg:right-6 bg-[#111117] border border-white/8 rounded-xl p-4 shadow-2xl">
+              <div className="absolute -bottom-6 right-0 lg:right-6 bg-[#111117] border border-white/8 rounded-xl p-4 shadow-2xl overflow-hidden">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-[#7c3aed]/20 flex items-center justify-center">
                     <Zap size={18} className="text-[#a78bfa]" />
@@ -86,7 +86,7 @@ export default function AboutPage() {
         </div>
       </main>
 
-      <Gallery />
+      {/*<Gallery />*/}
 
       <MusicPlayer />
       <Footer />
