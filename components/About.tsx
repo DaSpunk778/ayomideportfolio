@@ -3,6 +3,7 @@ import { MapPin, Calendar, Coffee, Zap } from "lucide-react";
 import { useInView } from "../hooks/useInView";
 import { motion } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
 
 
 const stats = [
@@ -82,27 +83,27 @@ export default function About() {
                   Building the future,{" "}
                   <span className="text-[#a78bfa]">one line</span> at a time
                  </h2>
+                 
                  <div 
-                   style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400 }}
-                   className="space-y-4 text-[#a1a1aa]  leading-relaxed mb-8"
-                 >
-                   <p>
-                     I'm Ayomide Samuel Akintomide, a software developer from Lagos Nigeria with a passion for crafting
-                     digital experiences that are as beautiful as they are performant. My journey
-                     started with a curiosity for how things works on the web, which quickly evolved
-                     into a career building products used by thousands.
-                   </p>
-                   <p>
-                     With expertise spanning Next.js, Node.js, TypeScript, and a strong Database infrastructure,
-                     I bring ideas from raw sketches to polished production-ready applications.
-                     I believe that a great software is the intersection of solid engineering and thoughtful design.
-                   </p>
-                   <p>
-                     When I'm not writing code, you'll find me contributing to open-source projects,
-                     writing technical blog posts, exploring the latest in web performance optimization while listeing to good music
-                     like the one you're enjoying now.
-                   </p>
-                 </div>
+                    style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400 }}
+                    className="space-y-4 text-[#a1a1aa] leading-relaxed mb-6"
+                  >
+                    <p>
+                      I'm Ayomide Samuel Akintomide, a software developer from Lagos Nigeria with a passion for crafting
+                      digital experiences that are as beautiful as they are performant. My journey
+                      started with a curiosity for how things works on the web, which quickly evolved
+                      into a career building products used by thousands.
+                    </p>
+                  </div>
+
+                  <Link
+                    href="/about"
+                    className="inline-flex items-center gap-2 mb-8 text-sm text-[#a78bfa] hover:text-white transition-colors group"
+                    style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}
+                  >
+                    Read more about me
+                    <span className="group-hover:translate-x-1 transition-transform">→</span>
+                  </Link>
 
                  {/* skills highligh */}
                  <div className="flex flex-wrap gap-2 mb-10">

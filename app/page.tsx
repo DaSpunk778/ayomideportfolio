@@ -6,7 +6,6 @@ import Stack from "@/components/Stack"
 import Projects from "@/components/Projects"
 import MusicPlayer from "@/components/musicPlayer"
 import Testimonials from "@/components/Testimonals"
-//import Gallery from "@/components/Gallery"
 import Contact from "@/components/Contact"
 import Footer from "@/components/Footer"
 
