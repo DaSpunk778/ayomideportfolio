@@ -2,6 +2,19 @@
 import { useState } from "react";
 import { motion } from "motion/react";
 import { useInView } from "../hooks/useInView";
+import { FaAws } from "react-icons/fa";
+import {
+  SiTypescript,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiNodedotjs,
+  SiGo,
+  SiPostgresql,
+  SiMysql,
+  SiGithubactions,
+  SiFigma,
+  SiJest,
+} from "react-icons/si";
 
 const categories = [
   "All",
@@ -18,6 +31,7 @@ const stacks = [
     category: "Frontend",
     level: 92,
     color: "#3178c6",
+    icon: SiTypescript,
     description: "Type-safe development at scale",
   },
   {
@@ -25,6 +39,7 @@ const stacks = [
     category: "Frontend",
     level: 88,
     color: "#ffffff",
+    icon: SiNextdotjs,
     description: "Full-stack React framework",
   },
   {
@@ -32,6 +47,7 @@ const stacks = [
     category: "Frontend",
     level: 90,
     color: "#38bdf8",
+    icon: SiTailwindcss,
     description: "Utility-first CSS framework",
   },
   {
@@ -39,6 +55,7 @@ const stacks = [
     category: "Backend",
     level: 30,
     color: "#68a063",
+    icon: SiNodedotjs,
     description: "Server-side JavaScript runtime",
   },
   {
@@ -46,6 +63,7 @@ const stacks = [
     category: "Backend",
     level: 45,
     color: "#ffdd57",
+    icon: SiGo,
     description: "Scripting and automation",
   },
   {
@@ -53,6 +71,7 @@ const stacks = [
     category: "Database",
     level: 85,
     color: "#336791",
+    icon: SiPostgresql,
     description: "Relational database mastery",
   },
   {
@@ -60,6 +79,7 @@ const stacks = [
     category: "Database",
     level: 82,
     color: "#47a248",
+    icon: SiMysql,
     description: "Relational databse Management system",
   },
   {
@@ -67,6 +87,7 @@ const stacks = [
     category: "Database",
     level: 88,
     color: "#5a67d8",
+    icon: SiPostgresql, // placeholder — no dedicated Sequelize icon exists
     description: "Next-gen ORM for TypeScript",
   },
   {
@@ -74,6 +95,7 @@ const stacks = [
     category: "DevOps",
     level: 78,
     color: "#ff9900",
+    icon: FaAws,
     description: "Cloud services platform",
   },
   {
@@ -81,6 +103,7 @@ const stacks = [
     category: "DevOps",
     level: 85,
     color: "#2088ff",
+    icon: SiGithubactions,
     description: "CI/CD automation",
   },
   {
@@ -88,6 +111,7 @@ const stacks = [
     category: "Tools",
     level: 80,
     color: "#f24e1e",
+    icon: SiFigma,
     description: "Design & prototyping",
   },
   {
@@ -95,6 +119,7 @@ const stacks = [
     category: "Tools",
     level: 82,
     color: "#c21325",
+    icon: SiJest,
     description: "JavaScript testing framework",
   },
 ];
@@ -193,16 +218,14 @@ export default function Stack() {
                 />
               )}
 
-              {/* Color dot */}
+              {/* Tech logo icon */}
               <div
                 className="w-8 h-8 rounded-lg mb-3 flex items-center justify-center"
                 style={{ backgroundColor: `${stack.color}20` }}
               >
-                <div
-                  className="w-3 h-3 rounded-full"
-                  style={{ backgroundColor: stack.color }}
-                />
+                <stack.icon size={18} style={{ color: stack.color }} />
               </div>
+            
 
               <p
                 style={{
