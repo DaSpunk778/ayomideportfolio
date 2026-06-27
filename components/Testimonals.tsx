@@ -106,7 +106,7 @@ export default function Testimonials() {
             }}
             className="text-4xl sm:text-5xl text-white leading-tight"
           >
-            What poeple say
+            What people say
           </h2>
         </motion.div>
 
