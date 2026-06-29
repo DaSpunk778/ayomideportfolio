@@ -27,6 +27,7 @@ const categories = [
 
 const stacks = [
   {
+    id: 1,
     name: "TypeScript",
     category: "Frontend",
     level: 92,
@@ -35,6 +36,7 @@ const stacks = [
     description: "Type-safe development at scale",
   },
   {
+    id: 2,
     name: "Next.js",
     category: "Frontend",
     level: 88,
@@ -43,6 +45,7 @@ const stacks = [
     description: "Full-stack React framework",
   },
   {
+    id: 3,
     name: "Tailwind CSS",
     category: "Frontend",
     level: 90,
@@ -51,6 +54,7 @@ const stacks = [
     description: "Utility-first CSS framework",
   },
   {
+    id: 4,
     name: "Node.js",
     category: "Backend",
     level: 30,
@@ -59,6 +63,7 @@ const stacks = [
     description: "Server-side JavaScript runtime",
   },
   {
+    id: 5,
     name: "Go Lang",
     category: "Backend",
     level: 45,
@@ -67,6 +72,7 @@ const stacks = [
     description: "Scripting and automation",
   },
   {
+    id: 6,
     name: "PostgreSQL",
     category: "Database",
     level: 85,
@@ -91,6 +97,7 @@ const stacks = [
     description: "Next-gen ORM for TypeScript",
   },
   {
+    id: 7,
     name: "AWS",
     category: "DevOps",
     level: 78,
@@ -99,6 +106,7 @@ const stacks = [
     description: "Cloud services platform",
   },
   {
+    id: 8,
     name: "GitHub Actions",
     category: "DevOps",
     level: 85,
@@ -107,6 +115,7 @@ const stacks = [
     description: "CI/CD automation",
   },
   {
+    id: 9,
     name: "Figma",
     category: "Tools",
     level: 80,
@@ -115,6 +124,7 @@ const stacks = [
     description: "Design & prototyping",
   },
   {
+    id: 10,
     name: "Jest",
     category: "Tools",
     level: 82,
@@ -134,9 +144,10 @@ export default function Stack() {
       ? stacks
       : stacks.filter((s) => s.category === activeCategory);
 
+       console.log("activeCategory:", activeCategory, "filtered count:", filtered.length);  // ← ADD THIS LINE
   return (
     <section id="stack" ref={ref} className="py-24 sm:py-32 relative">
-      <div className="absolute inset-0 pointer-event-none">
+      <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-0 w-80 h-80 rounded-full bg-[#22d3ee]/5 blur-[120px]" />
       </div>
 
