@@ -195,9 +195,9 @@ export default function Hero() {
                     className="flex items-center justify-center gap-4"
                     >
                     {[
-                      { icon: Github, href: "#", label: "GitHub" },
-                      { icon: Linkedin, href: "#", label: "LinkedIn" },
-                      { icon: RiTwitterXLine, href: "#", label: "Twitter" },
+                      { icon: Github, href: "https://github.com/DaSpunk778", label: "GitHub" },
+                      { icon: Linkedin, href: "https://www.linkedin.com/in/akintomide-ayomide-561832281/", label: "LinkedIn" },
+                      { icon: RiTwitterXLine, href: "https://x.com/Daspunk02", label: "Twitter" },
                     ].map(({ icon: Icon, href, label }) => (
                        <a
                         key={label}
