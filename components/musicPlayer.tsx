@@ -11,15 +11,20 @@ export default function MusicPlayer() {
     const startMusic = () => {
       if (!started && audioRef.current) {
         audioRef.current.volume = 0.3;
-        audioRef.current.play();
+        audioRef.current.play()
+          .then(() => setStarted(true))
+          .catch((err) => {
+            console.log("Playback blocked, will retry on next interaction:", err);
+          });
+
         setStarted(true);
       }
     };
 
     // Plays on the very first interaction anywhere on the page
-    window.addEventListener("click", startMusic, { once: true });
-    window.addEventListener("scroll", startMusic, { once: true });
-    window.addEventListener("touchstart", startMusic, { once: true });
+    window.addEventListener("click", startMusic);
+    window.addEventListener("scroll", startMusic);
+    window.addEventListener("touchstart", startMusic);
 
     return () => {
       window.removeEventListener("click", startMusic);

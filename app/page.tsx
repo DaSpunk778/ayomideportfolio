@@ -8,6 +8,8 @@ import MusicPlayer from "@/components/musicPlayer"
 import Testimonials from "@/components/Testimonals"
 import Contact from "@/components/Contact"
 import Footer from "@/components/Footer"
+import AnimatedTestimonialsDemo from "@/components/AnimatedTestimonialsDemo";
+
 
 
 
@@ -20,17 +22,17 @@ export default function Home() {
         scrollbarColor: "rgba(124,58,237,0.3) transparent",
       }}
     >
-  <Navbar />
+      <Navbar />
 
       <main>
-       <Hero />
+        <Hero />
 
-       <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="h-px bg-linear-to-r from-transparent via-white/6 to-transparent" />
         </div>
 
         <About />
-        
+
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="h-px bg-linear-to-r from-transparent via-white/6 to-transparent" />
         </div>
@@ -47,13 +49,13 @@ export default function Home() {
           <div className="h-px bg-linear-to-r from-transparent via-white/6 to-transparent" />
         </div>
 
-         <Projects />
+        <Projects />
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="h-px bg-linear-to-r from-transparent via-white/6 to-transparent" />
         </div>
 
-        <Testimonials />
+        <AnimatedTestimonialsDemo />
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="h-px bg-linear-to-r from-transparent via-white/6 to-transparent" />
@@ -65,7 +67,7 @@ export default function Home() {
           <div className="h-px bg-linear-to-r from-transparent via-white/6 to-transparent" />
         </div>*/}
 
-          <Contact />
+        <Contact />
       </main>
 
       <MusicPlayer />
