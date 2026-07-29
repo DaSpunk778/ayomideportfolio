@@ -49,7 +49,7 @@ export default function AnimatedTestimonialsDemo() {
     <section
       id="testimonials"
       ref={ref}
-      className="py-24 sm:py-32 relative overflow-hidden"
+      className="py-24 sm:py-22 relative overflow-hidden"
     >
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 righ-0 w-96 h-96 rounded-full bg-[#22d3ee]/5 blur-[120px]" />
