@@ -7,6 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 import { useGSAP } from "@gsap/react";
+import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 
 
 gsap.registerPlugin(ScrollTrigger, SplitText, useGSAP);
@@ -242,7 +243,7 @@ export default function Hero() {
             fontFamily: "var(--font-rubik-glitch), system-ui, sans-serif",
 
           }}
-          className="text-center! tracking-tight! leading-[0.9]! text-white! text-[clamp(2.5rem,10vw,7rem)]! z-0! max-w-4xl mx-auto"
+          className="text-center! whitespace-nowrap! tracking-tight! leading-[0.9]! text-white! text-[clamp(2rem,9vw,7rem)]! z-0! w-screen! max-w-none! relative! left-1/2! right-1/2! -ml-[50vw]! -mr-[50vw]!"
         >
           Ayomide Samuel
         </h2>
@@ -295,8 +296,7 @@ export default function Hero() {
           className="text-base sm:text-lg text-[#71717a] max-w-2xl mx-auto mb-10 leading-relaxed"
         >
           I craft high-performance web applications with a focus on clean architecture,
-          exceptional UX, and scalable backend systems. over 2 years turning complex problems
-          into elegant digital experiences.
+          exceptional UX, and scalable backend systems. Turning complex systems and ideas into elegant digital experience.
         </motion.p>
 
         <motion.div
