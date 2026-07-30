@@ -2,12 +2,19 @@ import type { Metadata } from "next";
 import { Inter, Noto_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { Rubik_Glitch } from 'next/font/google';
 
-const playfairDisplayHeading = Playfair_Display({subsets:['latin'],variable:'--font-heading'});
+const playfairDisplayHeading = Playfair_Display({ subsets: ['latin'], variable: '--font-heading' });
 
-const notoSans = Noto_Sans({subsets:['latin'],variable:'--font-sans'});
+const notoSans = Noto_Sans({ subsets: ['latin'], variable: '--font-sans' });
 
 const inter = Inter({ subsets: ["latin"] });
+
+const rubikGlitch = Rubik_Glitch({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-rubik-glitch',
+});
 
 export const metadata: Metadata = {
   title: "Ayomide Samuel Akintomide | Frontend Developer & Software Engineer",
@@ -24,7 +31,7 @@ export const metadata: Metadata = {
     google: "SjuvFqYeQbilT59fUpywV4QKYDVT2aJT8xgTeiYYtwM",
   },
   authors: [{ name: "Ayomide Samuel Akintomide" }],
-   openGraph: {
+  openGraph: {
     title: "Ayomide Samuel Akintomide | Frontend Developer",
     description: "Software developer from Lagos, Nigeria building clean, performant web applications with Next.js, React, and TypeScript.",
     url: "https://akintomideayomidesamuel.vercel.app/",
@@ -54,7 +61,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={cn("h-full antialiased", "font-sans", notoSans.variable, playfairDisplayHeading.variable)}>
-      <body className={`${inter.className} min-h-full flex flex-col`}>
+      <body className={`${inter.className} ${rubikGlitch.variable} min-h-full flex flex-col`}>
         {children}
       </body>
     </html>
