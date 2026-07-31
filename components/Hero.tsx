@@ -35,6 +35,7 @@ export default function Hero() {
   // nameRef    = the actual heading the split/hover animation targets
   const sectionRef = useRef<HTMLElement>(null);
   const nameRef = useRef<HTMLHeadingElement>(null);
+  const blurbRef = useRef<HTMLParagraphElement>(null)
 
 
   {/* the typewritter effect, allowing me to type display and delete my roles */ }
@@ -80,6 +81,12 @@ export default function Hero() {
       }
 
       let split: SplitText | null = null;
+
+      // Hoisted so the single cleanup return() below can always reach them,
+      // whether or not blurbRef was attached yet.
+      let onBlurbMove: ((e: PointerEvent) => void) | null = null;
+      let onBlurbLeave: (() => void) | null = null;
+      const blurb = blurbRef.current;
 
       try {
         console.log("1: starting split");
@@ -156,9 +163,50 @@ export default function Hero() {
           0,
         );
         console.log("4: reveal fired");
+
+         // ---- Blurb shimmer: gradient "shine" band tracks the cursor's ----
+        // x-position through the paragraph text. Entrance stays on
+        // framer-motion (the <motion.p> below); this only adds the hover.
+        if (blurb) {
+          const MUTED = "#71717a";
+          const BRAND1 = "#7c3aed";
+          const BRAND2 = "#22d3ee";
+
+          gsap.set(blurb, {
+            backgroundImage: `linear-gradient(100deg, ${MUTED} 38%, ${BRAND1} 48%, ${BRAND2} 52%, ${MUTED} 62%)`,
+            backgroundSize: "250% 100%",
+            backgroundPosition: "100% 0%",
+            webkitBackgroundClip: "text",
+            backgroundClip: "text",
+            webkitTextFillColor: "transparent",
+          });
+
+          const pos = { p : 100 };
+          const applyPos = () => {
+            blurb.style.backgroundPosition = `${pos.p}% 0%`;
+          };
+          const posTo = gsap.quickTo(pos, "p", {
+            duration: 0.45,
+            ease: "power3.out",
+            onUpdate: applyPos,
+          });
+
+          onBlurbMove = (e: PointerEvent) => {
+            const r = blurb.getBoundingClientRect();
+            const xFrac = gsap.utils.clamp(0, 1, (e.clientX - r.left) / r.width);
+            posTo(((1.25 - xFrac) / 1.5) * 100);
+          };
+          onBlurbLeave = () => posTo(100);
+
+          blurb.addEventListener("pointermove", onBlurbMove);
+          blurb.addEventListener("pointerleave", onBlurbLeave);
+        }
+
         return () => {
           heading.removeEventListener("pointermove", onMove);
           heading.removeEventListener("pointerLeave", onLeave);
+          if (blurb && onBlurbMove) blurb.removeEventListener("pointermove", onBlurbMove);
+          if (blurb && onBlurbLeave) blurb.removeEventListener("pointerleave", onBlurbLeave);
           split?.revert();
         };
 
@@ -289,11 +337,12 @@ export default function Hero() {
         </motion.div>
 
         <motion.p
+          ref={blurbRef}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.65, duration: 0.6 }}
           style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}
-          className="text-base sm:text-lg text-[#71717a] max-w-2xl mx-auto mb-10 leading-relaxed"
+          className="text-base sm:text-lg  max-w-2xl mx-auto mb-10 leading-relaxed"
         >
           I craft high-performance web applications with a focus on clean architecture,
           exceptional UX, and scalable backend systems. Turning complex systems and ideas into elegant digital experience.
