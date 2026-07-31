@@ -42,7 +42,7 @@ export default function MusicPlayer() {
 
   return (
     <>
-      <audio ref={audioRef} src="/bg-music.mp3" loop />
+      <audio ref={audioRef} src="/sb_horizons.mp3" loop />
       <button
         onClick={toggleMute}
         className="fixed bottom-6 right-6 z-50 p-3 rounded-full bg-[#7c3aed] hover:bg-[#6d28d9] text-white shadow-lg transition-colors"

@@ -18,7 +18,7 @@ export default function AboutPage() {
               <div className="absolute -inset-3 rounded-2xl border border-[#7c3aed]/20" />
               <div className="absolute -inset-6 rounded-3xl border border-[#7c3aed]/10" />
               <Image
-                src="/gemini.png"
+                src="/Timi.png"
                 alt="Ay_dev— front-end engineer"
                 fill
                 className="relative w-full aspect-4/5 object-cover rounded-xl"
