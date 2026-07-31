@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     siteName: "Ayomide Samuel Akintomide Portfolio",
     images: [
       {
-        url: "/ayomide.jpg", // ideally a wide banner image, 1200x630
+        url: "/Timi.png", // ideally a wide banner image, 1200x630
         width: 1200,
         height: 630,
       },
