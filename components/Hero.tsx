@@ -169,11 +169,11 @@ export default function Hero() {
         // framer-motion (the <motion.p> below); this only adds the hover.
         if (blurb) {
           const MUTED = "#71717a";
-          const BRAND1 = "#7c3aed";
+          //const BRAND1 = "#7c3aed";
           const BRAND2 = "#22d3ee";
 
           gsap.set(blurb, {
-            backgroundImage: `linear-gradient(100deg, ${MUTED} 38%, ${BRAND1} 48%, ${BRAND2} 52%, ${MUTED} 62%)`,
+            backgroundImage: `linear-gradient(100deg, ${MUTED} 38%,  ${BRAND2} 52%, ${MUTED} 62%)`,
             backgroundSize: "250% 100%",
             backgroundPosition: "100% 0%",
             webkitBackgroundClip: "text",
