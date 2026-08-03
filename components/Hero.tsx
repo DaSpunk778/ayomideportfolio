@@ -8,6 +8,7 @@ import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 import { useGSAP } from "@gsap/react";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
+import MagicButton from "./ui/MagicButton";
 
 
 gsap.registerPlugin(ScrollTrigger, SplitText, useGSAP);
@@ -164,7 +165,7 @@ export default function Hero() {
         );
         console.log("4: reveal fired");
 
-         // ---- Blurb shimmer: gradient "shine" band tracks the cursor's ----
+        // ---- Blurb shimmer: gradient "shine" band tracks the cursor's ----
         // x-position through the paragraph text. Entrance stays on
         // framer-motion (the <motion.p> below); this only adds the hover.
         if (blurb) {
@@ -181,7 +182,7 @@ export default function Hero() {
             webkitTextFillColor: "transparent",
           });
 
-          const pos = { p : 100 };
+          const pos = { p: 100 };
           const applyPos = () => {
             blurb.style.backgroundPosition = `${pos.p}% 0%`;
           };
@@ -361,14 +362,16 @@ export default function Hero() {
           >
             View My Work
           </button>
-          <a
-            href="/ayomides_CV.pdf"
 
-            className="group w-64 sm:w-auto flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl border border-white/10 hover:border-white/20 text-white/80 hover:text-white text-sm transition-all duration-200 bg-white/3 hover:bg-white/[0.07]"
-            style={{ fontFamily: "'JetBrains Mono', monospace", fontWeight: 500 }}
-          >
-            <Download size={16} />
-            Download CV
+          <a
+            href="/ayomides_CV.pdf" >
+            <MagicButton
+              title="Download CV"
+
+              //className="group w-64 sm:w-auto flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl border border-white/10 hover:border-white/20 text-white/80 hover:text-white text-sm transition-all duration-200 bg-white/3 hover:bg-white/[0.07]"
+              //style={{ fontFamily: "'JetBrains Mono', monospace", fontWeight: 500 }}
+              icon={<Download size={16} />} position={"left"} />
+
           </a>
 
         </motion.div>

@@ -38,7 +38,7 @@ const stacks = [
   {
     id: 2,
     name: "Next.js",
-    category: "Frontend",
+    category: "Backend",
     level: 88,
     color: "#ffffff",
     icon: SiNextdotjs,
@@ -53,7 +53,7 @@ const stacks = [
     icon: SiTailwindcss,
     description: "Utility-first CSS framework",
   },
-  {
+  /**{
     id: 4,
     name: "Node.js",
     category: "Backend",
@@ -70,7 +70,7 @@ const stacks = [
     color: "#ffdd57",
     icon: SiGo,
     description: "Scripting and automation",
-  },
+  },**/
   {
     id: 6,
     name: "PostgreSQL",
@@ -114,7 +114,7 @@ const stacks = [
     icon: SiGithubactions,
     description: "CI/CD automation",
   },
-  {
+  /**{
     id: 9,
     name: "Figma",
     category: "Tools",
@@ -131,7 +131,7 @@ const stacks = [
     color: "#c21325",
     icon: SiJest,
     description: "JavaScript testing framework",
-  },
+  },**/
 ];
 
 export default function Stack() {
@@ -144,7 +144,7 @@ export default function Stack() {
       ? stacks
       : stacks.filter((s) => s.category === activeCategory);
 
-       console.log("activeCategory:", activeCategory, "filtered count:", filtered.length);  // ← ADD THIS LINE
+  console.log("activeCategory:", activeCategory, "filtered count:", filtered.length);  // ← ADD THIS LINE
   return (
     <section id="stack" ref={ref} className="py-24 sm:py-32 relative">
       <div className="absolute inset-0 pointer-events-none">
@@ -193,11 +193,10 @@ export default function Stack() {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-4 py-1.5 rounded-full text-sm transition-all duration-200 ${
-                activeCategory === cat
-                  ? "bg-[#7c3aed] text-white"
-                  : "border border-white/8 text-[#a1a1aa] hover:text-white hover:border-white/20"
-              }`}
+              className={`px-4 py-1.5 rounded-full text-sm transition-all duration-200 ${activeCategory === cat
+                ? "bg-[#7c3aed] text-white"
+                : "border border-white/8 text-[#a1a1aa] hover:text-white hover:border-white/20"
+                }`}
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
               {cat}
@@ -236,7 +235,7 @@ export default function Stack() {
               >
                 <stack.icon size={18} style={{ color: stack.color }} />
               </div>
-            
+
 
               <p
                 style={{
