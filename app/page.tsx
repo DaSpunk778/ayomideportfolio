@@ -10,6 +10,7 @@ import Contact from "@/components/Contact"
 import Footer from "@/components/Footer"
 import AnimatedTestimonialsDemo from "@/components/AnimatedTestimonialsDemo";
 
+import MusicPlaylist from "@/components/MusicPlayist";
 
 
 
@@ -61,6 +62,12 @@ export default function Home() {
           <div className="h-px bg-linear-to-r from-transparent via-white/6 to-transparent" />
         </div>
 
+        <MusicPlaylist />
+
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="h-px bg-linear-to-r from-transparent via-white/6 to-transparent" />
+        </div>
+
         {/*<Gallery />
 
          <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -71,6 +78,7 @@ export default function Home() {
       </main>
 
       <MusicPlayer />
+
       <Footer />
     </div>
   );
