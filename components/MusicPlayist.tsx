@@ -177,6 +177,12 @@ const MusicPlaylists = () => {
         >
             {/* Centred heading */}
             <div className="container mx-auto px-6">
+                <span
+                    className="text-xs items-center tracking-[0.2em] text-[#a78bfa] uppercase mb-4 block"
+                    style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                >
+                    — My music selections
+                </span>
                 <h2 className="flex items-center justify-center gap-4 text-center text-4xl! sm:text-5xl! md:text-6xl! font-black! tracking-tight! text-white"
                     style={{
                         fontFamily: "'Bricolage Grotesque', sans-serif",

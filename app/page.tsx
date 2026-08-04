@@ -9,7 +9,6 @@ import Testimonials from "@/components/Testimonals"
 import Contact from "@/components/Contact"
 import Footer from "@/components/Footer"
 import AnimatedTestimonialsDemo from "@/components/AnimatedTestimonialsDemo";
-
 import MusicPlaylist from "@/components/MusicPlayist";
 
 
