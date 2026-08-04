@@ -178,10 +178,10 @@ const MusicPlaylists = () => {
             {/* Centred heading */}
             <div className="container mx-auto px-6">
                 <span
-                    className="text-xs items-center tracking-[0.2em] text-[#a78bfa] uppercase mb-4 block"
+                    className="text-xs text-center tracking-[0.2em] text-[#a78bfa] uppercase mb-4 block"
                     style={{ fontFamily: "'JetBrains Mono', monospace" }}
                 >
-                    — My music selections
+                    — My music Playlist
                 </span>
                 <h2 className="flex items-center justify-center gap-4 text-center text-4xl! sm:text-5xl! md:text-6xl! font-black! tracking-tight! text-white"
                     style={{
@@ -263,7 +263,7 @@ const MusicPlaylists = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+                        className="fixed inset-0 z-100 flex items-center justify-center p-4"
                     >
                         <div
                             className="absolute inset-0 bg-black/60 backdrop-blur-sm"

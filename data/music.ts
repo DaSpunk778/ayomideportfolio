@@ -15,56 +15,56 @@ export interface MusicItem {
 
 export const MUSIC_DATA: Record<TabId, MusicItem[]> = {
     playlists: [
-        { title: "Timi fever", artist: "Curated by Ayomide", image: "https://images.pexels.com/photos/257904/pexels-photo-257904.jpeg?auto=compress&cs=tinysrgb&w=400", url: "https://open.spotify.com/playlist/3Ey4Qy3Nc2wFrwx2hLezHT" },
-        { title: "Afro Special WTF!!!", artist: "Afro Special WTF!!!", image: "/images/music/afrowt.png", url: "https://open.spotify.com/playlist/2Ef2swGnqfykV5vZAzkirm?si=y0PgOBaDSauwgjnQWV3tuQ" },
-        { title: "Blended Peace", artist: "Blended Peace", image: "/images/music/blendedpeace.png", url: "https://open.spotify.com/album/2fz0Euo0JCmgJhNxiDuAeu?si=pfYl6sMYSW6tMQe46QwCIg" },
-        { title: "Anew Dystopian", artist: "Anew Dystopian", image: "/images/music/anewdystopian.png", url: "https://open.spotify.com/playlist/57lZWJdgWtX93HcfkroRx9?si=iQcFHw9BS62sBcPGQJPQ6g" },
-        { title: "Aesthetic LoFi -No AI", artist: "Aesthetic LoFi -No AI", image: "/images/music/aestheticLoFi.png", url: "https://open.spotify.com/playlist/3NOVvsnCq7CjhmB7WE0RNE?si=55NpfKqrTmWRFp-hEb-dRA" },
-        { title: "Synthwave - beats to chill/game to", artist: "Synthwave - beats to chill/game to", image: "/images/music/synthwave.png", url: "https://open.spotify.com/playlist/1YIe34rcmLjCYpY9wJoM2p?si=HCQoRY5SReuH9qv4Naelsw" },
+        { title: "son of spergy", artist: "Daniel ceasar", image: "/image/music/spergy.jpg", url: "https://open.spotify.com/album/2LKW0m9cC63QzEI9tJH3ql?si=P83BtT1QRiClvARrmSb8Tg" }, // son of spergy
+        { title: "Syntax POdcast", artist: "syntax web", image: "/image/music/syntax.jpg", url: "https://open.spotify.com/show/4kYCRYJ3yK5DQbP5tbfZby?si=5c2e651944bf46fe" }, //web syntax
+        { title: "Thriller", artist: "Micheal Jackson", image: "/image/music/micheal.jpg", url: "https://open.spotify.com/album/2ANVost0y2y52ema1E9xAZ?si=I4_eaI2kRwqdqXBI1uZ5nA" }, // second 
+        { title: "Self Control", artist: "Frank Ocean", image: "/image/music/frank.jpg", url: "https://open.spotify.com/track/5GUYJTQap5F3RDQiCOJhrS?si=ff177ea98ea8438a" }, //frank
+        { title: "Kiss of life", artist: "Sade", image: "/image/music/sade.jpg", url: "https://open.spotify.com/track/65krtHkaYLPr0mEbjL61UP?si=01cc3a025cf1458a" }, // sade-kiss of life 
+        { title: "No-love for lagos ", artist: "Showdem camp ft cavemen", image: "/image/music/show.jpg", url: "https://open.spotify.com/track/6YB48wZqqCZNa4b0dfEvIB?si=fb0e1862979c4e93" }, // no love for lagos 
     ],
     songs: [
-        { title: "Black water", artist: "Frankie Stew & Harvey Gunn", image: "/images/music/blackwater.png", url: "https://open.spotify.com/track/5qiOt87AxiBAGRaiKz7Yqb?si=88977b5bf98843f3" },
-        { title: "My Healer", artist: "Seyi Vibez ft Omah Lay", image: "/images/music/myhealer.png", url: "https://open.spotify.com/track/3tENXWy5Yf1iJJV4EYqZh1?si=b8ba811381dc4dde" },
-        { title: "almost gave up here", artist: "MKE", image: "/images/music/almostgaveuphere.png", url: "https://open.spotify.com/track/6kFDbInenX00vZhlKLiVfd?si=d38f313bf9b8433a" },
-        { title: "Vale", artist: "Maribou State", image: "/images/music/vale.png", url: "https://open.spotify.com/track/58FsmlVRQxpjFmXF8vSKMT?si=90b1bd124a8946af" },
-        { title: "How did i get here", artist: "ODESZA", image: "/images/music/howdidigethere.png", url: "https://open.spotify.com/track/6a8vuTNZubAqZ1LdTwuIud?si=5ad13fff2d8d4686" }
+        { title: "Who Knows", artist: "Daniel Cesar", image: "/image/music/ceasar-1.jpg", url: "https://open.spotify.com/track/6DH13QYXK7lKkYHSU88N48?si=0930e942eac5483e" }, // big first 
+        { title: "Love and high life ", artist: "cavemenn", image: "/image/music/cavemen.jpg", url: "https://open.spotify.com/artist/1cnBVQulaNSvbind6A0dVD?si=05804b1dfb4045dc" }, //cavemen
+        { title: "Fever", artist: "Wizkid", image: "/image/music/wizkid.jpg", url: "https://open.spotify.com/track/6kFDbInenX00vZhlKLiVfd?si=d38f313bf9b8433a" },
+        { title: "No one noticed", artist: "THe Marias", image: "/image/music/marias.jpg", url: "https://open.spotify.com/track/3siwsiaEoU4Kuuc9WKMUy5?si=dbce2b8980964694" }, // the marias
+        { title: "Best of Marvin sapp", artist: "Marvin Sapp", image: "/image/music/marvin.jpg", url: "https://open.spotify.com/playlist/54RTpM0S5JhMwSexJodcaN?si=p4viUypORBeFxGT-qWTVDw" }
     ],
     artists: [
         {
             title: "Never Enough",
             artist: "Daniel Ceasar",
             image: "/image/never.jpg",
-            url: "https://open.spotify.com/album/0qGQrHicD7qXuz5VMlDuCe?si=TW4aOCDdSVyNeIK_nowXzw"
+            url: "https://open.spotify.com/album/0qGQrHicD7qXuz5VMlDuCe?si=TW4aOCDdSVyNeIK_nowXzw" //daniel
         },
         {
-            title: "Sons of Spergy",
-            artist: "Aniel Cear",
-            image: "/images/music/artists/seyivibez.png",
-            url: "https://open.spotify.com/artist/4zmZ8lVLzGc84S4v2B1rLx"
+            title: "Here we go",
+            artist: "Bex ikudala",
+            image: "/image/music/Bez.jpg",
+            url: "https://open.spotify.com/track/7ikNIVWj7uyDUbQiWqgT2y?si=49ce0ebf8adc4216"
         },
         {
-            title: "Kygo",
-            artist: "Electronic",
-            image: "/images/music/artists/kygo.png",
-            url: "https://open.spotify.com/artist/23fqKkggKUBHNkbKtXEls4?si=NIyXl5sSQC-OX-tpMGZYog"
+            title: "Iceman",
+            artist: "Drake",
+            image: "/image/music/iceman.jpg",
+            url: "https://open.spotify.com/album/0OAv7DCME2AV4q1KPO95HY?si=152b91cc5e02421f"
         },
         {
-            title: "Mike Posner",
-            artist: "Pop",
-            image: "/images/music/artists/mikeposner.png",
-            url: "https://open.spotify.com/artist/2KsP6tYLJlTBvSUxnwlVWa"
+            title: "Higher",
+            artist: "Tems",
+            image: "/image/music/Tems.jpg",
+            url: "https://open.spotify.com/track/2QdSb68BzZGMgCbsrFmSLc?si=6d5bfbfa203b4753" // tems - higher
         },
         {
-            title: "Petit Biscuit",
-            artist: "Electronic",
-            image: "/images/music/artists/petitbiscuit.png",
-            url: "https://open.spotify.com/artist/6gK1Uct5FEdaUWRWpU4Cl2"
+            title: "Theophilus SUnday",
+            artist: "father of spirits",
+            image: "/image/music/Theophilus.jpg",
+            url: "https://open.spotify.com/album/0qSaJmEcEt0eozJqLbolDt?si=3dd3c0dbd269407d"
         },
         {
-            title: "Olamide",
-            artist: "Afrobeats",
-            image: "/images/music/artists/olamide.png",
-            url: "https://open.spotify.com/artist/4ovtyvs7j1jSmwhkBGHqSr"
+            title: "hymns",
+            artist: "choir of kings college",
+            image: "/image/music/choir.jpg",
+            url: "https://open.spotify.com/artist/0f3PsS9IQ6whvNMFFKnpjl?si=3fb18fc8330e40fb"
         }
     ]
 };
