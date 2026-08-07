@@ -55,8 +55,8 @@ export default function Navbar() {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className={`fixed top-0 left-0 right-0  mx-auto z-50 backdrop-blur transition-all duration-300 $ {
-          
+      className={`fixed top-0 left-0 right-0  z-50 backdrop-blur-xl backdrop-saturate-150 transition-all duration-300 mx-3 mt-3 rounded-2xl border border-white/10  md:mx-0 md:mt-0 md:rounded-none md:border-x-0 md:border-t-0 $ {
+          scrolled ? "bg-[#09000b8a] shadow-lg" : "bg-[#09000b]/30"
             }`}
     >
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16" >
