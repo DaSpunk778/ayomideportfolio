@@ -56,7 +56,7 @@ export default function Navbar() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       className={`fixed top-0 left-1/2 -translate-x-1/2 z-50 backdrop-blur-xl backdrop-saturate-150 transition-all duration-300 border w-[calc(100%-1.5rem)] ${scrolled
-        ? "mt-3 md:mt-4 md:max-w-6xl rounded-2xl border-white/15 bg-[#09000b]/60 shadow-lg"
+        ? "mt-3 md:mt-4 md:max-w-6xl rounded-2xl border-white/15 bg-[#09000b]/30 shadow-lg"
         : "mt-3 md:mt-0 md:max-w-none rounded-2xl md:rounded-none border-white/15 md:border-x-0 md:border-t-0 "
         }`}
     >
