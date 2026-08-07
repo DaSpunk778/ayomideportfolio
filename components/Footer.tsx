@@ -83,6 +83,20 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* BIg outlined name*/}
+        <div className="pointer-events-none select-none -mt-4 md:-mt-8">
+          <h2
+            className="text-center whitespace-nowrap leading-none font-extrabold uppercase tracking-tight text-[10vw] sm:text-[9vw] md:text-[7vw] lg:text-[8vw]"
+            style={{
+              fontFamily: "'Bricolage Grotesque', sans-serif",
+              WebkitTextStroke: "1.5px #7c3aed",
+              color: "transparent",
+            }}
+          >
+            Ayomide Samuel
+          </h2>
+        </div>
+
         <div className="border-t border-white/4 pt-6 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p
             className="text-xs text-[#3f3f46]"
