@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 
 import { useInView } from "../hooks/useInView";
@@ -37,6 +38,20 @@ const projects = [
   },
   {
     id: 3,
+    title: "PMO's Portfolio (fashion & lifestyle)",
+    description: 
+      "A responsive ambulance booking platform that allows users to request emergency medical transport in real time. Designed for speed and clarity in critical situations, with a streamlined booking flow, service information, and direct contact options for immediate assistance. ",
+    image: "/pmo's port.png",
+    tags: ["Next.js", "TypeScript", "Tailwind", "framer-motion"],
+    category: "Full-Stack",
+    liveUrl: "https://pmo-portfolio-steel.vercel.app/",
+    githubUrl: "https://github.com/DaSpunk778/pmo-portfolio",
+    featured: false,
+    year: "2026",
+  },
+
+  {
+    id: 4,
     title: "Framer-motion portfolio",
     description:
       "A personal portfolio built with Framer Motion and Aceternity UI, featuring fluid scroll animations, interactive hover effects, and a modern, visually engaging design. Crafted to showcase projects and skills through smooth, polished motion design.",
@@ -49,7 +64,7 @@ const projects = [
     year: "2026",
   },
   {
-    id: 4,
+    id: 5,
     title: "KING STORES",
     description:
       "A fully functional e-commerce storefront built with HTML, JavaScript, and vanilla CSS. Uses JSON for data prototyping to simulate product listings, cart functionality, and dynamic rendering — demonstrating core e-commerce logic without relying on a framework. ",
@@ -62,7 +77,7 @@ const projects = [
     year: "2026",
   },
   {
-    id: 5,
+    id: 6,
     title: "KORRECT LOGIN",
     description:
       "A frontend UI prototype showcasing a clean, modern login and authentication flow. Focused on intuitive navigation, responsive layouts, and polished interaction design",
@@ -75,7 +90,7 @@ const projects = [
     year: "2026",
   },
   {
-    id: 6,
+    id: 7,
     title: "TRIVIA FLOW",
     description:
       "A frontend UI prototype showcasing a clean, modern login and authentication flow. Focused on intuitive navigation, responsive layouts, and polished interaction design",
