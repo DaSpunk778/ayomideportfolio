@@ -47,7 +47,7 @@ const WORK: Work[] = [
     video: "/videos/korrectgames.mp4",
     category: "Full-Stack",
     year: "2026",
-    liveUrl: "#",
+    liveUrl: "https://korrectgames.com/",
     githubUrl: "#",
     description:
       "Korrect Games is a sports gaming platform where users can predict, play trivia, and win real cash prizes daily.",
@@ -259,88 +259,133 @@ const PortfolioSection = () => {
           </div>
         </div>
 
-        {/* Grid — capped at 3 */}
+        {/* Grid — capped at 2 */}
         <div className="work-cards grid! grid-cols-1! gap-6! md:grid-cols-2!">
-          {gridItems.map((work) => (
-            <article
-              key={work.id}
-              className="work-card group flex! flex-col! gap-5! rounded-3xl! bg-[#000000] border! border-[#181818] hover:border-[#7c3aed]/30! transition-colors! duration-300! p-2! pb-5!"
-            >
-              <div className="relative! aspect-40/35! overflow-hidden! rounded-2xl!">
-                {work.video ? (
-                  <video
-                    src={work.video}
-                    poster={work.image}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="auto"
-                    aria-label={work.name}
-                    className="absolute! inset-0! h-full lg:h-150 w-full! object-cover! transition-[filter]! duration-500! group-hover:blur-md!"
-                  />
+          {gridItems.map((work) => {
+            const hasLiveLink = work.liveUrl && work.liveUrl !== "#";
+
+            return (
+              <article
+                key={work.id}
+                className="work-card group flex! flex-col! gap-5! rounded-3xl! bg-[#000000] border! border-[#181818] hover:border-[#7c3aed]/30! transition-colors! duration-300! p-2! pb-5!"
+              >
+                {hasLiveLink ? (
+                  <div
+                   role="link"
+                    tabIndex={0}
+                    onClick={() => window.open(work.liveUrl, "_blank", "noopener,noreferrer")}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        window.open(work.liveUrl, "_blank", "noopener,noreferrer");
+                      }
+                    }}
+                    aria-label={`Visit ${work.name}`}
+                    className="relative! block! aspect-40/35! overflow-hidden! rounded-2xl! cursor-pointer!"
+                  >
+                    {work.video ? (
+                      <video
+                        src={work.video}
+                        poster={work.image}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        preload="auto"
+                        aria-label={work.name}
+                        className="absolute! inset-0! h-full lg:h-150 w-full! object-cover! transition-[filter]! duration-500! group-hover:blur-md!"
+                      />
+                    ) : (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={work.image}
+                        alt={work.name}
+                        className="absolute! inset-0! h-full! w-full! object-cover! transition-[filter]! duration-500! group-hover:blur-md!"
+                      />
+                    )}
+                    <div className="pointer-events-none! absolute! inset-0! bg-black/30! opacity-0! transition-opacity! duration-500! group-hover:opacity-100!" />
+
+                    <div className="absolute! top-3! right-3! flex! gap-2! opacity-0! group-hover:opacity-100! transition-opacity! duration-300! z-10!">
+                      {work.githubUrl && work.githubUrl !== "#" && (
+                        <a
+                          href={work.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="p-2! rounded-lg! bg-[#09090b]/80! backdrop-blur-sm! text-white/70! hover:text-white! transition-colors!"
+                        >
+                          <Github size={15} />
+                        </a>
+                      )}
+                    </div>
+                  </div>
                 ) : (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    src={work.image}
-                    alt={work.name}
-                    className="absolute! inset-0! h-full! w-full! object-cover! transition-[filter]! duration-500! group-hover:blur-md!"
-                  />
+                  <div className="relative! aspect-40/35! overflow-hidden! rounded-2xl!">
+                    {work.video ? (
+                      <video
+                        src={work.video}
+                        poster={work.image}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        preload="auto"
+                        aria-label={work.name}
+                        className="absolute! inset-0! h-full lg:h-150 w-full! object-cover! transition-[filter]! duration-500! group-hover:blur-md!"
+                      />
+                    ) : (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={work.image}
+                        alt={work.name}
+                        className="absolute! inset-0! h-full! w-full! object-cover! transition-[filter]! duration-500! group-hover:blur-md!"
+                      />
+                    )}
+                    <div className="pointer-events-none! absolute! inset-0! bg-black/30! opacity-0! transition-opacity! duration-500! group-hover:opacity-100!" />
+
+                    <div className="absolute! top-3! right-3! flex! gap-2! opacity-0! group-hover:opacity-100! transition-opacity! duration-300! z-10!">
+                      {work.githubUrl && work.githubUrl !== "#" && (
+                        <a
+                          href={work.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2! rounded-lg! bg-[#09090b]/80! backdrop-blur-sm! text-white/70! hover:text-white! transition-colors!"
+                        >
+                          <Github size={15} />
+                        </a>
+                      )}
+                    </div>
+                  </div>
                 )}
-                <div className="pointer-events-none! absolute! inset-0! bg-black/30! opacity-0! transition-opacity! duration-500! group-hover:opacity-100!" />
 
-                <div className="absolute! top-3! right-3! flex! gap-2! opacity-0! group-hover:opacity-100! transition-opacity! duration-300! z-10!">
-                  {work.liveUrl && work.liveUrl !== "#" && (
-                    <a
-                      href={work.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2! rounded-lg! bg-[#09090b]/80! backdrop-blur-sm! text-white/70! hover:text-white! transition-colors!"
-                    >
-                      <ExternalLink size={15} />
-                    </a>
-                  )}
-                  {work.githubUrl && work.githubUrl !== "#" && (
-                    <a
-                      href={work.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2! rounded-lg! bg-[#09090b]/80! backdrop-blur-sm! text-white/70! hover:text-white! transition-colors!"
-                    >
-                      <Github size={15} />
-                    </a>
-                  )}
+                <div className="flex! items-center! justify-between! gap-4! px-3!">
+                  <span style={font.subheading} className="text-sm! text-white!">
+                    {work.name}
+                  </span>
+                  <div className="flex! items-center! gap-4! text-xs!" style={font.mono}>
+                    <span className="text-[#a78bfa]!">{work.category}</span>
+                    <span className="text-[#71717a]!">{work.year}</span>
+                  </div>
                 </div>
-              </div>
 
-              <div className="flex! items-center! justify-between! gap-4! px-3!">
-                <span style={font.subheading} className="text-sm! text-white!">
-                  {work.name}
-                </span>
-                <div className="flex! items-center! gap-4! text-xs!" style={font.mono}>
-                  <span className="text-[#a78bfa]!">{work.category}</span>
-                  <span className="text-[#71717a]!">{work.year}</span>
+                {work.description && (
+                  <p style={font.body} className="px-3! text-[#71717a]! text-sm! leading-relaxed! line-clamp-2!">
+                    {work.description}
+                  </p>
+                )}
+
+                <div className="tag-marquee-group relative! overflow-hidden! px-3!">
+                  <div className="tag-marquee flex! w-max! gap-2! whitespace-nowrap!">
+                    {[...work.tags, ...work.tags].map((tag, i) => (
+                      <span key={`${tag}-${i}`} style={font.mono} className="text-sm! text-white/35!">
+                        {tag}
+                        {i < work.tags.length * 2 - 1 ? "," : ""}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-
-              {work.description && (
-                <p style={font.body} className="px-3! text-[#71717a]! text-sm! leading-relaxed! line-clamp-2!">
-                  {work.description}
-                </p>
-              )}
-
-              <div className="tag-marquee-group relative! overflow-hidden! px-3!">
-                <div className="tag-marquee flex! w-max! gap-2! whitespace-nowrap!">
-                  {[...work.tags, ...work.tags].map((tag, i) => (
-                    <span key={`${tag}-${i}`} style={font.mono} className="text-sm! text-white/35!">
-                      {tag}
-                      {i < work.tags.length * 2 - 1 ? "," : ""}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </article>
-          ))}
+              </article>
+            );
+          })}
 
           {hasEmptySlot && (
             <article className="work-card flex! min-h-64! items-center! justify-center! rounded-3xl! bg-[#111117]! border! border-white/6! p-6! md:min-h-0!">
