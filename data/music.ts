@@ -25,7 +25,7 @@ export const MUSIC_DATA: Record<TabId, MusicItem[]> = {
     songs: [
         { title: "Who Knows", artist: "Daniel Cesar", image: "/image/music/ceasar-1.jpg", url: "https://open.spotify.com/track/6DH13QYXK7lKkYHSU88N48?si=0930e942eac5483e" }, // big first 
         { title: "Love and high life ", artist: "cavemenn", image: "/image/music/cavemen.jpg", url: "https://open.spotify.com/artist/1cnBVQulaNSvbind6A0dVD?si=05804b1dfb4045dc" }, //cavemen
-        { title: "Fever", artist: "Wizkid", image: "/image/music/wizkid.jpg", url: "https://open.spotify.com/track/6kFDbInenX00vZhlKLiVfd?si=d38f313bf9b8433a" },
+        { title: "Money and love", artist: "Wizkid", image: "/image/music/wizkid.jpg", url: "https://open.spotify.com/track/213Ymlnss7DUsqG7Ut1HW0?si=1830b9c491004993" },
         { title: "No one noticed", artist: "THe Marias", image: "/image/music/marias.jpg", url: "https://open.spotify.com/track/3siwsiaEoU4Kuuc9WKMUy5?si=dbce2b8980964694" }, // the marias
         { title: "Best of Marvin sapp", artist: "Marvin Sapp", image: "/image/music/marvin.jpg", url: "https://open.spotify.com/playlist/54RTpM0S5JhMwSexJodcaN?si=p4viUypORBeFxGT-qWTVDw" }
     ],
