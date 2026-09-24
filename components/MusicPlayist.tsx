@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState,} from "react";
 import Image from "next/image";
 import {
     AnimatePresence,
@@ -17,9 +17,20 @@ import { MUSIC_DATA, type MusicItem } from "@/data/music";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
+const toEmbedUrl = (url?: string): string | null => {
+    if (!url) return null;
+    const match = url.match(
+      /open\.spotify\.com\/(?:intl-[a-z]+\/)?(track|album|playlist|artist|show|episode)\/([A-Za-z0-9]+)/,
+    );
+    if (!match) return null;
+    const [, type, id] = match;
+    return `https://open.spotify.com/embed/${type}/${id}?utm_source=generator&theme=0`;
+};
+
 // Blended Peace — the album the play orb opens in the floating player.
-const BLENDED_PEACE_EMBED =
-    "https://open.spotify.com/embed/artist/20wkVLutqVOYrc0kxFs7rA";
+// const BLENDED_PEACE_EMBED =
+    //"https://open.spotify.com/embed/artist/20wkVLutqVOYrc0kxFs7rA?";
+    // "https://open.spotify.com/embed/album/2ANVost0y2y52ema1E9xAZ?"
 
 // Every cover in one pool: playlists, then songs, then artists.
 const ITEMS: MusicItem[] = [
@@ -102,7 +113,7 @@ const Gloss = () => (
 const MusicPlaylists = () => {
     const rootRef = useRef<HTMLElement | null>(null);
     const cloudRef = useRef<HTMLDivElement | null>(null);
-    const [open, setOpen] = useState(false);
+    const [active, setActive] = useState<string | null>(null);
 
     // Spotify orb follows the cursor: springs track the offset from its home
     // slot; while the pointer is over the section the offset is the cursor's
@@ -155,8 +166,8 @@ const MusicPlaylists = () => {
 
     // Floating player: lock page scroll and close on Escape while open.
     useEffect(() => {
-        if (!open) return;
-        const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+        if (!active) return;
+        const onKey = (e: KeyboardEvent) => e.key === "Escape" && setActive(null);
         document.addEventListener("keydown", onKey);
         const prev = document.body.style.overflow;
         document.body.style.overflow = "hidden";
@@ -164,7 +175,7 @@ const MusicPlaylists = () => {
             document.removeEventListener("keydown", onKey);
             document.body.style.overflow = prev;
         };
-    }, [open]);
+    }, [active]);
 
     return (
         <section
@@ -200,13 +211,15 @@ const MusicPlaylists = () => {
                     ref={cloudRef}
                     className="relative mx-auto mt-20 aspect-20/13 w-full max-w-275 sm:mt-28"
                 >
-                    {ITEMS.slice(0, SLOTS.length).map((item, i) => (
+                    {ITEMS.slice(0, SLOTS.length).map((item, i) => {
+                        const embed = toEmbedUrl(item.url);
+                        return (
                         <BubbleShell key={item.title} slot={SLOTS[i]}>
-                            <a
-                                href={item.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label={`${item.title} on Spotify`}
+                            <button
+                                type = "button"
+                                disabled= {!embed}
+                                onClick={() => setActive(embed)}
+                                aria-label={`Play ${item.title}`}
                                 className="m-bubble group relative block h-full w-full overflow-hidden rounded-full shadow-[0_18px_40px_-12px_rgba(0,0,0,0.35)]"
                             >
                                 <Image
@@ -218,9 +231,10 @@ const MusicPlaylists = () => {
                                     className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
                                 />
                                 <Gloss />
-                            </a>
+                            </button>
                         </BubbleShell>
-                    ))}
+                        );
+                    })}
 
                     {/* Spotify orb — rests centre-bottom, glides to follow the cursor,
               opens the Blended Peace player on click. */}
@@ -235,11 +249,11 @@ const MusicPlaylists = () => {
                     >
                         <motion.button
                             type="button"
-                            onClick={() => setOpen(true)}
+                            onClick={() => setActive(toEmbedUrl(ITEMS[0].url))}
                             aria-haspopup="dialog"
                             aria-label="Play Blended Peace"
                             style={{ x: offX, y: offY }}
-                            className="m-bubble group relative flex h-full w-full cursor-pointer items-center justify-center overflow-hidden rounded-full bg-white shadow-[0_18px_40px_-12px_rgba(0,0,0,0.3)]"
+                            className="pointer-events-none m-bubble group relative flex h-full w-full cursor-pointer items-center justify-center overflow-hidden rounded-full bg-white shadow-[0_18px_40px_-12px_rgba(0,0,0,0.3)]"
                         >
                             <FaSpotify className="relative z-10 h-[52%] w-[52%] text-[#1DB954] transition-transform duration-300 group-hover:scale-110" />
                             <span
@@ -255,41 +269,52 @@ const MusicPlaylists = () => {
                 </div>
             </div>
 
-           {/* Floating Player Modal */}
-<AnimatePresence>
-    {open && (
-        <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md p-4"
-        >
-            <div className="relative w-full max-w-xl bg-zinc-900 rounded-2xl p-6 shadow-2xl border border-zinc-800">
-                {/* Close Button */}
-                <button 
-                    onClick={() => setOpen(false)}
-                    className="absolute top-4 right-4 text-zinc-400 hover:text-white text-2xl transition-colors"
-                >
-                    <IoClose />
-                </button>
-
-                {/* The Real Interactive Embed Player */}
-                <div className="mt-4 overflow-hidden rounded-xl">
-                    <iframe
-                        src={BLENDED_PEACE_EMBED}
-                        width="100%"
-                        height="352"
-                        frameBorder="0"
-                        allowFullScreen
-                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                        loading="lazy"
-                    />
-                </div>
-            </div>
-        </motion.div>
-    )}
-</AnimatePresence>
-
+            {/* Floating player — Blended Peace embedded, backdrop click or Esc to
+          dismiss. */}
+            <AnimatePresence>
+                {active && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-100 flex items-center justify-center p-4"
+                    >
+                        <div
+                            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+                            onClick={() => setActive(null)}
+                        />
+                        <motion.div
+                            role="dialog"
+                            aria-modal="true"
+                            aria-label="Blended Peace — Spotify player"
+                            initial={{ scale: 0.9, y: 24, opacity: 0 }}
+                            animate={{ scale: 1, y: 0, opacity: 1 }}
+                            exit={{ scale: 0.92, y: 16, opacity: 0 }}
+                            transition={{ type: "spring", stiffness: 320, damping: 28 }}
+                            className="relative w-full max-w-md overflow-hidden rounded-2xl bg-[#121212] shadow-2xl"
+                        >
+                            <button
+                                type="button"
+                                onClick={() => setActive(null)}
+                                aria-label="Close player"
+                                className="absolute right-3 top-3 z-10 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-md transition hover:bg-white/25"
+                            >
+                                <IoClose />
+                            </button>
+                            <iframe
+                                key={active}
+                                title="Spotify player"
+                                src={active}
+                                width="100%"
+                                height={active.includes("/embed/track/") ? 152 : 352}
+                                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                                loading="lazy"
+                                className="block"
+                            />
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </section>
     );
 };
