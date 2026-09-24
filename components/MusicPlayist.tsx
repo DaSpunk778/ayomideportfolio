@@ -19,7 +19,8 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 // Blended Peace — the album the play orb opens in the floating player.
 const BLENDED_PEACE_EMBED =
-    "https://open.spotify.com/artist/20wkVLutqVOYrc0kxFs7rA?si=LYSQCll9ThOhnrnrsWN9Iw";
+       // "https://spotify.com"
+    "https://open.spotify.com/embed/artist/20wkVLutqVOYrc0kxFs7rA";
 
 // Every cover in one pool: playlists, then songs, then artists.
 const ITEMS: MusicItem[] = [
@@ -255,51 +256,41 @@ const MusicPlaylists = () => {
                 </div>
             </div>
 
-            {/* Floating player — Blended Peace embedded, backdrop click or Esc to
-          dismiss. */}
-            <AnimatePresence>
-                {open && (
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-100 flex items-center justify-center p-4"
-                    >
-                        <div
-                            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-                            onClick={() => setOpen(false)}
-                        />
-                        <motion.div
-                            role="dialog"
-                            aria-modal="true"
-                            aria-label="Blended Peace — Spotify player"
-                            initial={{ scale: 0.9, y: 24, opacity: 0 }}
-                            animate={{ scale: 1, y: 0, opacity: 1 }}
-                            exit={{ scale: 0.92, y: 16, opacity: 0 }}
-                            transition={{ type: "spring", stiffness: 320, damping: 28 }}
-                            className="relative w-full max-w-md overflow-hidden rounded-2xl bg-[#121212] shadow-2xl"
-                        >
-                            <button
-                                type="button"
-                                onClick={() => setOpen(false)}
-                                aria-label="Close player"
-                                className="absolute right-3 top-3 z-10 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-md transition hover:bg-white/25"
-                            >
-                                <IoClose />
-                            </button>
-                            <iframe
-                                title="Blended Peace — Spotify player"
-                                src={`${BLENDED_PEACE_EMBED}?utm_source=generator&theme=0`}
-                                width="100%"
-                                height={352}
-                                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                                loading="lazy"
-                                className="block"
-                            />
-                        </motion.div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+           {/* Floating Player Modal */}
+<AnimatePresence>
+    {open && (
+        <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md p-4"
+        >
+            <div className="relative w-full max-w-xl bg-zinc-900 rounded-2xl p-6 shadow-2xl border border-zinc-800">
+                {/* Close Button */}
+                <button 
+                    onClick={() => setOpen(false)}
+                    className="absolute top-4 right-4 text-zinc-400 hover:text-white text-2xl transition-colors"
+                >
+                    <IoClose />
+                </button>
+
+                {/* The Real Interactive Embed Player */}
+                <div className="mt-4 overflow-hidden rounded-xl">
+                    <iframe
+                        src={BLENDED_PEACE_EMBED}
+                        width="100%"
+                        height="352"
+                        frameBorder="0"
+                        allowFullScreen
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        loading="lazy"
+                    />
+                </div>
+            </div>
+        </motion.div>
+    )}
+</AnimatePresence>
+
         </section>
     );
 };

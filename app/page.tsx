@@ -3,13 +3,15 @@ import Hero from "@/components/Hero";
 import About from "@/components/About"
 import Service from "@/components/Service"
 import Stack from "@/components/Stack"
-import Projects from "@/components/Projects"
+//import project from "@/components/project"
 import MusicPlayer from "@/components/musicPlayer"
-import Testimonials from "@/components/Testimonals"
+//import Testimonials from "@/components/Testimonals"
 import Contact from "@/components/Contact"
 import Footer from "@/components/Footer"
 import AnimatedTestimonialsDemo from "@/components/AnimatedTestimonialsDemo";
 import MusicPlaylist from "@/components/MusicPlayist";
+//import Project from "@/components/project";
+import PortfolioSection from "@/components/PortfolioSection";
 
 
 
@@ -49,7 +51,8 @@ export default function Home() {
           <div className="h-px bg-linear-to-r from-transparent via-white/6 to-transparent" />
         </div>
 
-        <Projects />
+       {/* <Project /> */}
+       <PortfolioSection />
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="h-px bg-linear-to-r from-transparent via-white/6 to-transparent" />
