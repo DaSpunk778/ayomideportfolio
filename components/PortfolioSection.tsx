@@ -32,7 +32,7 @@ const WORK: Work[] = [
     id: 1,
     name: "FAVOR STORES",
     video: "/videos/favor-stores.mp4",
-    category: "E-commerce Saas",
+    category: "Saas",
     year: "2026",
     liveUrl: "#",
     githubUrl: "#",
@@ -394,15 +394,15 @@ const PortfolioSection = () => {
               <div className="flex! items-center! gap-3!">
                 <span
                   style={font.mono}
-                  className="text-[10px] px-2 py-1 rounded-full bg-[#7c3aed]/20 border border-[#7c3aed]/30 text-[#a78bfa]"
+                  className="text-[10px] px-2 py-1 rounded-full bg-[#7c3aed]/20 border border-[#7c3aed]/30 text-[#a78bfa] shrink-0"
                 >
                   Featured Project
                 </span>
-                <span style={font.heading} className="text-sm! text-white!">
+                <span style={font.heading} className="text-sm! text-white! truncate">
                   {featured.name}
                 </span>
               </div>
-              <div className="flex! items-center! gap-6! text-sm!" style={font.mono}>
+              <div style={font.mono} className="flex items-center gap-4 text-xs text-[#a78bfa] md:text-sm md:gap-6 ml-0 md:ml-auto">
                 <span className="text-[#a78bfa]!">{featured.category}</span>
                 <span className="text-[#71717a]!">{featured.year}</span>
               </div>
