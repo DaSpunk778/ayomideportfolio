@@ -50,9 +50,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Ayomide Samuel Akintomide | Frontend Engineer",
     description: "Software developer from Lagos, Nigeria building clean, performant web apps.",
-    images: ["/ayomide.jpg"],
+    images: ["/Timi.png"],
   },
 };
+
 
 export default function RootLayout({
   children,

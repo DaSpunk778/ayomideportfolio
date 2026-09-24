@@ -19,7 +19,6 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 // Blended Peace — the album the play orb opens in the floating player.
 const BLENDED_PEACE_EMBED =
-       // "https://spotify.com"
     "https://open.spotify.com/embed/artist/20wkVLutqVOYrc0kxFs7rA";
 
 // Every cover in one pool: playlists, then songs, then artists.
