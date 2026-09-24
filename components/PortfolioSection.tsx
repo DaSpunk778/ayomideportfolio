@@ -31,7 +31,7 @@ const WORK: Work[] = [
   {
     id: 1,
     name: "FAVOR STORES",
-    video: "/videos/favor-stores.mp4",
+    video: "/videos/favor-stores.webm",
     category: "Saas",
     year: "2026",
     liveUrl: "#",
