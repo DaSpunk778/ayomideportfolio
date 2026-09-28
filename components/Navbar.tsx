@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 'use client'
 
 import { AnimatePresence, motion } from "motion/react";
@@ -9,8 +10,8 @@ import { useState, useEffect } from "react";
 const links = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
-  { label: "Stacks", href: "#stack" },
   { label: "Projects", href: "#projects" },
+  { label: "Stacks", href: "#stack" },
   { label: "Testimonials", href: "#testimonials" },
   //{ label: "Gallery", href: "#gallery"},
   { label: "Contact", href: "#contact" },

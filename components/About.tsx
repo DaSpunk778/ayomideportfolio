@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 'use client'
 import { MapPin, Calendar, Coffee, Zap } from "lucide-react";
 import { useInView } from "../hooks/useInView";
