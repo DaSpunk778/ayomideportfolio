@@ -160,7 +160,7 @@ export default function Stack() {
           className="text-center mb-16"
         >
           <span
-            className="text-xs tracking-[0.2em] text-[#a78bfa] uppercase mb-4 block"
+            className="text-xs tracking-[0.2em] text-brand-text uppercase mb-4 block"
             style={{ fontFamily: "'JetBrains Mono', monospace" }}
           >
             — Tech Stack
@@ -170,12 +170,12 @@ export default function Stack() {
               fontFamily: "'Bricolage Grotesque', sans-serif",
               fontWeight: 700,
             }}
-            className="text-4xl sm:text-5xl text-white mb-4 leading-tight"
+            className="light-heading text-4xl sm:text-5xl text-foreground mb-4 leading-tight"
           >
             Tools I work with
           </h2>
           <p
-            className="text-[#71717a] max-w-xl mx-auto"
+            className="text-subtle max-w-xl mx-auto"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
             A curated set of technologies I've mastered over the years of
@@ -196,7 +196,7 @@ export default function Stack() {
               onClick={() => setActiveCategory(cat)}
               className={`px-4 py-1.5 rounded-full text-sm transition-all duration-200 ${activeCategory === cat
                 ? "bg-[#7c3aed] text-white"
-                : "border border-white/8 text-[#a1a1aa] hover:text-white hover:border-white/20"
+                : "border border-border text-muted-foreground hover:text-foreground hover:border-border-strong"
                 }`}
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
@@ -215,7 +215,7 @@ export default function Stack() {
               transition={{ delay: 0.05 * (i % 8), duration: 0.4 }}
               onMouseEnter={() => setHovered(stack.name)}
               onMouseLeave={() => setHovered(null)}
-              className="relative p-5 rounded-xl border border-white/6 bg-white/2 hover:border-white/15 hover:bg-white/4 transition-all duration-300 group cursor-default overflow-hidden"
+              className="relative p-5 rounded-xl border border-border bg-foreground/2 hover:border-border-strong hover:bg-foreground/4 transition-all duration-300 group cursor-default overflow-hidden"
             >
               {/* Glow on hover */}
               {hovered === stack.name && (
@@ -243,12 +243,12 @@ export default function Stack() {
                   fontFamily: "'Bricolage Grotesque', sans-serif",
                   fontWeight: 600,
                 }}
-                className="text-white text-sm mb-1"
+                className="text-foreground text-sm mb-1"
               >
                 {stack.name}
               </p>
               <p
-                className="text-[#71717a] text-xs mb-3 leading-snug"
+                className="text-subtle text-xs mb-3 leading-snug"
                 style={{ fontFamily: "'Inter', sans-serif" }}
               >
                 {stack.description}
@@ -258,7 +258,7 @@ export default function Stack() {
               <div className="space-y-1">
                 <div className="flex items-center justify-between">
                   <span
-                    className="text-[10px] text-[#52525b]"
+                    className="text-[10px] text-subtle"
                     style={{ fontFamily: "'JetBrains Mono', monospace" }}
                   >
                     proficiency
@@ -273,7 +273,7 @@ export default function Stack() {
                     {stack.level}%
                   </span>
                 </div>
-                <div className="h-1 w-full bg-white/6 rounded-full overflow-hidden">
+                <div className="h-1 w-full bg-foreground/6 rounded-full overflow-hidden">
                   <motion.div
                     className="h-full rounded-full"
                     style={{ backgroundColor: stack.color }}

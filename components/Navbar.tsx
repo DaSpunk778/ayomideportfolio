@@ -2,8 +2,10 @@
 'use client'
 
 import { AnimatePresence, motion } from "motion/react";
-import { Menu, X, Code2 } from "lucide-react";
+import { Menu, X, Code2, Sun, Moon } from "lucide-react";
 import { useState, useEffect } from "react";
+import { useTheme } from "next-themes";
+import { ScrollSmoother } from "gsap/ScrollSmoother";
 
 
 
@@ -16,6 +18,30 @@ const links = [
   //{ label: "Gallery", href: "#gallery"},
   { label: "Contact", href: "#contact" },
 ];
+
+function ThemeToggle({ className = "" }: { className?: string }) {
+  const { resolvedTheme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
+  const isDark = resolvedTheme === "dark";
+
+  return (
+    <button
+      type="button"
+      aria-label="Toggle color theme"
+      onClick={() => setTheme(isDark ? "light" : "dark")}
+      className={`relative grid place-items-center w-9 h-9 rounded-lg border border-border-strong text-muted-foreground hover:text-foreground hover:bg-foreground/5 transition-colors ${className}`}
+    >
+      {/* Render a stable icon until mounted to avoid hydration mismatch */}
+      {mounted ? (
+        isDark ? <Sun size={17} /> : <Moon size={17} />
+      ) : (
+        <Sun size={17} className="opacity-0" />
+      )}
+    </button>
+  );
+}
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -44,7 +70,12 @@ export default function Navbar() {
 
     setTimeout(() => {
       const el = document.getElementById(id);
-      if (el) {
+      if (!el) return;
+      const smoother = ScrollSmoother.get();
+      if (smoother) {
+        // Let ScrollSmoother own the scroll so momentum stays smooth.
+        smoother.scrollTo(el, true, "top 80px");
+      } else {
         const top = el.getBoundingClientRect().top + window.scrollY - 80;
         window.scrollTo({ top, behavior: "smooth" });
       }
@@ -57,8 +88,8 @@ export default function Navbar() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       className={`fixed top-0 left-1/2 -translate-x-1/2 z-50 backdrop-blur-2xl backdrop-saturate-150 transition-all duration-300 border w-[calc(100%-1.5rem)] ${scrolled
-        ? "mt-3 md:mt-4 md:max-w-6xl rounded-2xl border-white/15 bg-[#09000b]/30 shadow-lg"
-        : "mt-3 md:mt-0 md:max-w-none rounded-2xl md:rounded-none border-white/15 md:border-x-0 md:border-t-0 "
+        ? "mt-3 md:mt-4 md:max-w-6xl rounded-2xl border-border-strong bg-background/60 shadow-lg"
+        : "mt-3 md:mt-0 md:max-w-none rounded-2xl md:rounded-none border-border-strong md:border-x-0 md:border-t-0 "
         }`}
     >
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16" >
@@ -67,12 +98,12 @@ export default function Navbar() {
           onClick={() => scrollTo("#home")}
           className="flex items-center gap-2 group"
         >
-          <div className="w-8 h-8 rounded-lg bg-[#7c3aed] flex items-center justify-center group-hover:bg-[#a78bfa] transition-colors ">
+          <div className="w-8 h-8 rounded-lg bg-brand flex items-center justify-center group-hover:bg-brand-soft transition-colors ">
             <Code2 size={16} className="text-white" />
           </div>
           <span
             style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 700 }}
-            className="text-white text-lg tracking-tight"
+            className="text-foreground text-lg tracking-tight"
           >
             AY_dev
           </span>
@@ -87,14 +118,14 @@ export default function Navbar() {
                 <button
                   onClick={() => scrollTo(link.href)}
                   className={`relative px-3 py-1.5 text-sm transition-colors rounded-md ${active === id
-                    ? "text-[#a78bfa]"
-                    : "text-[#a1a1aa] hover:text-white"
+                    ? "text-brand-text"
+                    : "text-muted-foreground hover:text-foreground"
                     }`}
                 >
                   {active === id && (
                     <motion.span
                       layoutId="nav-pill"
-                      className="absolute inset-0 bg-[#7c3aed]/15 rounded-md"
+                      className="absolute inset-0 bg-brand-tint rounded-md"
                     />
                   )}
                   <span className="relative">{link.label}</span>
@@ -105,23 +136,28 @@ export default function Navbar() {
         </ul>
 
         {/* CTA */}
-        <div className="hidden md:flex item-center gap-3">
+        <div className="hidden md:flex items-center gap-3">
+          <ThemeToggle />
           <button
             onClick={() => scrollTo("#contact")}
-            className="px-4 py-2 text-sm bg-[#7c3aed] hover:bg-[#6d28d9] text-white rounded-lg transition-colors"
+            className="px-4 py-2 text-sm bg-brand hover:bg-brand-hover text-white rounded-lg transition-colors"
             style={{ fontFamily: "'JetBrains Mono', monospace" }}
           >
             Let's Build
           </button>
         </div>
 
-        {/* Mobile Toogle */}
-        <button
-          onClick={() => setOpen((o) => !o)}
-          className="md:hidden text-[#a1a1aa] hover:text-white transition-colors p-1 "
-        >
-          {open ? <X size={22} /> : <Menu size={22} />}
-        </button>
+        {/* Mobile controls */}
+        <div className="flex md:hidden items-center gap-2">
+          <ThemeToggle />
+          <button
+            onClick={() => setOpen((o) => !o)}
+            aria-label="Toggle menu"
+            className="text-muted-foreground hover:text-foreground transition-colors p-1 "
+          >
+            {open ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile Menu */}
@@ -132,14 +168,14 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25 }}
-            className="md:hidden overflow-hidden bg-[#09000b58] backdrop-blur-xl border-b border-white/6"
+            className="md:hidden overflow-hidden bg-background/80 backdrop-blur-xl border-b border-border"
           >
             <ul className="flex flex-col px-4 py-4 gap-1">
               {links.map((link) => (
                 <li key={link.label}>
                   <button
                     onClick={() => scrollTo(link.href)}
-                    className="w-full text-left px-4 py-3 text-sm hover:text-white hover:bg-white/4 rounded-lg transition-colors"
+                    className="w-full text-left px-4 py-3 text-sm text-muted-foreground hover:text-foreground hover:bg-foreground/5 rounded-lg transition-colors"
                   >
                     {link.label}
                   </button>
@@ -149,7 +185,7 @@ export default function Navbar() {
                 <button
                   style={{ fontFamily: "'JetBrains Mono', monospace" }}
                   onClick={() => scrollTo("#contact")}
-                  className="w-full px-4 py-3 text-sm bg-[#7c3aed] hover:bg-[#6d28d9] text-white rounded-lg transition-colors">
+                  className="w-full px-4 py-3 text-sm bg-brand hover:bg-brand-hover text-white rounded-lg transition-colors">
                   let's Build
                 </button>
               </li>

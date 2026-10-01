@@ -4,82 +4,134 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/*
+  THEME TOKENS
+  ------------
+  :root holds the LIGHT theme. `.dark` overrides to the original dark design.
+  next-themes toggles the `dark` class on <html> (defaultTheme = "dark").
+  Brand hues (violet / cyan) stay consistent across themes; only their
+  contrast-safe text variants shift. Change a value here, both themes stay
+  in sync because every component reads these tokens instead of hex.
+*/
 :root {
+  color-scheme: light;
+
   --font-size: 16px;
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.147 0.004 49.3);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.147 0.004 49.3);
-  --primary: oklch(0.214 0.009 43.1);
-  --primary-foreground: oklch(0.986 0.002 67.8);
-  --secondary: oklch(0.96 0.002 17.2);
-  --secondary-foreground: oklch(0.214 0.009 43.1);
-  --muted: oklch(0.96 0.002 17.2);
-  --muted-foreground: oklch(0.547 0.021 43.1);
-  --accent: oklch(0.96 0.002 17.2);
-  --accent-foreground: oklch(0.214 0.009 43.1);
-  --destructive: oklch(0.577 0.245 27.325);
+
+  /* surfaces */
+  --background: #fbfbfd; /* near-white, barely cool */
+  --foreground: #18181b; /* zinc-900 — softer than pure black */
+  --card: #ffffff;
+  --card-foreground: #18181b;
+  --surface: #ffffff;
+  --surface-2: #f4f4f6;
+  --popover: #ffffff;
+  --popover-foreground: #18181b;
+
+  /* brand + semantic */
+  --primary: #7c3aed;
+  --primary-foreground: #ffffff;
+  --secondary: #f4f4f6;
+  --secondary-foreground: #27272a;
+  --muted: #f4f4f6;
+  --muted-foreground: #52525b; /* zinc-600 */
+  --subtle: #71717a; /* zinc-500 */
+  --accent: #f1ecfe; /* violet tint */
+  --accent-foreground: #6d28d9;
+  --destructive: #e11d48;
   --destructive-foreground: #ffffff;
-  --border: oklch(0.922 0.005 34.3);
-  --input: oklch(0.922 0.005 34.3);
+
+  /* lines + fields */
+  --border: rgb(0 0 0 / 0.08);
+  --border-strong: rgb(0 0 0 / 0.14);
+  --input: rgb(0 0 0 / 0.12);
   --input-background: #f3f3f5;
   --switch-background: #cbced4;
+  --ring: #7c3aed;
+
+  /* brand scale (theme-aware where contrast demands it) */
+  --brand: #7c3aed;
+  --brand-hover: #6d28d9;
+  --brand-soft: #a78bfa;
+  --brand-text: #6d28d9; /* deep, "thick" violet so accents read on white */
+  --brand-tint: rgb(109 40 217 / 0.14);
+  --accent-cyan: #0891b2; /* cyan-600 for light */
+
   --font-weight-medium: 500;
   --font-weight-normal: 400;
-  --ring: oklch(0.714 0.014 41.2);
+
+  /* charts (kept) */
   --chart-1: oklch(0.868 0.007 39.5);
   --chart-2: oklch(0.547 0.021 43.1);
   --chart-3: oklch(0.438 0.017 39.3);
   --chart-4: oklch(0.367 0.016 35.7);
   --chart-5: oklch(0.268 0.011 36.5);
+
   --radius: 0.625rem;
-  --sidebar: oklch(0.986 0.002 67.8);
-  --sidebar-foreground: oklch(0.147 0.004 49.3);
-  --sidebar-primary: oklch(0.214 0.009 43.1);
-  --sidebar-primary-foreground: oklch(0.986 0.002 67.8);
-  --sidebar-accent: oklch(0.96 0.002 17.2);
-  --sidebar-accent-foreground: oklch(0.214 0.009 43.1);
-  --sidebar-border: oklch(0.922 0.005 34.3);
-  --sidebar-ring: oklch(0.714 0.014 41.2);
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.147 0.004 49.3);
+
+  --sidebar: #ffffff;
+  --sidebar-foreground: #18181b;
+  --sidebar-primary: #7c3aed;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f4f4f6;
+  --sidebar-accent-foreground: #27272a;
+  --sidebar-border: rgb(0 0 0 / 0.08);
+  --sidebar-ring: #7c3aed;
 }
 
 .dark {
-  --background: oklch(0.147 0.004 49.3);
-  --foreground: oklch(0.986 0.002 67.8);
-  --card: oklch(0.214 0.009 43.1);
-  --card-foreground: oklch(0.986 0.002 67.8);
-  --popover: oklch(0.214 0.009 43.1);
-  --popover-foreground: oklch(0.986 0.002 67.8);
-  --primary: oklch(0.922 0.005 34.3);
-  --primary-foreground: oklch(0.214 0.009 43.1);
-  --secondary: oklch(0.268 0.011 36.5);
-  --secondary-foreground: oklch(0.986 0.002 67.8);
-  --muted: oklch(0.268 0.011 36.5);
-  --muted-foreground: oklch(0.714 0.014 41.2);
-  --accent: oklch(0.268 0.011 36.5);
-  --accent-foreground: oklch(0.986 0.002 67.8);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.547 0.021 43.1);
-  --font-weight-medium: 500;
-  --font-weight-normal: 400;
+  color-scheme: dark;
+
+  /* surfaces — the original design */
+  --background: #09090b;
+  --foreground: #f4f4f5;
+  --card: #111117;
+  --card-foreground: #f4f4f5;
+  --surface: #111117;
+  --surface-2: #0e0e14;
+  --popover: #111117;
+  --popover-foreground: #f4f4f5;
+
+  --primary: #7c3aed;
+  --primary-foreground: #ffffff;
+  --secondary: #1b1b22;
+  --secondary-foreground: #f4f4f5;
+  --muted: #1b1b22;
+  --muted-foreground: #a1a1aa; /* zinc-400 */
+  --subtle: #71717a; /* zinc-500 */
+  --accent: #1b1b22;
+  --accent-foreground: #e2cbff;
+  --destructive: #f43f5e;
+  --destructive-foreground: #ffffff;
+
+  --border: rgb(255 255 255 / 0.08);
+  --border-strong: rgb(255 255 255 / 0.15);
+  --input: rgb(255 255 255 / 0.15);
+  --input-background: #16161c;
+  --switch-background: #3f3f46;
+  --ring: #a78bfa;
+
+  --brand: #7c3aed;
+  --brand-hover: #6d28d9;
+  --brand-soft: #a78bfa;
+  --brand-text: #a78bfa; /* lighter so it reads on dark surfaces */
+  --brand-tint: rgb(124 58 237 / 0.15);
+  --accent-cyan: #22d3ee; /* cyan-400 for dark */
+
   --chart-1: oklch(0.868 0.007 39.5);
   --chart-2: oklch(0.547 0.021 43.1);
   --chart-3: oklch(0.438 0.017 39.3);
   --chart-4: oklch(0.367 0.016 35.7);
   --chart-5: oklch(0.268 0.011 36.5);
-  --sidebar: oklch(0.214 0.009 43.1);
-  --sidebar-foreground: oklch(0.986 0.002 67.8);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.986 0.002 67.8);
-  --sidebar-accent: oklch(0.268 0.011 36.5);
-  --sidebar-accent-foreground: oklch(0.986 0.002 67.8);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.547 0.021 43.1);
+
+  --sidebar: #111117;
+  --sidebar-foreground: #f4f4f5;
+  --sidebar-primary: #7c3aed;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #1b1b22;
+  --sidebar-accent-foreground: #f4f4f5;
+  --sidebar-border: rgb(255 255 255 / 0.08);
+  --sidebar-ring: #a78bfa;
 }
 
 @theme inline {
@@ -87,6 +139,8 @@
   --color-foreground: var(--foreground);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
@@ -95,15 +149,25 @@
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
+  --color-subtle: var(--subtle);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
   --color-input: var(--input);
   --color-input-background: var(--input-background);
   --color-switch-background: var(--switch-background);
   --color-ring: var(--ring);
+
+  --color-brand: var(--brand);
+  --color-brand-hover: var(--brand-hover);
+  --color-brand-soft: var(--brand-soft);
+  --color-brand-text: var(--brand-text);
+  --color-brand-tint: var(--brand-tint);
+  --color-accent-cyan: var(--accent-cyan);
+
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
@@ -134,8 +198,34 @@
   }
   body {
     @apply bg-background text-foreground;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
   html {
     @apply font-sans;
+  }
+}
+
+/* Dark text on a light background reads lighter than light text on a dark
+   background at the same weight, so headings get a weight bump in light mode.
+   Opt-in via `.light-heading`; the portfolio section deliberately omits it. */
+:root:not(.dark) .light-heading {
+  font-weight: 800 !important;
+}
+
+/* ScrollSmoother requires these; it sets inline styles at runtime but this
+   avoids a flash of unstyled layout before hydration. */
+#smooth-wrapper {
+  overflow: hidden;
+}
+#smooth-content {
+  will-change: transform;
+}
+
+/* Respect reduced-motion: SmoothScroll also disables JS smoothing. */
+@media (prefers-reduced-motion: reduce) {
+  #smooth-wrapper,
+  #smooth-content {
+    overflow: visible;
+    will-change: auto;
   }
 }

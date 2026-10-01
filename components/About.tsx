@@ -286,17 +286,17 @@ export default function About() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={inView ? { opacity: 1, y: 0 } : {}}
                             transition={{ delay: 0.5, duration: 0.5 }}
-                            className="absolute -bottom-6 right-0 lg:right-6 bg-[#111117] border border-white/8 rounded-xl p-4 shadow-2xl"
+                            className="absolute -bottom-6 right-0 lg:right-6 bg-surface border border-border rounded-xl p-4 shadow-2xl"
                             >
                             <div className="flex items-center gap-3">
                             <div className="w-10 h-10 rounded-full bg-[#7c3aed]/20 flex items-center justify-center">
-                                <Zap size={18} className="text-[#a78bfa]" />
+                                <Zap size={18} className="text-brand-text" />
                             </div>
                             <div>
-                                <p className="text-white text-sm" style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 600 }}>
+                                <p className="text-foreground text-sm" style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 600 }}>
                                     Currently available
                                 </p>
-                                <p className="text-[#71717a] text-xs" style={{ fontFamily: "'Inter', sans-serif" }}>
+                                <p className="text-subtle text-xs" style={{ fontFamily: "'Inter', sans-serif" }}>
                                     Open to new projects
                                 </p>
                             </div>
@@ -312,22 +312,22 @@ export default function About() {
                   transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
                 >
                  <span
-                  className="text-xs tracking-[0.2em] text-[#a78bfa] uppercase mb-4 block"
+                  className="text-xs tracking-[0.2em] text-brand-text uppercase mb-4 block"
                   style={{ fontFamily: "'jetBrains Monno', monospace"}}
                  >
                    — About Me
                  </span>
                  <h2
                   style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 700 }}
-                  className="text-4xl sm:text-5xl text-white mb-6 leading-tight"
+                  className="light-heading text-4xl sm:text-5xl text-foreground mb-6 leading-tight"
                  >
                   Building the future,{" "}
-                  <span className="text-[#a78bfa]">one line</span> at a time
+                  <span className="text-brand-text">one line</span> at a time
                  </h2>
                  
                  <div 
                     style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400 }}
-                    className="space-y-4 text-[#a1a1aa] leading-relaxed mb-6"
+                    className="space-y-4 text-muted-foreground leading-relaxed mb-6"
                   >
                     <p>
                       I'm Ayomide Samuel Akintomide, a software developer from Lagos Nigeria with a passion for crafting
@@ -339,7 +339,7 @@ export default function About() {
 
                   <Link
                     href="/about"
-                    className="inline-flex items-center gap-2 mb-8 text-sm text-[#a78bfa] hover:text-white transition-colors group"
+                    className="inline-flex items-center gap-2 mb-8 text-sm text-brand-text hover:text-foreground transition-colors group"
                     style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}
                   >
                     Read more about me
@@ -351,7 +351,7 @@ export default function About() {
                   {["Clean code", "Agile", "TDD", "System Design", "Comunication"].map((tag) => (
                     <span
                      key={tag}
-                     className="px-3 py-1 text-xs rounded-full border border-[#7c3aed]/30 text-[#a78bfa] bg-[#7c3aed]/10"
+                     className="px-3 py-1 text-xs rounded-full border border-[#7c3aed]/30 text-brand-text bg-[#7c3aed]/10"
                      style={{ fontFamily: "'JetBrains Mono', monospace" }}
                     >
                     {tag}
@@ -367,19 +367,19 @@ export default function About() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ delay: 0.4 + i * 0.1, duration: 0.5 }}
-                  className="p-4 rounded-xl border border-white/6 bg-white/2 hover:border-[#7c3aed]/30 transition-colors group"
+                  className="p-4 rounded-xl border border-border bg-foreground/2 hover:border-[#7c3aed]/30 transition-colors group"
                 >
                   <stat.icon
                     size={20}
-                    className="text-[#7c3aed] group-hover:text-[#a78bfa] transition-colors mb-2"
+                    className="text-[#7c3aed] group-hover:text-brand-text transition-colors mb-2"
                   />
                   <p
                     style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 700 }}
-                    className="text-2xl text-white"
+                    className="text-2xl text-foreground"
                   >
                     {stat.value}
                   </p>
-                  <p className="text-xs text-[#71717a]" style={{ fontFamily: "'Inter', sans-serif" }}>
+                  <p className="text-xs text-subtle" style={{ fontFamily: "'Inter', sans-serif" }}>
                     {stat.label}
                   </p>
                 </motion.div>

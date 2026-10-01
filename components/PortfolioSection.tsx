@@ -252,7 +252,7 @@ const PortfolioSection = () => {
             </span>
             <h2
               style={font.heading}
-              className="text-[30px] lg:text-[clamp(2.5rem,7vw,6.5rem)]! leading-[0.85]! tracking-tight! text-white!"
+              className="text-[30px] lg:text-[clamp(2.5rem,7vw,6.5rem)]! leading-[0.85]! tracking-tight! text-foreground!"
             >
               Works I'm proud of
             </h2>
@@ -478,7 +478,7 @@ const PortfolioSection = () => {
             <Link
               href="/portfolio"
               style={font.heading}
-              className="group/all inline-flex! items-center! gap-3! text-lg md:text-2xl! text-white! transition-colors! hover:text-white/60!"
+              className="group/all inline-flex! items-center! gap-3! text-lg md:text-2xl! text-foreground! transition-colors! hover:text-foreground/60!"
             >
               See more projects
               <IoArrowForwardOutline className="transition-transform! duration-300! group-hover/all:translate-x-1!" />

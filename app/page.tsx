@@ -14,13 +14,14 @@ import AnimatedTestimonialsDemo from "@/components/AnimatedTestimonialsDemo";
 import MusicPlaylist from "@/components/MusicPlayist";
 //import Project from "@/components/project";
 import PortfolioSection from "@/components/PortfolioSection";
+import SmoothScroll from "@/components/SmoothScroll";
 
 
 
 export default function Home() {
   return (
     <div
-      className="min-h-screen bg-[#09090b] text-[#f4f4f5] overflow-x-hidden"
+      className="min-h-screen bg-background text-foreground overflow-x-hidden"
       style={{
         scrollbarWidth: "thin",
         scrollbarColor: "rgba(124,58,237,0.3) transparent",
@@ -28,23 +29,24 @@ export default function Home() {
     >
       <Navbar />
 
+      <SmoothScroll>
       <main>
         <Hero />
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="h-px bg-linear-to-r from-transparent via-white/6 to-transparent" />
+          <div className="h-px bg-linear-to-r from-transparent via-foreground/10 to-transparent" />
         </div>
 
         <About />
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="h-px bg-linear-to-r from-transparent via-white/6 to-transparent" />
+          <div className="h-px bg-linear-to-r from-transparent via-foreground/10 to-transparent" />
         </div>
 
         <Service />
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="h-px bg-linear-to-r from-transparent via-white/6 to-transparent" />
+          <div className="h-px bg-linear-to-r from-transparent via-foreground/10 to-transparent" />
         </div>
 
         <HowIwork/>
@@ -53,39 +55,40 @@ export default function Home() {
        <PortfolioSection />
 
         {/* <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="h-px bg-linear-to-r from-transparent via-white/6 to-transparent" />
+          <div className="h-px bg-linear-to-r from-transparent via-foreground/10 to-transparent" />
         </div> */}
 
         <Stack />
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="h-px bg-linear-to-r from-transparent via-white/6 to-transparent" />
+          <div className="h-px bg-linear-to-r from-transparent via-foreground/10 to-transparent" />
         </div>
 
         <AnimatedTestimonialsDemo />
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="h-px bg-linear-to-r from-transparent via-white/6 to-transparent" />
+          <div className="h-px bg-linear-to-r from-transparent via-foreground/10 to-transparent" />
         </div>
 
         <MusicPlaylist />
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="h-px bg-linear-to-r from-transparent via-white/6 to-transparent" />
+          <div className="h-px bg-linear-to-r from-transparent via-foreground/10 to-transparent" />
         </div>
 
         {/*<Gallery />
 
          <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="h-px bg-linear-to-r from-transparent via-white/6 to-transparent" />
+          <div className="h-px bg-linear-to-r from-transparent via-foreground/10 to-transparent" />
         </div>*/}
 
         <Contact />
       </main>
 
-      <MusicPlayer />
-
       <Footer />
+      </SmoothScroll>
+
+      <MusicPlayer />
     </div>
   );
 }

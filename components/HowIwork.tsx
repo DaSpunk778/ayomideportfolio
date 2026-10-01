@@ -37,21 +37,21 @@ export default function HowIWork() {
       <div className="grid md:grid-cols-2 gap-12 items-center">
         <div>
           <span
-            className="text-xs tracking-[0.2em] text-[#a78bfa] uppercase mb-4 block mt-4"
+            className="text-xs tracking-[0.2em] text-brand-text uppercase mb-4 block mt-4"
             style={{ fontFamily: "'JetBrains Mono', monospace" }}
           >
             — How I Work
           </span>
           <h2
             style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 700 }}
-            className="text-4xl sm:text-5xl text-white mb-6 leading-tight"
+            className="light-heading text-4xl sm:text-5xl text-foreground mb-6 leading-tight"
           >
             Every project, one migration {" "}
-            <span className="text-[#a78bfa]">at</span> a time
+            <span className="text-brand-text">at</span> a time
           </h2>
           <p 
            ref={paragraphRef}
-          className="text-[#71717a] text-sm sm:text-base leading-relaxed max-w-xl">
+          className="text-subtle text-sm sm:text-base leading-relaxed max-w-xl">
             I build in small, testable sessions — model, migrate, wire, verify —
             rather than writing everything at once and hoping it connects. Every
             terminal above is a real session from a real build: setting up auth

@@ -1,6 +1,12 @@
 "use client"
 
+import { useRef } from "react";
 import { Code2, Github, Linkedin, Twitter, ArrowUp } from "lucide-react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -12,11 +18,38 @@ const navLinks = [
 ];
 
 export default function Footer() {
+  const rootRef = useRef<HTMLElement>(null);
+  const wordmarkRef = useRef<HTMLDivElement>(null);
+
   const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
+  useGSAP(
+    () => {
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reduce || !wordmarkRef.current) return;
+
+      // Giant outlined name drifts sideways as the footer scrolls into view.
+      gsap.fromTo(
+        wordmarkRef.current,
+        { xPercent: -4 },
+        {
+          xPercent: 4,
+          ease: "none",
+          scrollTrigger: {
+            trigger: rootRef.current,
+            start: "top bottom",
+            end: "bottom bottom",
+            scrub: true,
+          },
+        }
+      );
+    },
+    { scope: rootRef }
+  );
+
   return (
-    <footer className="border-t border-white/6 py-12 relative">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+    <footer ref={rootRef} className="border-t border-border py-12 relative overflow-hidden">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6" data-reveal>
         <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-8 mb-10">
           {/* Brand */}
           <div className="text-center md:text-left">
@@ -26,13 +59,13 @@ export default function Footer() {
               </div>
               <span
                 style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 700 }}
-                className="text-white"
+                className="text-foreground"
               >
                 AY_dev
               </span>
             </div>
             <p
-              className="text-[#52525b] text-sm max-w-xs"
+              className="text-subtle text-sm max-w-xs"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
               Full-stack developer crafting high-performance web experiences.
@@ -49,7 +82,7 @@ export default function Footer() {
                   e.preventDefault();
                   document.getElementById(l.href.slice(1))?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="text-sm text-[#71717a] hover:text-white transition-colors"
+                className="text-sm text-subtle hover:text-foreground transition-colors"
                 style={{ fontFamily: "'Inter', sans-serif" }}
               >
                 {l.label}
@@ -68,14 +101,14 @@ export default function Footer() {
                 key={label}
                 href={href}
                 aria-label={label}
-                className="p-2.5 rounded-lg border border-white/8 text-[#71717a] hover:text-white hover:border-white/20 transition-all duration-200"
+                className="p-2.5 rounded-lg border border-border text-subtle hover:text-foreground hover:border-border-strong transition-all duration-200"
               >
                 <Icon size={16} />
               </a>
             ))}
             <button
               onClick={scrollTop}
-              className="p-2.5 rounded-lg bg-[#7c3aed]/15 border border-[#7c3aed]/30 text-[#a78bfa] hover:bg-[#7c3aed]/25 transition-colors ml-1"
+              className="p-2.5 rounded-lg bg-brand-tint border border-[#7c3aed]/30 text-brand-text hover:bg-[#7c3aed]/25 transition-colors ml-1"
               aria-label="Back to top"
             >
               <ArrowUp size={16} />
@@ -84,7 +117,7 @@ export default function Footer() {
         </div>
 
         {/* BIg outlined name*/}
-        <div className="pointer-events-none select-none -mt-4 md:-mt-8">
+        <div ref={wordmarkRef} className="pointer-events-none select-none -mt-4 md:-mt-8">
           <h2
             className="text-center whitespace-nowrap leading-none font-extrabold uppercase tracking-tight text-[10vw] sm:text-[9vw] md:text-[7vw] lg:text-[8vw]"
             style={{
@@ -97,15 +130,15 @@ export default function Footer() {
           </h2>
         </div>
 
-        <div className="border-t border-white/4 pt-6 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <div className="border-t border-border pt-6 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p
-            className="text-xs text-[#3f3f46]"
+            className="text-xs text-subtle"
             style={{ fontFamily: "'JetBrains Mono', monospace" }}
           >
             © 2026 Ayomide Samuel Akintomide — All rights reserved
           </p>
           <p
-            className="text-xs text-[#3f3f46]"
+            className="text-xs text-subtle"
             style={{ fontFamily: "'JetBrains Mono', monospace" }}
           >
             Built with Next.js · TypeScript · Tailwind CSS

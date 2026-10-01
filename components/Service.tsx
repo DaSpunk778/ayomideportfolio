@@ -103,7 +103,7 @@ export default function Services() {
           className="mb-16"
         >
           <span
-            className="text-xs tracking-[0.2em] text-[#a78bfa] uppercase mb-4 block"
+            className="text-xs tracking-[0.2em] text-brand-text uppercase mb-4 block"
             style={{ fontFamily: "'JetBrains Mono', monospace" }}
           >
             — What I Offer
@@ -111,14 +111,14 @@ export default function Services() {
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
             <h2
               style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 700 }}
-              className="text-4xl sm:text-5xl text-white leading-tight max-w-sm"
+              className="light-heading text-4xl sm:text-5xl text-foreground leading-tight max-w-sm"
             >
               What I can{" "}
-              <span className="text-[#a78bfa]">build</span>{" "}
+              <span className="text-brand-text">build</span>{" "}
               for you
             </h2>
             <p
-              className="text-[#71717a] max-w-xs leading-relaxed"
+              className="text-subtle max-w-xs leading-relaxed"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
               Six focused disciplines. One engineer who cares about the whole product, not just the ticket.
@@ -138,11 +138,11 @@ export default function Services() {
                 transition={{ delay: i * 0.08, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
                 onMouseEnter={() => setHovered(i)}
                 onMouseLeave={() => setHovered(null)}
-                className="relative rounded-2xl border bg-[#111117] p-7 flex flex-col gap-5 cursor-default overflow-hidden"
+                className="relative rounded-2xl border bg-surface p-7 flex flex-col gap-5 cursor-default overflow-hidden"
                 style={{
                   borderColor: isHovered
                     ? `${service.accent}55`
-                    : "rgba(255,255,255,0.06)",
+                    : "var(--border)",
                   transform: isHovered ? "translateY(-4px) scale(1.01)" : "translateY(0) scale(1)",
                   boxShadow: isHovered
                     ? `0 20px 50px rgba(0,0,0,0.4), 0 0 0 1px ${service.accent}30, 0 0 40px ${service.accent}12`
@@ -166,7 +166,7 @@ export default function Services() {
                     className="text-xs leading-none"
                     style={{
                       fontFamily: "'JetBrains Mono', monospace",
-                      color: isHovered ? service.accent : "rgba(255,255,255,0.15)",
+                      color: isHovered ? service.accent : "var(--border-strong)",
                       transition: "color 0.3s ease",
                     }}
                   >
@@ -177,14 +177,14 @@ export default function Services() {
                   <div
                     className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300"
                     style={{
-                      backgroundColor: isHovered ? `${service.accent}20` : "rgba(255,255,255,0.04)",
-                      border: `1px solid ${isHovered ? `${service.accent}40` : "rgba(255,255,255,0.08)"}`,
+                      backgroundColor: isHovered ? `${service.accent}20` : "var(--muted)",
+                      border: `1px solid ${isHovered ? `${service.accent}40` : "var(--border-strong)"}`,
                     }}
                   >
                     <service.icon
                       size={18}
                       style={{
-                        color: isHovered ? service.accent : "#71717a",
+                        color: isHovered ? service.accent : "var(--subtle)",
                         transition: "color 0.3s ease",
                       }}
                     />
@@ -197,7 +197,7 @@ export default function Services() {
                   style={{
                     background: isHovered
                       ? `linear-gradient(90deg, ${service.accent}, transparent)`
-                      : "rgba(255,255,255,0.08)",
+                      : "var(--border-strong)",
                     width: isHovered ? "48px" : "28px",
                   }}
                 />
@@ -206,12 +206,12 @@ export default function Services() {
                 <div className="flex flex-col gap-2.5 flex-1">
                   <h3
                     style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 700 }}
-                    className="text-white text-lg leading-snug transition-colors duration-300"
+                    className="text-foreground text-lg leading-snug transition-colors duration-300"
                   >
                     {service.title}
                   </h3>
                   <p
-                    className="text-[#71717a] text-sm leading-relaxed"
+                    className="text-subtle text-sm leading-relaxed"
                     style={{ fontFamily: "'Inter', sans-serif" }}
                   >
                     {service.description}
@@ -228,9 +228,9 @@ export default function Services() {
                         fontFamily: "'JetBrains Mono', monospace",
                         backgroundColor: isHovered
                           ? `${service.accent}12`
-                          : "rgba(255,255,255,0.03)",
-                        color: isHovered ? service.accent : "#52525b",
-                        border: `1px solid ${isHovered ? `${service.accent}30` : "rgba(255,255,255,0.06)"}`,
+                          : "var(--muted)",
+                        color: isHovered ? service.accent : "var(--subtle)",
+                        border: `1px solid ${isHovered ? `${service.accent}30` : "var(--border)"}`,
                         transition: "all 0.3s ease",
                       }}
                     >
@@ -248,17 +248,17 @@ export default function Services() {
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.6, duration: 0.5 }}
-          className="mt-14 flex flex-col sm:flex-row items-center justify-between gap-6 p-6 rounded-2xl border border-white/6 bg-white/2"
+          className="mt-14 flex flex-col sm:flex-row items-center justify-between gap-6 p-6 rounded-2xl border border-border bg-foreground/2"
         >
           <div>
             <p
               style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 600 }}
-              className="text-white mb-1"
+              className="text-foreground mb-1"
             >
               Not sure what you need?
             </p>
             <p
-              className="text-[#71717a] text-sm"
+              className="text-subtle text-sm"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
               Let's talk through your project and figure out the right approach together.

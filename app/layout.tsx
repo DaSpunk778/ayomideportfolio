@@ -3,6 +3,7 @@ import { Inter, Noto_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Rubik_Glitch } from 'next/font/google';
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const playfairDisplayHeading = Playfair_Display({ subsets: ['latin'], variable: '--font-heading' });
 
@@ -61,9 +62,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("h-full antialiased", "font-sans", notoSans.variable, playfairDisplayHeading.variable)}>
+    <html lang="en" suppressHydrationWarning className={cn("h-full antialiased", "font-sans", notoSans.variable, playfairDisplayHeading.variable)}>
       <body className={`${inter.className} ${rubikGlitch.variable} min-h-full flex flex-col`}>
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -64,7 +64,7 @@ export default function AnimatedTestimonialsDemo() {
           className="text-center mb-16"
         >
           <span
-            className="text-xs tracking-[0.2em] text-[#a78bfa] uppercase mb-4 block"
+            className="text-xs tracking-[0.2em] text-brand-text uppercase mb-4 block"
             style={{ fontFamily: "'JetBrains Mono', monospace" }}
           >
             — Testimonials
@@ -74,7 +74,7 @@ export default function AnimatedTestimonialsDemo() {
               fontFamily: "'Bricolage Grotesque', sans-serif",
               fontWeight: 700,
             }}
-            className="text-4xl sm:text-5xl text-white leading-tight"
+            className="light-heading text-4xl sm:text-5xl text-foreground leading-tight"
           >
             What people say
           </h2>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState,} from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 import {
     AnimatePresence,
@@ -184,17 +185,17 @@ const MusicPlaylists = () => {
             data-nav-theme="light"
             onPointerMove={followCursor}
             onPointerLeave={resetCursor}
-            className="relative bg-[#09090b] py-24 sm:py-32 overflow-hidden"
+            className="relative bg-background py-24 sm:py-32 overflow-hidden"
         >
             {/* Centred heading */}
             <div className="container mx-auto px-6">
                 <span
-                    className="text-xs text-center tracking-[0.2em] text-[#a78bfa] uppercase mb-4 block"
+                    className="text-xs text-center tracking-[0.2em] text-brand-text uppercase mb-4 block"
                     style={{ fontFamily: "'JetBrains Mono', monospace" }}
                 >
                     — My music Playlist
                 </span>
-                <h2 className="flex items-center justify-center gap-4 text-center text-4xl! sm:text-5xl! md:text-6xl! font-black! tracking-tight! text-white"
+                <h2 className="flex items-center justify-center gap-4 text-center text-4xl! sm:text-5xl! md:text-6xl! font-black! tracking-tight! text-foreground"
                     style={{
                         fontFamily: "'Bricolage Grotesque', sans-serif",
                         fontWeight: 700,
@@ -270,8 +271,12 @@ const MusicPlaylists = () => {
             </div>
 
             {/* Floating player — Blended Peace embedded, backdrop click or Esc to
-          dismiss. */}
-            <AnimatePresence>
+          dismiss. Portaled to <body> so ScrollSmoother's transform on
+          #smooth-content doesn't offset this fixed overlay (which broke the
+          iframe's position / clickability). */}
+            {typeof document !== "undefined" &&
+              createPortal(
+                <AnimatePresence>
                 {active && (
                     <motion.div
                         initial={{ opacity: 0 }}
@@ -314,7 +319,9 @@ const MusicPlaylists = () => {
                         </motion.div>
                     </motion.div>
                 )}
-            </AnimatePresence>
+                </AnimatePresence>,
+                document.body
+              )}
         </section>
     );
 };

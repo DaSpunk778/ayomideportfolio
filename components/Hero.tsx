@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react"
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
+import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { useGSAP } from "@gsap/react";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 import MagicButton from "./ui/MagicButton";
@@ -223,9 +224,18 @@ export default function Hero() {
   );
 
 
-  const scrollToNext = () => {
-    document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
+  const scrollToId = (id: string) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const smoother = ScrollSmoother.get();
+    if (smoother) {
+      smoother.scrollTo(el, true, "top 80px");
+    } else {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
   };
+
+  const scrollToNext = () => scrollToId("about");
 
   return (
     <section
@@ -254,7 +264,7 @@ export default function Hero() {
       {floatingBadges.map((badge, i) => (
         <motion.div
           key={badge.label}
-          className="absolute hidden lg:flex items-center gap-1.5 px-3 py-1.5 rounded-full border-white/10 bg-white/4 backdrop-blur-sm text-xs text-white/60 "
+          className="absolute hidden lg:flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-border bg-foreground/5 backdrop-blur-sm text-xs text-muted-foreground "
           style={{ left: badge.x, top: badge.y, willChange: "transform" }}
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1, y: [0, -8, 0] }}
@@ -278,7 +288,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.6 }}
-          className="inline-flex mt-20 sm:mt-0 items-center gap-2 px-4 py-1.5 rounded-full border border-[#7c3aed]/30 bg-[#7c3ead]/10 text-[#a78bfa] text-sm mb-8"
+          className="inline-flex mt-20 sm:mt-0 items-center gap-2 px-4 py-1.5 rounded-full border border-[#7c3aed]/30 bg-[#7c3ead]/10 text-brand-text text-sm mb-8"
         >
           <span
             style={{ fontFamily: "'JetBrains Mono', monospace" }}
@@ -292,7 +302,7 @@ export default function Hero() {
             fontFamily: "var(--font-rubik-glitch), system-ui, sans-serif",
 
           }}
-          className="text-center! whitespace-nowrap! tracking-tight! leading-[0.9]! text-white! text-[clamp(2rem,9vw,7rem)]! z-0! w-screen! max-w-none! relative! left-1/2! right-1/2! -ml-[50vw]! -mr-[50vw]!"
+          className="text-center! whitespace-nowrap! tracking-tight! leading-[0.9]! text-foreground! text-[clamp(2rem,9vw,7rem)]! z-0! w-screen! max-w-none! relative! left-1/2! right-1/2! -ml-[50vw]! -mr-[50vw]!"
         >
           Ayomide Samuel
         </h2>
@@ -330,7 +340,7 @@ export default function Hero() {
         >
           <span
             style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}
-            className="text-xl sm:text-2xl lg:text-3xl text-[#a1a1aa] "
+            className="text-xl sm:text-2xl lg:text-3xl text-muted-foreground "
           >
             {displayed}
             <span className="inline-block w-0.5 h-7 bg-[#a78bfa] ml-1 animate-pulse align-middle" />
@@ -356,8 +366,8 @@ export default function Hero() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
         >
           <button
-            onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
-            className="group w-64 sm:w-auto flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#7c3aed] hover:bg-[#6d28d9] text-white text-sm transition-all duration-200 hover:shadow-[0_0_30px_rgba(124,58,237,0.4)]"
+            onClick={() => scrollToId("projects")}
+            className="group w-64 sm:w-auto flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-brand hover:bg-brand-hover text-white text-sm transition-all duration-200 hover:shadow-[0_0_30px_rgba(124,58,237,0.4)]"
             style={{ fontFamily: "'JetBrains Mono', monospace", fontWeight: 500 }}
           >
             View My Work
@@ -392,7 +402,7 @@ export default function Hero() {
               key={label}
               href={href}
               aria-label={label}
-              className="p-5 rounded-lg border border-white/8 text-[#71717a] hover:text-white hover:border-white/20 hover:bg-white/5 transition-all duration-200"
+              className="p-5 rounded-lg border border-border text-subtle hover:text-foreground hover:border-border-strong hover:bg-foreground/5 transition-all duration-200"
             >
               <Icon size={18} />
             </a>
@@ -406,7 +416,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, y: [0, 6, 0] }}
         transition={{ delay: 1.5, duration: 2, repeat: Infinity }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-[#71717a] hover:text-[#a78bfa] transition-colors"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-subtle hover:text-brand-text transition-colors"
       >
         <span className="text-xs"
           style={{ fontFamily: "'JetBrains Mono', monospace" }}>

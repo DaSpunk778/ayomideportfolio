@@ -94,7 +94,7 @@ export default function Contact() {
     <div>
       <label
         htmlFor={key}
-        className="block text-sm text-[#a1a1aa] mb-2"
+        className="block text-sm text-muted-foreground mb-2"
         style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}
       >
         {label}
@@ -108,10 +108,10 @@ export default function Contact() {
           if (errors[key]) setErrors((er) => ({ ...er, [key]: undefined }));
         }}
         placeholder={placeholder}
-        className={`w-full px-4 py-3 rounded-xl bg-white/4 border text-white placeholder-[#52525b] text-sm outline-none transition-all duration-200 focus:ring-2 ${
+        className={`w-full px-4 py-3 rounded-xl bg-foreground/4 border text-foreground placeholder-subtle text-sm outline-none transition-all duration-200 focus:ring-2 ${
           errors[key]
             ? "boder-red-500/50 focus:ring-red-500/30"
-            : "border-white/8 focus:border-[#7c3aed]/50 focus:ring-[#7c3aed]/20"
+            : "border-border focus:border-[#7c3aed]/50 focus:ring-[#7c3aed]/20"
         }`}
         style={{ fontFamily: "'Inter', sans-serif" }}
       />
@@ -144,7 +144,7 @@ export default function Contact() {
           className="text-center mb-16"
         >
           <span
-            className="text-xs tracking-[0.2em] text-[#a78bfa] uppercase mb-4 block"
+            className="text-xs tracking-[0.2em] text-brand-text uppercase mb-4 block"
             style={{ fontFamily: "'JetBrains Mono', monospace" }}
           >
             — Get in Touch
@@ -154,12 +154,12 @@ export default function Contact() {
               fontFamily: "'Bricolage Grotesque', sans-serif",
               fontWeight: 700,
             }}
-            className="text-4xl sm:text-5xl text-white mb-4 leading-tight"
+            className="light-heading text-4xl sm:text-5xl text-foreground mb-4 leading-tight"
           >
-            Let's build something <span className="text-[#a78bfa]">great</span>
+            Let's build something <span className="text-brand-text">great</span>
           </h2>
           <p
-            className="text-[#71717a] max-w-xl mx-auto"
+            className="text-subtle max-w-xl mx-auto"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
             Have a project in mind, a collaboration opportunity, or just want to
@@ -179,20 +179,20 @@ export default function Contact() {
               <a
                 key={label}
                 href={href}
-                className="flex items-start gap-4 p-5 rounded-xl border border-white/6 bg-white/2 hover:border-[#7c3aed]/30 hover:bg-[#7c3aed]/5 transition-all duration-300 group"
+                className="flex items-start gap-4 p-5 rounded-xl border border-border bg-foreground/2 hover:border-[#7c3aed]/30 hover:bg-[#7c3aed]/5 transition-all duration-300 group"
               >
                 <div className="w-10 h-10 rounded-lg bg-[#7c3aed]/15 flex items-center justify-center shrink-0 group-hover:bg-[#7c3aed]/25 transition-colors">
-                  <Icon size={18} className="text-[#a78bfa]" />
+                  <Icon size={18} className="text-brand-text" />
                 </div>
                 <div>
                   <p
-                    className="text-xs text-[#52525b] mb-0.5"
+                    className="text-xs text-subtle mb-0.5"
                     style={{ fontFamily: "'JetBrains Mono', monospace" }}
                   >
                     {label}
                   </p>
                   <p
-                    className="text-white text-sm"
+                    className="text-foreground text-sm"
                     style={{
                       fontFamily: "'Inter', sans-serif",
                       fontWeight: 500,
@@ -205,9 +205,9 @@ export default function Contact() {
             ))}
 
             {/** social */}
-            <div className="p-5 rounded-xl border border-white/6 bg-white/2">
+            <div className="p-5 rounded-xl border border-border bg-foreground/2">
               <p
-                className="text-xs text-[#52525b] mb-4"
+                className="text-xs text-subtle mb-4"
                 style={{ fontFamily: "'JetBrains Mono', monospace" }}
               >
                 Find me on
@@ -234,7 +234,7 @@ export default function Contact() {
                     key={label}
                     href={href}
                     aria-label={label}
-                    className="p-3 rounded-xl border border-white/8 text-[#71717a] hover:text-white hover:border-[#7c3aed]/30 hover:bg-[#7c3aed]/10 transition-all duration-200"
+                    className="p-3 rounded-xl border border-border text-subtle hover:text-brand-text hover:border-[#7c3aed]/30 hover:bg-[#7c3aed]/10 transition-all duration-200"
                   >
                     <Icon size={18} />
                   </a>
@@ -262,19 +262,19 @@ export default function Contact() {
                     fontFamily: "'Bricolage Grotesque', sans-serif",
                     fontWeight: 700,
                   }}
-                  className="text-2xl text-white mb-3"
+                  className="text-2xl text-foreground mb-3"
                 >
                   Message sent!
                 </h3>
                 <p
-                  className="text-[#71717a] mb-6"
+                  className="text-subtle mb-6"
                   style={{ fontFamily: "'Inter', sans-serif" }}
                 >
                   Thanks for reaching out. I'll get back to you within 24 hours.
                 </p>
                 <button
                   onClick={() => setStatus("idle")}
-                  className="px-5 py-2.5 text-sm rounded-lg border border-white/8 text-[#a1a1aa] hover:text-white hover:border-white/20 transition-colors"
+                  className="px-5 py-2.5 text-sm rounded-lg border border-border text-muted-foreground hover:text-foreground hover:border-border-strong transition-colors"
                   style={{ fontFamily: "'Inter', sans-serif" }}
                 >
                   Send another message
@@ -290,7 +290,7 @@ export default function Contact() {
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm text-[#a1a1aa] mb-2"
+                    className="block text-sm text-muted-foreground mb-2"
                     style={{
                       fontFamily: "'Inter', sans-serif",
                       fontWeight: 500,
@@ -308,10 +308,10 @@ export default function Contact() {
                     }}
                     rows={5}
                     placeholder="Tell me about your project, timeline, and budget..."
-                    className={`w-full px-4 py-3 rounded-xl bg-white/4 border text-white placeholder-[#52525b] text-sm outline-none transition-all duration-200 focus:ring-2 resize-none ${
+                    className={`w-full px-4 py-3 rounded-xl bg-foreground/4 border text-foreground placeholder-subtle text-sm outline-none transition-all duration-200 focus:ring-2 resize-none ${
                       errors.message
                         ? "border-red-500/50 focus:ring-red-500/30"
-                        : "border-white/8 focus:border-[#7c3aed]/50 focus:ring-[#7c3aed]/20"
+                        : "border-border focus:border-[#7c3aed]/50 focus:ring-[#7c3aed]/20"
                     }`}
                     style={{ fontFamily: "'Inter', sans-serif" }}
                   />
