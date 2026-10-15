@@ -221,6 +221,10 @@
   will-change: transform;
 }
 
+.animation {
+  flex: 3;
+}
+
 /* Respect reduced-motion: SmoothScroll also disables JS smoothing. */
 @media (prefers-reduced-motion: reduce) {
   #smooth-wrapper,

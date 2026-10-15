@@ -8,6 +8,7 @@ import Stack from "@/components/Stack"
 //import project from "@/components/project"
 import MusicPlayer from "@/components/musicPlayer"
 //import Testimonials from "@/components/Testimonals"
+import Accordion from "@/components/Accordion";
 import Contact from "@/components/Contact"
 import Footer from "@/components/Footer"
 import AnimatedTestimonialsDemo from "@/components/AnimatedTestimonialsDemo";
@@ -81,7 +82,11 @@ export default function Home() {
          <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="h-px bg-linear-to-r from-transparent via-foreground/10 to-transparent" />
         </div>*/}
-
+        <Accordion />
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="h-px bg-linear-to-r from-transparent via-foreground/10 to-transparent" />
+        </div>
+        
         <Contact />
       </main>
 
