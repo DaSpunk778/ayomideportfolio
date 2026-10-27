@@ -187,6 +187,7 @@
   --color-sidebar-ring: var(--sidebar-ring);
   --font-sans: var(--font-sans);
   --font-heading: var(--font-heading);
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
@@ -232,4 +233,10 @@
     overflow: visible;
     will-change: auto;
   }
+}
+
+/* Tech-stack tag marquee (PortfolioSection): soft fade at both edges. Motion is driven by GSAP. */
+.tag-marquee-mask {
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
 }

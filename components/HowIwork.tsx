@@ -38,12 +38,12 @@ export default function HowIWork() {
         <div>
           <span
             className="text-xs tracking-[0.2em] text-brand-text uppercase mb-4 block mt-4"
-            style={{ fontFamily: "'JetBrains Mono', monospace" }}
+            style={{ fontFamily: "var(--font-jetbrains), monospace" }}
           >
             — How I Work
           </span>
           <h2
-            style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 700 }}
+            style={{ fontFamily: "var(--font-sans), sans-serif", fontWeight: 700 }}
             className="light-heading text-4xl sm:text-5xl text-foreground mb-6 leading-tight"
           >
             Every project, one migration {" "}

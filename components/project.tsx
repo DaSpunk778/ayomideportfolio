@@ -129,7 +129,7 @@ function TagMarquee({ tags, paused }: { tags: string[]; paused?: boolean }) {
           <span
             key={i}
             className="text-[11px] shrink-0 whitespace-nowrap text-[#52525b]"
-            style={{ fontFamily: "'JetBrains Mono', monospace" }}
+            style={{ fontFamily: "var(--font-jetbrains), monospace" }}
           >
             {tag}
             <span className="ml-4 text-[#2a2a35]">·</span>
@@ -254,7 +254,7 @@ function DesktopRow({
               <div className="px-2.5 py-1.5 rounded-lg bg-[#09090b]/90 border border-[#7c3aed]/30 backdrop-blur-sm">
                 <span
                   className="text-[10px] text-[#a78bfa]"
-                  style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                  style={{ fontFamily: "var(--font-jetbrains), monospace" }}
                 >
                   {project.stat.value}{" "}
                   <span className="text-[#52525b]">{project.stat.label}</span>
@@ -273,7 +273,7 @@ function DesktopRow({
               <span
                 className="text-xs transition-colors duration-300"
                 style={{
-                  fontFamily: "'JetBrains Mono', monospace",
+                  fontFamily: "var(--font-jetbrains), monospace",
                   color: hovered ? "#a78bfa" : "rgba(255,255,255,0.15)",
                 }}
               >
@@ -282,7 +282,7 @@ function DesktopRow({
               <span
                 className="text-[10px] px-2.5 py-1 rounded-full border transition-all duration-300"
                 style={{
-                  fontFamily: "'JetBrains Mono', monospace",
+                  fontFamily: "var(--font-jetbrains), monospace",
                   color: hovered ? "#a78bfa" : "#52525b",
                   borderColor: hovered ? "rgba(124,58,237,0.35)" : "rgba(255,255,255,0.08)",
                   backgroundColor: hovered ? "rgba(124,58,237,0.08)" : "transparent",
@@ -299,7 +299,7 @@ function DesktopRow({
               <a
                 href={project.githubUrl}
                 className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-white/[0.08] text-[#71717a] hover:text-white hover:border-white/20 text-xs transition-all"
-                style={{ fontFamily: "'Inter', sans-serif" }}
+                style={{ fontFamily: "var(--font-sans), sans-serif" }}
                 onClick={(e) => e.stopPropagation()}
               >
                 <Github size={13} /> Code
@@ -307,7 +307,7 @@ function DesktopRow({
               <a
                 href={project.liveUrl}
                 className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#7c3aed] hover:bg-[#6d28d9] text-white text-xs transition-all"
-                style={{ fontFamily: "'Inter', sans-serif" }}
+                style={{ fontFamily: "var(--font-sans), sans-serif" }}
                 onClick={(e) => e.stopPropagation()}
               >
                 <ExternalLink size={13} /> Live
@@ -320,7 +320,7 @@ function DesktopRow({
             <h3
               className="leading-none mb-2 transition-colors duration-300"
               style={{
-                fontFamily: "'Bricolage Grotesque', sans-serif",
+                fontFamily: "var(--font-sans), sans-serif",
                 fontWeight: 800,
                 fontSize: "clamp(1.6rem, 2.8vw, 2.4rem)",
                 color: hovered ? "#a78bfa" : "#ffffff",
@@ -346,13 +346,13 @@ function DesktopRow({
             <div className="shrink-0">
               <p
                 className="text-[10px] text-[#3f3f46] mb-0.5 uppercase tracking-widest"
-                style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                style={{ fontFamily: "var(--font-jetbrains), monospace" }}
               >
                 Role
               </p>
               <p
                 className="text-sm text-white/80 whitespace-nowrap"
-                style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}
+                style={{ fontFamily: "var(--font-sans), sans-serif", fontWeight: 500 }}
               >
                 {project.role}
               </p>
@@ -360,13 +360,13 @@ function DesktopRow({
             <div className="shrink-0">
               <p
                 className="text-[10px] text-[#3f3f46] mb-0.5 uppercase tracking-widest"
-                style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                style={{ fontFamily: "var(--font-jetbrains), monospace" }}
               >
                 Year
               </p>
               <p
                 className="text-sm text-white/80"
-                style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                style={{ fontFamily: "var(--font-jetbrains), monospace" }}
               >
                 {project.year}
               </p>
@@ -374,13 +374,13 @@ function DesktopRow({
             <div>
               <p
                 className="text-[10px] text-[#3f3f46] mb-0.5 uppercase tracking-widest"
-                style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                style={{ fontFamily: "var(--font-jetbrains), monospace" }}
               >
                 About
               </p>
               <p
                 className="text-sm text-[#71717a] leading-relaxed max-w-sm"
-                style={{ fontFamily: "'Inter', sans-serif" }}
+                style={{ fontFamily: "var(--font-sans), sans-serif" }}
               >
                 {project.description}
               </p>
@@ -418,10 +418,10 @@ function AllProjectsModal({ onClose }: { onClose: () => void }) {
     >
       <div className="flex items-center justify-between px-6 sm:px-12 py-5 border-b border-white/[0.06] shrink-0">
         <div>
-          <p className="text-xs text-[#a78bfa] tracking-[0.2em] uppercase" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+          <p className="text-xs text-[#a78bfa] tracking-[0.2em] uppercase" style={{ fontFamily: "var(--font-jetbrains), monospace" }}>
             Full Archive
           </p>
-          <h2 className="text-2xl text-white" style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 700 }}>
+          <h2 className="text-2xl text-white" style={{ fontFamily: "var(--font-sans), sans-serif", fontWeight: 700 }}>
             {allProjects.length} projects
           </h2>
         </div>
@@ -452,7 +452,7 @@ function AllProjectsModal({ onClose }: { onClose: () => void }) {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0e0e14] via-transparent to-transparent" />
                 <span
                   className="absolute top-3 left-3 text-[10px] px-2 py-1 rounded-full border border-[#7c3aed]/30 bg-[#0e0e14]/80 text-[#a78bfa] backdrop-blur-sm"
-                  style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                  style={{ fontFamily: "var(--font-jetbrains), monospace" }}
                 >
                   {project.category}
                 </span>
@@ -463,17 +463,17 @@ function AllProjectsModal({ onClose }: { onClose: () => void }) {
               </div>
               <div className="p-5 flex flex-col gap-3 flex-1">
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] text-[#52525b]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+                  <span className="text-[10px] text-[#52525b]" style={{ fontFamily: "var(--font-jetbrains), monospace" }}>
                     {project.number} · {project.year}
                   </span>
-                  <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#7c3aed]/10 text-[#a78bfa]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+                  <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#7c3aed]/10 text-[#a78bfa]" style={{ fontFamily: "var(--font-jetbrains), monospace" }}>
                     {project.stat.value} {project.stat.label}
                   </span>
                 </div>
-                <h3 className="text-white text-lg leading-snug group-hover:text-[#a78bfa] transition-colors" style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 700 }}>
+                <h3 className="text-white text-lg leading-snug group-hover:text-[#a78bfa] transition-colors" style={{ fontFamily: "var(--font-sans), sans-serif", fontWeight: 700 }}>
                   {project.title}
                 </h3>
-                <p className="text-[#71717a] text-xs leading-relaxed flex-1" style={{ fontFamily: "'Inter', sans-serif" }}>
+                <p className="text-[#71717a] text-xs leading-relaxed flex-1" style={{ fontFamily: "var(--font-sans), sans-serif" }}>
                   {project.description}
                 </p>
                 <TagMarquee tags={project.tags} />
@@ -518,13 +518,13 @@ export default function Project() {
           <div>
             <span
               className="text-xs tracking-[0.2em] text-[#a78bfa] uppercase mb-4 block"
-              style={{ fontFamily: "'JetBrains Mono', monospace" }}
+              style={{ fontFamily: "var(--font-jetbrains), monospace" }}
             >
               — Selected Work
             </span>
             <h2
               className="text-4xl sm:text-5xl text-white leading-tight"
-              style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 700 }}
+              style={{ fontFamily: "var(--font-sans), sans-serif", fontWeight: 700 }}
             >
               Projects I&apos;ve
               <br />
@@ -532,7 +532,7 @@ export default function Project() {
             </h2>
           </div>
           <div className="flex flex-col items-start sm:items-end gap-3">
-            <p className="text-[#71717a] text-sm sm:text-right leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>
+            <p className="text-[#71717a] text-sm sm:text-right leading-relaxed" style={{ fontFamily: "var(--font-sans), sans-serif" }}>
               Three featured builds.{" "}
               <button onClick={() => setModalOpen(true)} className="text-[#a78bfa] hover:text-white underline underline-offset-2 transition-colors">
                 See all {allProjects.length}
@@ -542,7 +542,7 @@ export default function Project() {
             <button
               onClick={() => setModalOpen(true)}
               className="flex items-center gap-2 px-5 py-2.5 rounded-xl border border-[#7c3aed]/30 bg-[#7c3aed]/10 text-[#a78bfa] hover:bg-[#7c3aed]/20 hover:border-[#7c3aed]/50 text-sm transition-all duration-200"
-              style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}
+              style={{ fontFamily: "var(--font-sans), sans-serif", fontWeight: 500 }}
             >
               View all projects <ArrowRight size={15} />
             </button>
@@ -573,20 +573,20 @@ export default function Project() {
                 <div className="relative h-48 overflow-hidden">
                   <img src={project.imageA} alt={project.title} className="w-full h-full object-cover brightness-75" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0e0e14] via-transparent to-transparent" />
-                  <span className="absolute bottom-3 left-4 text-[10px] px-2.5 py-1 rounded-full border border-[#7c3aed]/30 bg-[#0e0e14]/80 text-[#a78bfa]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+                  <span className="absolute bottom-3 left-4 text-[10px] px-2.5 py-1 rounded-full border border-[#7c3aed]/30 bg-[#0e0e14]/80 text-[#a78bfa]" style={{ fontFamily: "var(--font-jetbrains), monospace" }}>
                     {project.category}
                   </span>
                 </div>
                 <div className="p-5 flex flex-col gap-3 flex-1">
                   <div className="flex items-center gap-2">
-                    <span className="text-[10px] text-[#52525b]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{project.number} · {project.year}</span>
-                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#7c3aed]/10 text-[#a78bfa]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{project.stat.value} {project.stat.label}</span>
+                    <span className="text-[10px] text-[#52525b]" style={{ fontFamily: "var(--font-jetbrains), monospace" }}>{project.number} · {project.year}</span>
+                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#7c3aed]/10 text-[#a78bfa]" style={{ fontFamily: "var(--font-jetbrains), monospace" }}>{project.stat.value} {project.stat.label}</span>
                   </div>
-                  <h3 className="text-white text-xl leading-snug" style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 800 }}>{project.title}</h3>
-                  <p className="text-[#71717a] text-xs leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>{project.description}</p>
+                  <h3 className="text-white text-xl leading-snug" style={{ fontFamily: "var(--font-sans), sans-serif", fontWeight: 800 }}>{project.title}</h3>
+                  <p className="text-[#71717a] text-xs leading-relaxed" style={{ fontFamily: "var(--font-sans), sans-serif" }}>{project.description}</p>
                   <div className="flex gap-2 mt-auto pt-2">
-                    <a href={project.githubUrl} className="flex items-center gap-1.5 px-3 py-2 text-xs rounded-lg border border-white/[0.08] text-[#a1a1aa] hover:text-white transition-colors" style={{ fontFamily: "'Inter', sans-serif" }}><Github size={13} /> Code</a>
-                    <a href={project.liveUrl} className="flex items-center gap-1.5 px-3 py-2 text-xs rounded-lg bg-[#7c3aed] text-white" style={{ fontFamily: "'Inter', sans-serif" }}><ExternalLink size={13} /> Live</a>
+                    <a href={project.githubUrl} className="flex items-center gap-1.5 px-3 py-2 text-xs rounded-lg border border-white/[0.08] text-[#a1a1aa] hover:text-white transition-colors" style={{ fontFamily: "var(--font-sans), sans-serif" }}><Github size={13} /> Code</a>
+                    <a href={project.liveUrl} className="flex items-center gap-1.5 px-3 py-2 text-xs rounded-lg bg-[#7c3aed] text-white" style={{ fontFamily: "var(--font-sans), sans-serif" }}><ExternalLink size={13} /> Live</a>
                   </div>
                   <TagMarquee tags={project.tags} />
                 </div>
@@ -604,7 +604,7 @@ export default function Project() {
               <div className="w-12 h-12 rounded-full border border-[#7c3aed]/30 bg-[#7c3aed]/10 flex items-center justify-center">
                 <ArrowUpRight size={20} className="text-[#a78bfa]" />
               </div>
-              <span className="text-[#a78bfa] text-sm" style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 600 }}>
+              <span className="text-[#a78bfa] text-sm" style={{ fontFamily: "var(--font-sans), sans-serif", fontWeight: 600 }}>
                 View all {allProjects.length} projects
               </span>
             </motion.button>

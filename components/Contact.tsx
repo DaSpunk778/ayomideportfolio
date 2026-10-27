@@ -95,7 +95,7 @@ export default function Contact() {
       <label
         htmlFor={key}
         className="block text-sm text-muted-foreground mb-2"
-        style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}
+        style={{ fontFamily: "var(--font-sans), sans-serif", fontWeight: 500 }}
       >
         {label}
       </label>
@@ -113,12 +113,12 @@ export default function Contact() {
             ? "boder-red-500/50 focus:ring-red-500/30"
             : "border-border focus:border-[#7c3aed]/50 focus:ring-[#7c3aed]/20"
         }`}
-        style={{ fontFamily: "'Inter', sans-serif" }}
+        style={{ fontFamily: "var(--font-sans), sans-serif" }}
       />
       {errors[key] && (
         <p
           className="text-red-400 text-xs mt-1.5"
-          style={{ fontFamily: "'Inter', sans-serif" }}
+          style={{ fontFamily: "var(--font-sans), sans-serif" }}
         >
           {errors[key]}
         </p>
@@ -145,13 +145,13 @@ export default function Contact() {
         >
           <span
             className="text-xs tracking-[0.2em] text-brand-text uppercase mb-4 block"
-            style={{ fontFamily: "'JetBrains Mono', monospace" }}
+            style={{ fontFamily: "var(--font-jetbrains), monospace" }}
           >
             — Get in Touch
           </span>
           <h2
             style={{
-              fontFamily: "'Bricolage Grotesque', sans-serif",
+              fontFamily: "var(--font-sans), sans-serif",
               fontWeight: 700,
             }}
             className="light-heading text-4xl sm:text-5xl text-foreground mb-4 leading-tight"
@@ -160,7 +160,7 @@ export default function Contact() {
           </h2>
           <p
             className="text-subtle max-w-xl mx-auto"
-            style={{ fontFamily: "'Inter', sans-serif" }}
+            style={{ fontFamily: "var(--font-sans), sans-serif" }}
           >
             Have a project in mind, a collaboration opportunity, or just want to
             say hi? I'd love to hear from you.
@@ -187,14 +187,14 @@ export default function Contact() {
                 <div>
                   <p
                     className="text-xs text-subtle mb-0.5"
-                    style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                    style={{ fontFamily: "var(--font-jetbrains), monospace" }}
                   >
                     {label}
                   </p>
                   <p
                     className="text-foreground text-sm"
                     style={{
-                      fontFamily: "'Inter', sans-serif",
+                      fontFamily: "var(--font-sans), sans-serif",
                       fontWeight: 500,
                     }}
                   >
@@ -208,7 +208,7 @@ export default function Contact() {
             <div className="p-5 rounded-xl border border-border bg-foreground/2">
               <p
                 className="text-xs text-subtle mb-4"
-                style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                style={{ fontFamily: "var(--font-jetbrains), monospace" }}
               >
                 Find me on
               </p>
@@ -259,7 +259,7 @@ export default function Contact() {
                 <CheckCircle size={56} className="text-[#22d3ee] mb-5" />
                 <h3
                   style={{
-                    fontFamily: "'Bricolage Grotesque', sans-serif",
+                    fontFamily: "var(--font-sans), sans-serif",
                     fontWeight: 700,
                   }}
                   className="text-2xl text-foreground mb-3"
@@ -268,14 +268,14 @@ export default function Contact() {
                 </h3>
                 <p
                   className="text-subtle mb-6"
-                  style={{ fontFamily: "'Inter', sans-serif" }}
+                  style={{ fontFamily: "var(--font-sans), sans-serif" }}
                 >
                   Thanks for reaching out. I'll get back to you within 24 hours.
                 </p>
                 <button
                   onClick={() => setStatus("idle")}
                   className="px-5 py-2.5 text-sm rounded-lg border border-border text-muted-foreground hover:text-foreground hover:border-border-strong transition-colors"
-                  style={{ fontFamily: "'Inter', sans-serif" }}
+                  style={{ fontFamily: "var(--font-sans), sans-serif" }}
                 >
                   Send another message
                 </button>
@@ -292,7 +292,7 @@ export default function Contact() {
                     htmlFor="message"
                     className="block text-sm text-muted-foreground mb-2"
                     style={{
-                      fontFamily: "'Inter', sans-serif",
+                      fontFamily: "var(--font-sans), sans-serif",
                       fontWeight: 500,
                     }}
                   >
@@ -313,12 +313,12 @@ export default function Contact() {
                         ? "border-red-500/50 focus:ring-red-500/30"
                         : "border-border focus:border-[#7c3aed]/50 focus:ring-[#7c3aed]/20"
                     }`}
-                    style={{ fontFamily: "'Inter', sans-serif" }}
+                    style={{ fontFamily: "var(--font-sans), sans-serif" }}
                   />
                   {errors.message && (
                     <p
                       className="text-red-400 text-xs mt-1.5"
-                      style={{ fontFamily: "'Inter', sans-serif" }}
+                      style={{ fontFamily: "var(--font-sans), sans-serif" }}
                     >
                       {errors.message}
                     </p>
@@ -328,7 +328,7 @@ export default function Contact() {
                   type="submit"
                   disabled={status === "loading"}
                   className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-[#7c3aed] hover:bg-[#6d28d9] disabled:opacity-70 text-white text-sm transition-all duration-200 hover:shadow-[0_0_30px_rgba(124,58,237,0.4)]"
-                  style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}
+                  style={{ fontFamily: "var(--font-sans), sans-serif", fontWeight: 500 }}
                 >
                   {status === "loading" ? (
                     <>

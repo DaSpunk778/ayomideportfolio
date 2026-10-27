@@ -98,7 +98,7 @@ function Lightbox({
       {/* Counter */}
       <span
         className="absolute top-6 left-1/2 -translate-x-1/2 text-xs text-white/30 z-10"
-        style={{ fontFamily: "'JetBrains Mono', monospace" }}
+        style={{ fontFamily: "var(--font-jetbrains), monospace" }}
       >
         {index + 1} / {images.length}
       </span>
@@ -161,13 +161,13 @@ function Lightbox({
             <div className="text-center px-4">
               <p
                 className="text-white text-base sm:text-lg mb-1.5"
-                style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 600 }}
+                style={{ fontFamily: "var(--font-sans), sans-serif", fontWeight: 600 }}
               >
                 {current.caption}
               </p>
               <p
                 className="text-[#71717a] text-sm leading-relaxed max-w-xl mx-auto"
-                style={{ fontFamily: "'Inter', sans-serif" }}
+                style={{ fontFamily: "var(--font-sans), sans-serif" }}
               >
                 {current.description}
               </p>
@@ -283,7 +283,7 @@ function GalleryCard({ img, onClick }: { img: GalleryImage; onClick: () => void 
       >
         <p
           className="text-white text-xs leading-tight"
-          style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}
+          style={{ fontFamily: "var(--font-sans), sans-serif", fontWeight: 500 }}
         >
           {img.caption}
         </p>
@@ -334,12 +334,12 @@ export default function Gallery() {
         >
           <span
             className="text-xs tracking-[0.2em] text-[#a78bfa] uppercase mb-4 block"
-            style={{ fontFamily: "'JetBrains Mono', monospace" }}
+            style={{ fontFamily: "var(--font-jetbrains), monospace" }}
           >
             — Beyond the Code
           </span>
           <h2
-            style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 700 }}
+            style={{ fontFamily: "var(--font-sans), sans-serif", fontWeight: 700 }}
             className="text-4xl sm:text-5xl text-white mb-4 leading-tight"
           >
             Life in{" "}
@@ -355,7 +355,7 @@ export default function Gallery() {
           </h2>
           <p
             className="text-[#71717a] max-w-lg mx-auto"
-            style={{ fontFamily: "'Inter', sans-serif" }}
+            style={{ fontFamily: "var(--font-sans), sans-serif" }}
           >
             Events, travel, behind-the-scenes moments — the world that exists
             outside the terminal window.
@@ -380,7 +380,7 @@ export default function Gallery() {
         animate={inView ? { opacity: 1 } : {}}
         transition={{ delay: 0.8 }}
         className="text-center mt-10 text-[#3f3f46] text-xs"
-        style={{ fontFamily: "'JetBrains Mono', monospace" }}
+        style={{ fontFamily: "var(--font-jetbrains), monospace" }}
       >
         click any image to expand · use arrow keys to navigate
       </motion.p>

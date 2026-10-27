@@ -291,7 +291,7 @@ export default function Hero() {
           className="inline-flex mt-20 sm:mt-0 items-center gap-2 px-4 py-1.5 rounded-full border border-[#7c3aed]/30 bg-[#7c3ead]/10 text-brand-text text-sm mb-8"
         >
           <span
-            style={{ fontFamily: "'JetBrains Mono', monospace" }}
+            style={{ fontFamily: "var(--font-jetbrains), monospace" }}
             className="w-1.5 h-1.5 rounded-full bg-[#22ee6d] animate-pulse" />
           Available for select work
         </motion.div>
@@ -312,7 +312,7 @@ export default function Hero() {
                  initial={{ opacity: 0, y: 30}}
                  animate={{ opacity: 1, y: 0}}
                  transition={{ delay: 0.35, duration: 0.7 }}
-                 style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 800 }}
+                 style={{ fontFamily: "var(--font-sans), sans-serif", fontWeight: 800 }}
                  className="text-4xl sm:text-6xl lg:text-7xl text-white leading-[1.05] tracking-tight mb-6"
                 >
                 Hi,I'm{" "}
@@ -339,7 +339,7 @@ export default function Hero() {
           className="h-10 sm:h-12 flex items-center justify-center mb-8"
         >
           <span
-            style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}
+            style={{ fontFamily: "var(--font-sans), sans-serif", fontWeight: 300 }}
             className="text-xl sm:text-2xl lg:text-3xl text-muted-foreground "
           >
             {displayed}
@@ -352,7 +352,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.65, duration: 0.6 }}
-          style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}
+          style={{ fontFamily: "var(--font-sans), sans-serif", fontWeight: 300 }}
           className="text-base sm:text-lg  max-w-2xl mx-auto mb-10 leading-relaxed"
         >
           I craft high-performance web applications with a focus on clean architecture,
@@ -368,7 +368,7 @@ export default function Hero() {
           <button
             onClick={() => scrollToId("projects")}
             className="group w-64 sm:w-auto flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-brand hover:bg-brand-hover text-white text-sm transition-all duration-200 hover:shadow-[0_0_30px_rgba(124,58,237,0.4)]"
-            style={{ fontFamily: "'JetBrains Mono', monospace", fontWeight: 500 }}
+            style={{ fontFamily: "var(--font-jetbrains), monospace", fontWeight: 500 }}
           >
             View My Work
           </button>
@@ -379,7 +379,7 @@ export default function Hero() {
               title="Download CV"
 
               //className="group w-64 sm:w-auto flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl border border-white/10 hover:border-white/20 text-white/80 hover:text-white text-sm transition-all duration-200 bg-white/3 hover:bg-white/[0.07]"
-              //style={{ fontFamily: "'JetBrains Mono', monospace", fontWeight: 500 }}
+              //style={{ fontFamily: "var(--font-jetbrains), monospace", fontWeight: 500 }}
               icon={<Download size={16} />} position={"left"} />
 
           </a>
@@ -419,7 +419,7 @@ export default function Hero() {
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-subtle hover:text-brand-text transition-colors"
       >
         <span className="text-xs"
-          style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+          style={{ fontFamily: "var(--font-jetbrains), monospace" }}>
           scroll
         </span>
         <ArrowDown size={16} />

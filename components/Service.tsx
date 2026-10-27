@@ -104,13 +104,13 @@ export default function Services() {
         >
           <span
             className="text-xs tracking-[0.2em] text-brand-text uppercase mb-4 block"
-            style={{ fontFamily: "'JetBrains Mono', monospace" }}
+            style={{ fontFamily: "var(--font-jetbrains), monospace" }}
           >
             — What I Offer
           </span>
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
             <h2
-              style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 700 }}
+              style={{ fontFamily: "var(--font-sans), sans-serif", fontWeight: 700 }}
               className="light-heading text-4xl sm:text-5xl text-foreground leading-tight max-w-sm"
             >
               What I can{" "}
@@ -119,7 +119,7 @@ export default function Services() {
             </h2>
             <p
               className="text-subtle max-w-xs leading-relaxed"
-              style={{ fontFamily: "'Inter', sans-serif" }}
+              style={{ fontFamily: "var(--font-sans), sans-serif" }}
             >
               Six focused disciplines. One engineer who cares about the whole product, not just the ticket.
             </p>
@@ -165,7 +165,7 @@ export default function Services() {
                   <span
                     className="text-xs leading-none"
                     style={{
-                      fontFamily: "'JetBrains Mono', monospace",
+                      fontFamily: "var(--font-jetbrains), monospace",
                       color: isHovered ? service.accent : "var(--border-strong)",
                       transition: "color 0.3s ease",
                     }}
@@ -205,14 +205,14 @@ export default function Services() {
                 {/* Title + description */}
                 <div className="flex flex-col gap-2.5 flex-1">
                   <h3
-                    style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 700 }}
+                    style={{ fontFamily: "var(--font-sans), sans-serif", fontWeight: 700 }}
                     className="text-foreground text-lg leading-snug transition-colors duration-300"
                   >
                     {service.title}
                   </h3>
                   <p
                     className="text-subtle text-sm leading-relaxed"
-                    style={{ fontFamily: "'Inter', sans-serif" }}
+                    style={{ fontFamily: "var(--font-sans), sans-serif" }}
                   >
                     {service.description}
                   </p>
@@ -225,7 +225,7 @@ export default function Services() {
                       key={tag}
                       className="text-[10px] px-2 py-1 rounded-md transition-all duration-300"
                       style={{
-                        fontFamily: "'JetBrains Mono', monospace",
+                        fontFamily: "var(--font-jetbrains), monospace",
                         backgroundColor: isHovered
                           ? `${service.accent}12`
                           : "var(--muted)",
@@ -252,14 +252,14 @@ export default function Services() {
         >
           <div>
             <p
-              style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 600 }}
+              style={{ fontFamily: "var(--font-sans), sans-serif", fontWeight: 600 }}
               className="text-foreground mb-1"
             >
               Not sure what you need?
             </p>
             <p
               className="text-subtle text-sm"
-              style={{ fontFamily: "'Inter', sans-serif" }}
+              style={{ fontFamily: "var(--font-sans), sans-serif" }}
             >
               Let's talk through your project and figure out the right approach together.
             </p>
@@ -267,7 +267,7 @@ export default function Services() {
           <button
             onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
             className="shrink-0 px-6 py-3 rounded-xl bg-[#7c3aed] hover:bg-[#6d28d9] text-white text-sm transition-all duration-200 hover:shadow-[0_0_30px_rgba(124,58,237,0.4)]"
-            style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}
+            style={{ fontFamily: "var(--font-sans), sans-serif", fontWeight: 500 }}
           >
             Start a conversation
           </button>

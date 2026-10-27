@@ -191,13 +191,13 @@ const MusicPlaylists = () => {
             <div className="container mx-auto px-6">
                 <span
                     className="text-xs text-center tracking-[0.2em] text-brand-text uppercase mb-4 block"
-                    style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                    style={{ fontFamily: "var(--font-jetbrains), monospace" }}
                 >
                     — My music Playlist
                 </span>
                 <h2 className="flex items-center justify-center gap-4 text-center text-4xl! sm:text-5xl! md:text-6xl! font-black! tracking-tight! text-foreground"
                     style={{
-                        fontFamily: "'Bricolage Grotesque', sans-serif",
+                        fontFamily: "var(--font-sans), sans-serif",
                         fontWeight: 700,
                     }}
                 >

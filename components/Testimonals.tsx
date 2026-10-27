@@ -94,17 +94,17 @@ export default function Testimonials() {
           className="text-center mb-16"
         >
           <span
-            className="text-xs tracking-[0.2em] text-[#a78bfa] uppercase mb-4 block"
-            style={{ fontFamily: "'JetBrains Mono', monospace" }}
+            className="text-xs tracking-[0.2em] text-brand-text uppercase mb-4 block"
+            style={{ fontFamily: "var(--font-jetbrains), monospace" }}
           >
             — Testimonials
           </span>
           <h2
             style={{
-              fontFamily: "'Bricolage Grotesque', sans-serif",
+              fontFamily: "var(--font-sans), sans-serif",
               fontWeight: 700,
             }}
-            className="text-4xl sm:text-5xl text-white leading-tight"
+            className="light-heading text-4xl sm:text-5xl text-foreground leading-tight"
           >
             What people say
           </h2>
@@ -117,7 +117,7 @@ export default function Testimonials() {
           className="relative"
         >
           {/* Main Card*/}
-          <div className="relative rounded-3xl border border-white/6 bg-[#111117] overflow-hidden p-8 sm:p-12 min-h-85 flex flex-col justify-between">
+          <div className="relative rounded-3xl border border-border bg-surface shadow-[0_30px_80px_-45px_rgba(24,24,27,0.35)] dark:shadow-none overflow-hidden p-8 sm:p-12 min-h-85 flex flex-col justify-between">
             {/* my quote icon */}
             <Quote
               size={80}
@@ -148,10 +148,10 @@ export default function Testimonials() {
 
                 {/*quotes from people */}
                 <blockquote
-                  className="text-[16px] sm:text-[16px] text-white/80 leading-relaxed mb-8 max-w-3xl"
-                  style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}
+                  className="text-[16px] sm:text-[17px] text-foreground/80 leading-relaxed mb-8 max-w-3xl"
+                  style={{ fontFamily: "var(--font-sans), sans-serif", fontWeight: 300 }}
                 >
-                  "{current.content}"
+                  &quot;{current.content}&quot;
                 </blockquote>
 
                 {/** Attribution */}
@@ -164,24 +164,24 @@ export default function Testimonials() {
                   <div>
                     <p
                       style={{
-                        fontFamily: "'Bricolage Grotesque', sans-serif",
+                        fontFamily: "var(--font-sans), sans-serif",
                         fontWeight: 600,
                       }}
-                      className="text-white"
+                      className="text-foreground"
                     >
                       {current.name}
                     </p>
                     <p
-                      className="text-sm text-[#71717a]"
-                      style={{ fontFamily: "'Inter', sans-serif" }}
+                      className="text-sm text-subtle"
+                      style={{ fontFamily: "var(--font-sans), sans-serif" }}
                     >
                       {current.role} at {current.company}
                     </p>
                   </div>
                   <div className="ml-auto hidden sm:block" >
                     <span
-                      className="text-xs px-3 py-1.5 rounded-full border border-[#7c3aed]/30 text-[#a78bfa]"
-                      style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                      className="text-xs px-3 py-1.5 rounded-full border border-brand/30 bg-brand-tint text-brand-text"
+                      style={{ fontFamily: "var(--font-jetbrains), monospace" }}
                     >
                       {current.project}
                     </span>
@@ -200,7 +200,7 @@ export default function Testimonials() {
                   key={i}
                   onClick={() => { setDirection(i > index ? 1 : -1); setIndex(i); }}
                   className={`h-1.5 rounded-full transition-all duration-300 ${
-                    i === index ? "w-8 bg-[#7c3aed]" : "w-1.5 bg-white/20 hover:bg-white/40"
+                    i === index ? "w-8 bg-[#7c3aed]" : "w-1.5 bg-foreground/20 hover:bg-foreground/40"
                   }`}
                 />
               ))}
@@ -210,13 +210,13 @@ export default function Testimonials() {
             <div className="flex gap-2">
               <button
                 onClick={() => go(-1)}
-                className="p-2.5 rounded-xl border border-white/8 text-[#71717a] hover:text-white hover:border-white/20 transition-all"
+                className="p-2.5 rounded-xl border border-border text-subtle hover:text-foreground hover:border-border-strong transition-all"
               >
                 <ChevronLeft size={18} />
               </button>
               <button
                 onClick={() => go(1)}
-                className="p-2.5 rounded-xl border border-white/8 text-[#71717a] hover:text-white hover:border-white/20 transition-all"
+                className="p-2.5 rounded-xl border border-border text-subtle hover:text-foreground hover:border-border-strong transition-all"
               >
                 <ChevronRight size={18} />
               </button>
@@ -237,8 +237,8 @@ export default function Testimonials() {
               onClick={() => { setDirection(i > index ? 1 : -1); setIndex(i); }}
               className={`p-4 rounded-xl border transition-all duration-300 text-left ${
                 i === index
-                  ? "border-[#7c3aed]/40 bg-[#7c3aed]/10"
-                  : "border-white/6 bg-white/2 hover:border-white/15"
+                  ? "border-brand/40 bg-brand-tint"
+                  : "border-border bg-foreground/[0.02] hover:border-border-strong"
               }`}
             >
               <div className="flex items-center gap-2 mb-1.5">
@@ -248,15 +248,15 @@ export default function Testimonials() {
                   className="w-6 h-6 rounded-full object-cover"
                 />
                 <span
-                  className="text-xs text-white truncate"
-                  style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}
+                  className="text-xs text-foreground truncate"
+                  style={{ fontFamily: "var(--font-sans), sans-serif", fontWeight: 500 }}
                 >
                   {t.name}
                 </span>
               </div>
               <p
-                className="text-[10px] text-[#52525b] truncate"
-                style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                className="text-[10px] text-subtle truncate"
+                style={{ fontFamily: "var(--font-jetbrains), monospace" }}
               >
                 {t.company}
               </p>

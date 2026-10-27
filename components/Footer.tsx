@@ -58,7 +58,7 @@ export default function Footer() {
                 <Code2 size={14} className="text-white" />
               </div>
               <span
-                style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 700 }}
+                style={{ fontFamily: "var(--font-sans), sans-serif", fontWeight: 700 }}
                 className="text-foreground"
               >
                 AY_dev
@@ -66,7 +66,7 @@ export default function Footer() {
             </div>
             <p
               className="text-subtle text-sm max-w-xs"
-              style={{ fontFamily: "'Inter', sans-serif" }}
+              style={{ fontFamily: "var(--font-sans), sans-serif" }}
             >
               Full-stack developer crafting high-performance web experiences.
             </p>
@@ -83,7 +83,7 @@ export default function Footer() {
                   document.getElementById(l.href.slice(1))?.scrollIntoView({ behavior: "smooth" });
                 }}
                 className="text-sm text-subtle hover:text-foreground transition-colors"
-                style={{ fontFamily: "'Inter', sans-serif" }}
+                style={{ fontFamily: "var(--font-sans), sans-serif" }}
               >
                 {l.label}
               </a>
@@ -121,7 +121,7 @@ export default function Footer() {
           <h2
             className="text-center whitespace-nowrap leading-none font-extrabold uppercase tracking-tight text-[10vw] sm:text-[9vw] md:text-[7vw] lg:text-[8vw]"
             style={{
-              fontFamily: "'Bricolage Grotesque', sans-serif",
+              fontFamily: "var(--font-sans), sans-serif",
               WebkitTextStroke: "1.5px #7c3aed",
               color: "transparent",
             }}
@@ -133,13 +133,13 @@ export default function Footer() {
         <div className="border-t border-border pt-6 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p
             className="text-xs text-subtle"
-            style={{ fontFamily: "'JetBrains Mono', monospace" }}
+            style={{ fontFamily: "var(--font-jetbrains), monospace" }}
           >
             © 2026 Ayomide Samuel Akintomide — All rights reserved
           </p>
           <p
             className="text-xs text-subtle"
-            style={{ fontFamily: "'JetBrains Mono', monospace" }}
+            style={{ fontFamily: "var(--font-jetbrains), monospace" }}
           >
             Built with Next.js · TypeScript · Tailwind CSS
           </p>

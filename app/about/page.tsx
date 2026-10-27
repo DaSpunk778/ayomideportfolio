@@ -32,11 +32,11 @@ export default function AboutPage() {
                   <div>
                     <p
                       className="text-white text-sm"
-                      style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 600 }}
+                      style={{ fontFamily: "var(--font-sans), sans-serif", fontWeight: 600 }}
                     >
                       Currently available
                     </p>
-                    <p className="text-[#71717a] text-xs" style={{ fontFamily: "'Inter', sans-serif" }}>
+                    <p className="text-[#71717a] text-xs" style={{ fontFamily: "var(--font-sans), sans-serif" }}>
                       Open to new projects
                     </p>
                   </div>
@@ -49,12 +49,12 @@ export default function AboutPage() {
           <div>
             <span
               className="text-xs tracking-[0.2em] text-[#a78bfa] uppercase mb-4 block"
-              style={{ fontFamily: "'JetBrains Mono', monospace" }}
+              style={{ fontFamily: "var(--font-jetbrains), monospace" }}
             >
               — About Me
             </span>
             <h1
-              style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 700 }}
+              style={{ fontFamily: "var(--font-sans), sans-serif", fontWeight: 700 }}
               className="text-4xl sm:text-5xl text-white mb-6 leading-tight"
             >
               Building the future,{" "}
@@ -62,7 +62,7 @@ export default function AboutPage() {
             </h1>
 
             <div
-              style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400 }}
+              style={{ fontFamily: "var(--font-sans), sans-serif", fontWeight: 400 }}
               className="space-y-5 text-[#a1a1aa] leading-relaxed"
             >
               <p>

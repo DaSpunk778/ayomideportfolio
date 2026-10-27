@@ -161,13 +161,13 @@ export default function Stack() {
         >
           <span
             className="text-xs tracking-[0.2em] text-brand-text uppercase mb-4 block"
-            style={{ fontFamily: "'JetBrains Mono', monospace" }}
+            style={{ fontFamily: "var(--font-jetbrains), monospace" }}
           >
             — Tech Stack
           </span>
           <h2
             style={{
-              fontFamily: "'Bricolage Grotesque', sans-serif",
+              fontFamily: "var(--font-sans), sans-serif",
               fontWeight: 700,
             }}
             className="light-heading text-4xl sm:text-5xl text-foreground mb-4 leading-tight"
@@ -176,7 +176,7 @@ export default function Stack() {
           </h2>
           <p
             className="text-subtle max-w-xl mx-auto"
-            style={{ fontFamily: "'Inter', sans-serif" }}
+            style={{ fontFamily: "var(--font-sans), sans-serif" }}
           >
             A curated set of technologies I've mastered over the years of
             building production applications across diverse industries.
@@ -198,7 +198,7 @@ export default function Stack() {
                 ? "bg-[#7c3aed] text-white"
                 : "border border-border text-muted-foreground hover:text-foreground hover:border-border-strong"
                 }`}
-              style={{ fontFamily: "'Inter', sans-serif" }}
+              style={{ fontFamily: "var(--font-sans), sans-serif" }}
             >
               {cat}
             </button>
@@ -240,7 +240,7 @@ export default function Stack() {
 
               <p
                 style={{
-                  fontFamily: "'Bricolage Grotesque', sans-serif",
+                  fontFamily: "var(--font-sans), sans-serif",
                   fontWeight: 600,
                 }}
                 className="text-foreground text-sm mb-1"
@@ -249,7 +249,7 @@ export default function Stack() {
               </p>
               <p
                 className="text-subtle text-xs mb-3 leading-snug"
-                style={{ fontFamily: "'Inter', sans-serif" }}
+                style={{ fontFamily: "var(--font-sans), sans-serif" }}
               >
                 {stack.description}
               </p>
@@ -259,14 +259,14 @@ export default function Stack() {
                 <div className="flex items-center justify-between">
                   <span
                     className="text-[10px] text-subtle"
-                    style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                    style={{ fontFamily: "var(--font-jetbrains), monospace" }}
                   >
                     proficiency
                   </span>
                   <span
                     className="text-[10px]"
                     style={{
-                      fontFamily: "'JetBrains Mono', monospace",
+                      fontFamily: "var(--font-jetbrains), monospace",
                       color: stack.color,
                     }}
                   >

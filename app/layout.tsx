@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Noto_Sans, Playfair_Display } from "next/font/google";
+import { Host_Grotesk, JetBrains_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Rubik_Glitch } from 'next/font/google';
@@ -7,9 +7,10 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 
 const playfairDisplayHeading = Playfair_Display({ subsets: ['latin'], variable: '--font-heading' });
 
-const notoSans = Noto_Sans({ subsets: ['latin'], variable: '--font-sans' });
+// Host Grotesk is the site-wide typeface (headings + body); JetBrains Mono is for small labels.
+const hostGrotesk = Host_Grotesk({ subsets: ['latin'], variable: '--font-sans', display: 'swap' });
 
-const inter = Inter({ subsets: ["latin"] });
+const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-jetbrains', display: 'swap' });
 
 const rubikGlitch = Rubik_Glitch({
   subsets: ['latin'],
@@ -62,8 +63,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={cn("h-full antialiased", "font-sans", notoSans.variable, playfairDisplayHeading.variable)}>
-      <body className={`${inter.className} ${rubikGlitch.variable} min-h-full flex flex-col`}>
+    <html lang="en" suppressHydrationWarning className={cn("h-full antialiased", "font-sans", hostGrotesk.variable, jetbrainsMono.variable, playfairDisplayHeading.variable)}>
+      <body className={`${rubikGlitch.variable} min-h-full flex flex-col`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

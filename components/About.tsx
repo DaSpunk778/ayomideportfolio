@@ -293,10 +293,10 @@ export default function About() {
                                 <Zap size={18} className="text-brand-text" />
                             </div>
                             <div>
-                                <p className="text-foreground text-sm" style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 600 }}>
+                                <p className="text-foreground text-sm" style={{ fontFamily: "var(--font-sans), sans-serif", fontWeight: 600 }}>
                                     Currently available
                                 </p>
-                                <p className="text-subtle text-xs" style={{ fontFamily: "'Inter', sans-serif" }}>
+                                <p className="text-subtle text-xs" style={{ fontFamily: "var(--font-sans), sans-serif" }}>
                                     Open to new projects
                                 </p>
                             </div>
@@ -313,12 +313,12 @@ export default function About() {
                 >
                  <span
                   className="text-xs tracking-[0.2em] text-brand-text uppercase mb-4 block"
-                  style={{ fontFamily: "'jetBrains Monno', monospace"}}
+                  style={{ fontFamily: "var(--font-jetbrains), monospace"}}
                  >
                    — About Me
                  </span>
                  <h2
-                  style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 700 }}
+                  style={{ fontFamily: "var(--font-sans), sans-serif", fontWeight: 700 }}
                   className="light-heading text-4xl sm:text-5xl text-foreground mb-6 leading-tight"
                  >
                   Building the future,{" "}
@@ -326,7 +326,7 @@ export default function About() {
                  </h2>
                  
                  <div 
-                    style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400 }}
+                    style={{ fontFamily: "var(--font-sans), sans-serif", fontWeight: 400 }}
                     className="space-y-4 text-muted-foreground leading-relaxed mb-6"
                   >
                     <p>
@@ -340,7 +340,7 @@ export default function About() {
                   <Link
                     href="/about"
                     className="inline-flex items-center gap-2 mb-8 text-sm text-brand-text hover:text-foreground transition-colors group"
-                    style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}
+                    style={{ fontFamily: "var(--font-sans), sans-serif", fontWeight: 500 }}
                   >
                     Read more about me
                     <span className="group-hover:translate-x-1 transition-transform">→</span>
@@ -352,7 +352,7 @@ export default function About() {
                     <span
                      key={tag}
                      className="px-3 py-1 text-xs rounded-full border border-[#7c3aed]/30 text-brand-text bg-[#7c3aed]/10"
-                     style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                     style={{ fontFamily: "var(--font-jetbrains), monospace" }}
                     >
                     {tag}
                     </span>
@@ -374,12 +374,12 @@ export default function About() {
                     className="text-[#7c3aed] group-hover:text-brand-text transition-colors mb-2"
                   />
                   <p
-                    style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 700 }}
+                    style={{ fontFamily: "var(--font-sans), sans-serif", fontWeight: 700 }}
                     className="text-2xl text-foreground"
                   >
                     {stat.value}
                   </p>
-                  <p className="text-xs text-subtle" style={{ fontFamily: "'Inter', sans-serif" }}>
+                  <p className="text-xs text-subtle" style={{ fontFamily: "var(--font-sans), sans-serif" }}>
                     {stat.label}
                   </p>
                 </motion.div>

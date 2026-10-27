@@ -65,13 +65,13 @@ export default function AnimatedTestimonialsDemo() {
         >
           <span
             className="text-xs tracking-[0.2em] text-brand-text uppercase mb-4 block"
-            style={{ fontFamily: "'JetBrains Mono', monospace" }}
+            style={{ fontFamily: "var(--font-jetbrains), monospace" }}
           >
             — Testimonials
           </span>
           <h2
             style={{
-              fontFamily: "'Bricolage Grotesque', sans-serif",
+              fontFamily: "var(--font-sans), sans-serif",
               fontWeight: 700,
             }}
             className="light-heading text-4xl sm:text-5xl text-foreground leading-tight"

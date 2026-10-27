@@ -131,7 +131,7 @@ export default function Projects() {
             </span>
             <h2
               style={{
-                fontFamily: "'Bricolage Grotesque', sans-serif",
+                fontFamily: "var(--font-sans), sans-serif",
                 fontWeight: 700,
               }}
               className="text-4xl sm:text-5xl text-white leading-tight"
@@ -142,7 +142,7 @@ export default function Projects() {
           <a
             href="#"
             className="flex items-center gap-1.5 text-sm text-[#a78bfa] hover:text-white transition-colors shrink-0"
-            style={{ fontFamily: "'JetBrains Mono', monospace" }}
+            style={{ fontFamily: "var(--font-jetbrains), monospace" }}
           >
             View all on GitHub <ArrowUpRight size={16} />
           </a>
@@ -164,7 +164,7 @@ export default function Projects() {
                   ? "bg-[#7c3aed] text-white"
                   : "border border-white/8 text-[#a1a1aa] hover:text-white hover:border-white/20"
               }`}
-              style={{ fontFamily: "'Inter', sans-serif" }}
+              style={{ fontFamily: "var(--font-sans), sans-serif" }}
             >
               {cat}
             </button>
@@ -226,20 +226,20 @@ function FeaturedCard({ project }: { project: (typeof projects)[0] }) {
           <div className="flex items-center gap-2 mb-4">
             <span
               className="text-[10px] px-2 py-1 rounded-full bg-[#7c3aed]/20 border border-[#7c3aed]/30 text-[#a78bfa]"
-              style={{ fontFamily: "'JetBrains Mono', monospace" }}
+              style={{ fontFamily: "var(--font-jetbrains), monospace" }}
             >
               Featured Project
             </span>
             <span
               className="text-[10px] text-[#52525b]"
-              style={{ fontFamily: "'JetBrains Mono', monospace" }}
+              style={{ fontFamily: "var(--font-jetbrains), monospace" }}
             >
               {project.year}
             </span>
           </div>
           <h3
             style={{
-              fontFamily: "'Bricolage Grotesque', sans-serif",
+              fontFamily: "var(--font-sans), sans-serif",
               fontWeight: 800,
             }}
             className="text-3xl text-white mb-3 group-hover:text-[#a78bfa] transition-colors"
@@ -248,7 +248,7 @@ function FeaturedCard({ project }: { project: (typeof projects)[0] }) {
           </h3>
           <p
             className="text-[#a1a1aa] leading-relaxed mb-6"
-            style={{ fontFamily: "'Inter', sans-serif" }}
+            style={{ fontFamily: "var(--font-sans), sans-serif" }}
           >
             {project.description}
           </p>
@@ -257,7 +257,7 @@ function FeaturedCard({ project }: { project: (typeof projects)[0] }) {
               <span
                 key={tag}
                 className="text-xs px-2.5 py-1 rounded bg-white/4 text-[#a1a1aa] border border-white/6"
-                style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                style={{ fontFamily: "var(--font-jetbrains), monospace" }}
               >
                 {tag}
               </span>
@@ -267,7 +267,7 @@ function FeaturedCard({ project }: { project: (typeof projects)[0] }) {
             <a
               href={project.liveUrl}
               className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#7c3aed] hover:bg-[#6d28d9] text-white text-sm transition-colors"
-              style={{ fontFamily: "'Inter', sans-serif" }}
+              style={{ fontFamily: "var(--font-sans), sans-serif" }}
             >
               <ExternalLink size={15} />
               currently building!
@@ -275,7 +275,7 @@ function FeaturedCard({ project }: { project: (typeof projects)[0] }) {
             <a
               href={project.githubUrl}
               className="flex items-center gap-2 px-5 py-2.5 rounded-lg border border-white/8 hover:border-white/20 text-[#a1a1aa] hover:text-white text-sm transition-colors"
-              style={{ fontFamily: "'Inter', sans-serif" }}
+              style={{ fontFamily: "var(--font-sans), sans-serif" }}
             >
               <Github size={15} /> Source
             </a>
@@ -356,7 +356,7 @@ function ProjectCard({
         <div className="flex items-center justify-between mb-2">
           <span
             className="text-[10px] text-[#52525b]"
-            style={{ fontFamily: "'JetBrains Mono', monospace" }}
+            style={{ fontFamily: "var(--font-jetbrains), monospace" }}
           >
             {project.year}
           </span>
@@ -366,7 +366,7 @@ function ProjectCard({
         </div>
         <h3
           style={{
-            fontFamily: "'Bricolage Grotesque', sans-serif",
+            fontFamily: "var(--font-sans), sans-serif",
             fontWeight: 700,
           }}
           className="text-white text-lg mb-2 group-hover:text-[#a78bfa] transition-colors"
@@ -381,7 +381,7 @@ function ProjectCard({
             <span
               key={tag}
               className="text-[10px] px-2 py-0.5 rounded bg-white/4 text-[#a1a1aa] border border-white/6"
-              style={{ fontFamily: "'JetBrains Mono', monospace" }}
+              style={{ fontFamily: "var(--font-jetbrains), monospace" }}
             >
               {tag}
             </span>
@@ -389,7 +389,7 @@ function ProjectCard({
           {project.tags.length > 3 && (
             <span
               className="text-[10px] px-2 py-0.5 rounded bg-white/4 text-[#52525b]"
-              style={{ fontFamily: "'JetBrains Mono', monospace" }}
+              style={{ fontFamily: "var(--font-jetbrains), monospace" }}
             >
               +{project.tags.length - 3}
             </span>

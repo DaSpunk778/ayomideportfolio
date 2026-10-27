@@ -102,7 +102,7 @@ export default function Navbar() {
             <Code2 size={16} className="text-white" />
           </div>
           <span
-            style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 700 }}
+            style={{ fontFamily: "var(--font-sans), sans-serif", fontWeight: 700 }}
             className="text-foreground text-lg tracking-tight"
           >
             AY_dev
@@ -141,7 +141,7 @@ export default function Navbar() {
           <button
             onClick={() => scrollTo("#contact")}
             className="px-4 py-2 text-sm bg-brand hover:bg-brand-hover text-white rounded-lg transition-colors"
-            style={{ fontFamily: "'JetBrains Mono', monospace" }}
+            style={{ fontFamily: "var(--font-jetbrains), monospace" }}
           >
             Let's Build
           </button>
@@ -183,7 +183,7 @@ export default function Navbar() {
               ))}
               <li className="pt-2 px-3">
                 <button
-                  style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                  style={{ fontFamily: "var(--font-jetbrains), monospace" }}
                   onClick={() => scrollTo("#contact")}
                   className="w-full px-4 py-3 text-sm bg-brand hover:bg-brand-hover text-white rounded-lg transition-colors">
                   let's Build
