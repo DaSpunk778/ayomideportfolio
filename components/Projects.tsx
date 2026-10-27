@@ -5,7 +5,6 @@ import { useInView } from "../hooks/useInView";
 import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
 import { p, title } from "motion/react-client";
 import Image from "next/image";
-import { Category } from "@mui/icons-material";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "motion/react";
 
